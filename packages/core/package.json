@@ -14,5 +14,10 @@
     "url": "\"url\": \"git+https://github.com/DaPulse/dastyle.git\""
   },
   "author": "dapulse Labs Ltd.",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "react": "^15.4.1",
+    "react-addons-css-transition-group": "^15.4.1",
+    "react-dom": "^15.4.1"
+  }
 }
