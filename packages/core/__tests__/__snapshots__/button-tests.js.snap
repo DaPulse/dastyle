@@ -1,0 +1,51 @@
+exports[`test Button changes the class when hovered 1`] = `
+<button
+  className="normal"
+  href="#"
+  onClick={[Function]}
+  onMouseDown={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+  onMouseUp={[Function]}>
+  Test Button
+</button>
+`;
+
+exports[`test Button changes the class when hovered 2`] = `
+<button
+  className="hovered"
+  href="#"
+  onClick={[Function]}
+  onMouseDown={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+  onMouseUp={[Function]}>
+  Test Button
+</button>
+`;
+
+exports[`test Button changes the class when hovered 3`] = `
+<button
+  className="normal"
+  href="#"
+  onClick={[Function]}
+  onMouseDown={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+  onMouseUp={[Function]}>
+  Test Button
+</button>
+`;
+
+exports[`test Button changes the class when hovered 4`] = `
+<button
+  className="down"
+  href="#"
+  onClick={[Function]}
+  onMouseDown={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+  onMouseUp={[Function]}>
+  Test Button
+</button>
+`;

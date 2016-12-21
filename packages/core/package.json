@@ -1,0 +1,30 @@
+{
+  "name": "@dapulse/core",
+  "version": "0.0.1",
+  "description": "Core Components",
+  "main": "dist/index.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "\"url\": \"git+https://github.com/DaPulse/dastyle.git\""
+  },
+  "author": "dapulse Labs Ltd.",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^15.4.1",
+    "react-addons-css-transition-group": "^15.4.1",
+    "react-dom": "^15.4.1"
+  },
+  "devDependencies": {
+    "babel-jest": "^18.0.0",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
+    "jest": "^18.0.0",
+    "react-test-renderer": "^15.4.1"
+  }
+}
