@@ -1,0 +1,13 @@
+.left-bar-item {
+    display: flex;
+    flex-flow: row-reverse nowrap;
+    height: 70px;
+}
+
+.left-bar-item>.triangle {
+    flex-basis: 20px;
+}
+
+.left-bar-item>.item-title {
+    flex-basis: auto;
+}

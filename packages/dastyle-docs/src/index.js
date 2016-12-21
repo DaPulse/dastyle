@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
 import './index.css';
-import { Router, Route, Index, Link, IndexRoute, browserHistory} from 'react-router';
+import { Router, Route, browserHistory} from 'react-router';
 const _ = require('lodash');
 import Layout from './components/layout';
 import DocPage from './components/doc-page';

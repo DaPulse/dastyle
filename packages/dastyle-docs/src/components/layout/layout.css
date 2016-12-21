@@ -4,19 +4,6 @@
   height: 100vh;
 }
 
-.flexcontainer>.left-side-bar{
-  flex-basis: 200px;
-  padding: 20px;
-  background-color: black;
-
-}
-.flexcontainer>.main-bar{
-  padding: 20px;
-
-  flex-basis: auto;
-}
-
-
 .layout {
   text-align: center;
 }

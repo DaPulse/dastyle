@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router';
+import LeftBar from './left-bar'
+import MainBar from './main-bar'
 const _ = require('lodash');
 import './layout.css'
 
@@ -9,14 +10,8 @@ export default class Layout extends Component {
     console.log(this.props.route.items);
     return (
       <div className="flexcontainer">
-        <div className="left-side-bar">
-          {_.keys(this.props.route.items).map(entry =>
-            <Link key={entry} to={`/${entry}`}>{entry}<br/></Link>
-          )}
-        </div>
-        <div className='main-bar'>
-          {this.props.children}
-        </div>
+        <LeftBar array={_.keys(this.props.route.items)}/>
+        <MainBar showThis={this.props.children}/>
       </div>
     );
   }
