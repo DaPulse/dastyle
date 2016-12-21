@@ -3,11 +3,11 @@ import './button.scss'
 
 const STATUS = {
   NORMAL: 'ds-button normal',
-  HOVERED: 'ds-button-hovered',
-  DOWN: 'ds-button-down',
+  HOVERED: 'ds-button hovered',
+  DOWN: 'ds-button down',
 };
 
-export default class Button extends React.Component {
+export default class Button extends Component {
 
   constructor(props) {
     super(props);
