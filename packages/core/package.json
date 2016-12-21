@@ -1,0 +1,18 @@
+{
+  "name": "@dapulse/core",
+  "version": "0.0.1",
+  "description": "Core Components",
+  "main": "dist/index.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "\"url\": \"git+https://github.com/DaPulse/dastyle.git\""
+  },
+  "author": "dapulse Labs Ltd.",
+  "license": "ISC"
+}
