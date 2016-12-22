@@ -10,8 +10,9 @@ export default class Layout extends Component {
     console.log(this.props.route.items);
     return (
       <div className="flexcontainer">
-        <LeftBar array={_.keys(this.props.route.items)}/>
+        <LeftBar array={_.keys(this.props.route.items)} object={this.props.route.items}/>
         <MainBar showThis={this.props.children}/>
+
       </div>
     );
   }
