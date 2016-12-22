@@ -1,4 +1,4 @@
-.main-bar {
-    padding: 20px;
-    flex-basis: auto;
+.flexcontainer>.main-bar{
+  padding: 20px;
+  flex-basis: auto;
 }
