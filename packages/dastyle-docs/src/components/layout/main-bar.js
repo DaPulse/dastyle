@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 const _ = require('lodash');
-import './main-bar.css'
+import './main-bar.scss'
 
 export default class MainBar extends Component {
   render () {

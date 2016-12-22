@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Link} from 'react-router';
 import RotatingArrow from './rotating-arrow'
 const _ = require('lodash');
-import './left-bar-item.css'
+import './left-bar-item.scss'
 
 export default class LeftBarItem extends Component {
     constructor()
@@ -24,7 +24,11 @@ export default class LeftBarItem extends Component {
     subMenuGenerator(isOpened)
     {
         if (isOpened) {
-            return (_.keys(this.props.innerItems).map(entry => <Link className="side-bar-item" key={entry} to={`/${entry}`}>{entry}</Link>));
+            return (_.keys(this.props.innerItems).map(entry =>
+              <div className="side-bar-sub-item">
+                <Link key={entry} to={`/${entry}`}>{entry}</Link>
+              </div>
+              ));
         } else {
             return;
         }
@@ -33,13 +37,17 @@ export default class LeftBarItem extends Component {
         console.log('render left bar item');
         return (
             <div className="left-bar-item">
-                <div onClick={() => this._onArrowClick()}>
-                    <RotatingArrow/>
+                <div className="left-bar-shown-line">
+                    <div onClick={() => this._onArrowClick()}>
+                        <RotatingArrow/>
+                    </div>
+                    <span className="item-title">
+                        {this.props.title}
+                    </span>
                 </div>
-                <span className="item-title">
-                    {this.props.title}
-                </span>
-                {this.subMenuGenerator(this.state.opened)}
+                <div className="sub-menu">
+                    {this.subMenuGenerator(this.state.opened)}
+                </div>
             </div>
         );
     }
