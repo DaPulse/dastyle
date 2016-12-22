@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Link} from 'react-router';
 const _ = require('lodash');
 import './rotating-arrow.css'
+import triangleClosed from './triangle-closed.svg';
 
 export default class RotatingArrow extends Component {
     constructor() {
@@ -16,7 +17,7 @@ export default class RotatingArrow extends Component {
         console.log('render side bar');
         return (
             <div className="rotating-arrow">
-              ^
+              <img src={triangleClosed}/>
             </div>
         );
     }
