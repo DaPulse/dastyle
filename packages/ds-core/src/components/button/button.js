@@ -1,57 +1,77 @@
-import React, { Component } from "react";
-import './button.scss'
+import React, { Component, PropTypes } from 'react';
+import classNames from 'classnames';
+import './button.scss';
 
-const STATUS = {
-  NORMAL: 'ds-button normal',
-  HOVERED: 'ds-button hovered',
-  DOWN: 'ds-button down',
+const propTypes = {
+  active: PropTypes.bool,
+  block: PropTypes.bool,
+  color: PropTypes.string,
+  disabled: PropTypes.bool,
+  outline: PropTypes.bool,
+  tag: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
+  getRef: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
+  onClick: PropTypes.func,
+  size: PropTypes.string,
+  children: PropTypes.node,
+  className: PropTypes.string,
 };
 
-export default class Button extends Component {
+const defaultProps = {
+  color: 'secondary',
+  tag: 'button',
+};
 
+class Button extends Component {
   constructor(props) {
     super(props);
 
-    this._onMouseEnter = this._onMouseEnter.bind(this);
-    this._onMouseLeave = this._onMouseLeave.bind(this);
-    this._onMouseUp = this._onMouseUp.bind(this);
-    this._onMouseDown = this._onMouseDown.bind(this);
-
-    this.state = {
-      class: STATUS.NORMAL,
-    };
+    this.onClick = this.onClick.bind(this);
   }
 
-  _onMouseEnter() {
-    this.setState({class: STATUS.HOVERED});
-  }
+  onClick(e) {
+    if (this.props.disabled) {
+      e.preventDefault();
+      return;
+    }
 
-  _onMouseLeave() {
-    this.setState({class: STATUS.NORMAL});
-  }
-
-  _onMouseUp() {
-    this.setState({class: STATUS.HOVERED});
-  }
-
-  _onMouseDown() {
-    this.setState({class: STATUS.DOWN});
+    if (this.props.onClick) {
+      this.props.onClick(e);
+    }
   }
 
   render() {
+    let {
+      active,
+      block,
+      className,
+      color,
+      outline,
+      size,
+      tag: Tag,
+      getRef,
+      ...attributes
+    } = this.props;
+
+    const classes = classNames(
+      className,
+      'ds-btn',
+      `ds-btn${outline ? '-outline' : ''}-${color}`,
+      size ? `ds-btn-${size}` : false,
+      block ? 'ds-btn-block' : false,
+      { active, disabled: this.props.disabled }
+    );
+
+    if (attributes.href && Tag === 'button') {
+      Tag = 'a';
+    }
+
     return (
-      <button
-        className={this.state.class}
-        href={this.props.page || '#'}
-        onClick={this.props.onClick}
-        onMouseDown={this._onMouseDown}
-        onMouseUp={this._onMouseUp}
-        onMouseEnter={this._onMouseEnter}
-        onMouseLeave={this._onMouseLeave}
-      >
-        {this.props.children}
-      </button>
+      <Tag {...attributes} className={classes} ref={getRef} onClick={this.onClick} />
     );
   }
-
 }
+
+Button.propTypes = propTypes;
+Button.defaultProps = defaultProps;
+
+export default Button;

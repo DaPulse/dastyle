@@ -43,7 +43,7 @@ export default class Welcome extends React.Component {
   render() {
     return (
       <div style={styles.main}>
-        <h1>Dapulse style guide storybook :)</h1>
+        <h1>Dapulse styleguide storybook :)</h1>
         <p>Have fun!</p>
       </div>
     );

@@ -10,7 +10,10 @@ storiesOf('Welcome', module)
 
 storiesOf('Button', module)
   .add('with text', () => (
-    <Button onClick={action('clicked')}>Hello Button</Button>
+    <div>
+    <Button onClick={action('clicked')} onMouseEnter={action('hover in')}>Hello Button</Button>
+    <Button onClick={action('clicked')}>😀 😎 👍 💯</Button>
+  </div>
   ))
   .add('with some emoji', () => (
     <Button onClick={action('clicked')}>😀 😎 👍 💯</Button>
