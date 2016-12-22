@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import LeftBar from './left-bar'
 import MainBar from './main-bar'
 const _ = require('lodash');
-import './layout.css'
+import './layout.scss'
 
 export default class Layout extends Component {
   render () {
