@@ -1,6 +1,6 @@
 const Content = {
-    section1: {
-        button: [
+    "Some Title": {
+        Button: [
             {
                 type: 'header',
                 content: 'Button'
@@ -14,15 +14,15 @@ const Content = {
             }
 
         ],
-        colors: [
+        Colors: [
             {
                 type: 'component',
                 ref: 'examples/sample'
             }
         ]
     },
-    section2: {
-        button: [
+    "Another Title": {
+        Code: [
             {
                 type: 'header',
                 content: 'Button'
@@ -36,7 +36,7 @@ const Content = {
             }
 
         ],
-        colors: [
+        Headers: [
             {
                 type: 'component',
                 ref: 'examples/sample'
