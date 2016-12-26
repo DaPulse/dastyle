@@ -5,6 +5,7 @@ const styles = {
     margin: 15,
     maxWidth: 600,
     lineHeight: 1.4,
+    fontSize: 15,
     fontFamily: '"Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif',
   },
 
