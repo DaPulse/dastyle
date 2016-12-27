@@ -9,10 +9,9 @@ export default class Layout extends Component {
     console.log('render layout');
     console.log(this.props.route.items);
     return (
-      <div className="flexcontainer">
-        <LeftBar array={_.keys(this.props.route.items)} object={this.props.route.items}/>
+      <div className="main-container">
+        <LeftBar items={this.props.route.items} labels={this.props.route.labels}/>
         <MainBar showThis={this.props.children}/>
-
       </div>
     );
   }

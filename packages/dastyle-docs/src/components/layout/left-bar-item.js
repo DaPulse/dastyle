@@ -24,7 +24,7 @@ export default class LeftBarItem extends Component {
     subMenuGenerator(isOpened)
     {
         if (isOpened) {
-            return (_.keys(this.props.innerItems).map(entry =>
+            return (this.props.innerItemsNames.map(entry =>
               <div className="side-bar-sub-item">
                 <Link key={entry} to={`/${entry}`}>{entry}</Link>
               </div>
@@ -37,9 +37,9 @@ export default class LeftBarItem extends Component {
         console.log('render left bar item');
         return (
             <div className="left-bar-item">
-                <div className="left-bar-shown-line">
-                    <div onClick={() => this._onArrowClick()}>
-                        <RotatingArrow/>
+                <div className="left-bar-shown-line" onClick={() => this._onArrowClick()}>
+                    <div>
+                        <RotatingArrow opened={this.state.opened}/>
                     </div>
                     <span className="item-title">
                         {this.props.title}
