@@ -1,18 +1,21 @@
-import React, { Component } from 'react';
-import LeftBar from './left-bar'
-import MainBar from './main-bar'
-const _ = require('lodash');
-import './layout.scss'
+import React from 'react';
+import LeftBar from './left-bar';
+import MainBar from './main-bar';
+import './layout.scss';
 
-export default class Layout extends Component {
-  render () {
-    console.log('render layout');
-    console.log(this.props.route.items);
-    return (
-      <div className="main-container">
-        <LeftBar items={this.props.route.items} labels={this.props.route.labels}/>
-        <MainBar showThis={this.props.children}/>
-      </div>
-    );
-  }
-}
+const Layout = ({ children, route }) => {
+  console.log('render layout');
+  console.log(route.items);
+  return (
+    <div className="main-container">
+      <LeftBar items={route.items} labels={route.labels} />
+      <MainBar showThis={children} />
+    </div>
+  );
+};
+
+Layout.propTypes = {
+  children: React.PropTypes.any,
+  route: React.PropTypes.any,
+};
+export default Layout;

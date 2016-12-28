@@ -1,0 +1,36 @@
+.color-display-container {
+    height: 110px;
+    width: 202px;
+    border-radius: 4px;
+
+    .hex-title {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        font-family: 'Roboto', sans-serif;
+        font-size: 20px;
+        text-align: left;
+    }
+
+    .color-display-text-container {
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+    }
+
+    .mouseIn {
+        opacity: 0.0;
+    }
+
+    &.hover {
+        .mouseIn {
+            opacity: 1.0;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .mouseOut {
+            opacity: 0.0;
+            transition: all 0.2s ease-out-in;
+        }
+    }
+}

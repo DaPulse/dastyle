@@ -1,36 +1,31 @@
-import React, {Component} from 'react';
-import {Link} from 'react-router';
-const _ = require('lodash');
-import './rotating-arrow.css'
+import React, { Component } from 'react';
 import triangleClosed from './triangle-closed.svg';
 import triangleOpened from './triangle-opened.svg';
+import './rotating-arrow.css';
 
 export default class RotatingArrow extends Component {
-    constructor() {
-      super();
-    }
+  _onClick() {
+    this.setState({
+      opend: !this.state.opend,
+    });
+  }
 
-    _onClick() {
-      this.setState( {opend: !this.state.opend} )
+  generateArrow() {
+    if (this.props.opened) {
+      return (<img src={triangleOpened} role="presentation" />);
     }
-
-    generateArrow()
-    {
-      if (this.props.opened)
-      {
-        return (<img src={triangleOpened}/>)
-      }
-      else
-      {
-        return (<img src={triangleClosed}/>)
-      }
-    }
-    render() {
-        console.log('render side bar');
-        return (
-            <div className="rotating-arrow">
-              {this.generateArrow()}
-            </div>
-        );
-    }
+    return (<img src={triangleClosed} role="presentation" />);
+  }
+  render() {
+    console.log('render side bar');
+    return (
+      <div className="rotating-arrow">
+        {this.generateArrow()}
+      </div>
+    );
+  }
 }
+
+RotatingArrow.propTypes = {
+  opened: React.PropTypes.bool.isRequired,
+};
