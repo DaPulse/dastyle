@@ -1,4 +1,5 @@
 .rotating-arrow {
+    user-select: none;
     flex-basis: 20px;
     text-align: right;
 }

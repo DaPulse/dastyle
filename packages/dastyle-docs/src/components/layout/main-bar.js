@@ -1,14 +1,16 @@
-import React, { Component } from 'react';
-const _ = require('lodash');
-import './main-bar.scss'
+import React from 'react';
+import './main-bar.scss';
 
-export default class MainBar extends Component {
-  render () {
-    console.log('render side bar');
-    return (
-      <div className='main-bar'>
-        {this.props.showThis}
-      </div>
-    );
-  }
-}
+const MainBar = ({ showThis }) => {
+  console.log('render side bar');
+  return (
+    <div className="main-bar">
+      {showThis}
+    </div>
+  );
+};
+
+MainBar.propTypes = {
+  showThis: React.PropTypes.any,
+};
+export default MainBar;
