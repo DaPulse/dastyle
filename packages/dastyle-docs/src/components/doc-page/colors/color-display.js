@@ -21,9 +21,7 @@ class ColorDisplayComponent extends React.Component {
 
   doOnUpdate() {
     this.colorRGB = getComputedStyle(this.myRef).getPropertyValue('background-color');
-    this.colorHEX = '#' + this.colorRGB.substr(5, this.colorRGB.indexOf(')') - 5).split(',').map(color => parseInt(color, 10).toString(16)).join('');
-    // let tmp = this.colorRGB.substr(5, this.colorRGB.indexOf(')') - 5).split(',')
-    // debugger
+    this.colorHEX = '#' + this.colorRGB.substr(4, this.colorRGB.indexOf(')') - 5).split(',').map(color => parseInt(color, 10).toString(16)).join('');
     this.setState({ color: this.decideColorFormat() });
   }
   decideColorFormat() {
