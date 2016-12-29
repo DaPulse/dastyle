@@ -9,7 +9,7 @@ npm-debug.log
 .sass-cache/
 
 # Lerna
-.lerna-debug.log
+lerna-debug.log
 
 # DaStyle
 build
