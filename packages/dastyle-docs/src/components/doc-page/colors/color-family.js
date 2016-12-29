@@ -5,7 +5,7 @@ import { ColorDisplayComponent } from './color-display';
 const ColorFamilyComponent = ({ colorObj }) => {
   console.log('render colors view');
   return (
-    <div className="color-view-container">
+    <div className="color-family-container">
       <span className="colors-main-title">
         {colorObj[tabName].title}
       </span>

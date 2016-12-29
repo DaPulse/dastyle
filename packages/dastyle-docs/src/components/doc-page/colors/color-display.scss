@@ -2,6 +2,8 @@
     height: 110px;
     width: 202px;
     border-radius: 4px;
+    position: relative;
+    user-select: none;
 
     .hex-title {
         position: absolute;
@@ -13,16 +15,27 @@
     }
 
     .color-display-text-container {
+        display: flex;
+        flex-direction: column;
         position: absolute;
         bottom: 10px;
         left: 10px;
+
+        .color-title{
+          font-weight: bold;
+        }
+
+        .copy-text{
+          font-size: 23px;
+        }
     }
+
 
     .mouseIn {
         opacity: 0.0;
     }
 
-    &.hover {
+    &:hover {
         .mouseIn {
             opacity: 1.0;
             transition: all 0.2s ease-in-out;
@@ -32,5 +45,8 @@
             opacity: 0.0;
             transition: all 0.2s ease-out-in;
         }
+    }
+    &:active{
+      filter: brightness(92%);
     }
 }
