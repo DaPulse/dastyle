@@ -1,24 +1,28 @@
 import React, { Component } from 'react';
 import './color-family.scss';
-import { ColorDisplayComponent } from './color-display';
+import ColorDisplayComponent from './color-display';
 
-const ColorFamilyComponent = ({ colorObj }) => {
+const ColorFamilyComponent = ({ colorFamilyObject, colorCopyMode }) => {
   console.log('render colors view');
   return (
     <div className="color-family-container">
       <span className="colors-main-title">
-        {colorObj[tabName].title}
+        {colorFamilyObject.title}
       </span>
+      <br />
+      <br />
       <span className="colors-description-text">
-        {colorObj[tabName].text}
+        {colorFamilyObject.text}
       </span>
+      <br />
       <div className="color-container">
         {
-          colorObj[tabName].colorsArray.map(colorData =>
+          colorFamilyObject.colorsArray.map(colorData =>
             <ColorDisplayComponent
-              colorHex={colorData.colorHex}
+              colorName={colorData.colorName}
               colorTitle={colorData.colorTitle}
               colorText={colorData.colorText}
+              copyOption={colorCopyMode}
             />,
           )
         }
@@ -27,7 +31,8 @@ const ColorFamilyComponent = ({ colorObj }) => {
   );
 };
 ColorFamilyComponent.propTypes = {
-  colorsObj: React.PropTypes.any,
+  colorFamilyObject: React.PropTypes.any,
+  colorCopyMode: React.PropTypes.number.isRequired,
 };
 
 export default ColorFamilyComponent;

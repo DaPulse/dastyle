@@ -1,22 +1,28 @@
 import React from 'react';
+import ColorDocComponent from './colors/color-doc'
 import './doc-page.css';
-import ColorDisplayComponent from './colors/color-display';
-// import { Button } from '../../../../ds-core/build/static/js/main'
+
 
 const DocPage = ({ route }) => {
+  const printBy = () => {
+    if (route.contentEntry[0].type === 'component') {
+      if (/color-doc/i.test(route.contentEntry[0].ref)) {
+        return <ColorDocComponent />;
+      }
+    }
+    return false;
+  };
   console.log('render doc-page');
+  // let tmp = ColorsViewComponent;
+  // debugger;
   return (
-    <div>
-      {/* this will render {route.contentEntry[0].content} */}
-      <ColorDisplayComponent
-        colorName="acid-green"
-        colorTitle="Title Here"
-        colorText="Hext Here"
-        copyOption={2}
-      />
+    <div className="doc-page">
+      {printBy()}
     </div>
   );
 };
+// this will render {route.contentEntry[0].content}
+
 DocPage.propTypes = {
   route: React.PropTypes.any.isRequired,
 };

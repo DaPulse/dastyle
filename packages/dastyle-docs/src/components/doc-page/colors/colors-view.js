@@ -1,20 +1,23 @@
 import React, { Component } from 'react';
 import './colors-view.scss';
-import colorsObj from './colors-data';
-import { ColorFamilyComponent } from './color-family';
+import ColorFamilyComponent from './color-family';
 
-const ColorsViewComponent = ({ tabName }) => {
+const ColorsViewComponent = ({ colorFamiliesArray, colorCopyMode }) => {
   console.log('render colors view');
   return (
     <div className="colors-view-container">
-      {colorsObj[tabName].map(colorFamilyObject =>
-        <ColorFamilyComponent colorObj={colorFamilyObject} />,
+      {colorFamiliesArray.map(colorFamilyObject =>
+        <ColorFamilyComponent
+          colorFamilyObject={colorFamilyObject}
+          colorCopyMode={colorCopyMode}
+        />,
       )}
     </div>
   );
 };
 ColorsViewComponent.propTypes = {
-  tabName: React.PropTypes.string.isRequired,
+  colorFamiliesArray: React.PropTypes.any,
+  colorCopyMode: React.PropTypes.number.isRequired,
 };
 
 export default ColorsViewComponent;

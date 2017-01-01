@@ -15,7 +15,7 @@ const Content = {
   Colors: [
     {
       type: 'component',
-      ref: 'examples/sample',
+      ref: 'colors/color-doc',
     },
   ],
   Code: [
