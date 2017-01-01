@@ -19,7 +19,7 @@ class ColorDisplayComponent extends Component {
   decideColorFormat() {
     if (this.myRef) {
       this.colorRGB = getComputedStyle(this.myRef).getPropertyValue('background-color');
-      const rgbArray = this.colorRGB.substr(4, this.colorRGB.indexOf(')') - 5).split(',');
+      const rgbArray = this.colorRGB.substr(4, this.colorRGB.indexOf(')') - 4).split(',');
       this.textColor = Math.round(
         ((parseInt(rgbArray[0], 10) * 299) +
           (parseInt(rgbArray[1], 10) * 587) +

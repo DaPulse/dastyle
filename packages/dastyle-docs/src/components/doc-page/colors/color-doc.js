@@ -35,6 +35,7 @@ class ColorDocComponent extends Component {
             ]}
           onChange={this.onChange.bind(this)}
           clearable={false}
+          searchable={false}
         />
         <Tabs
           selectedIndex={0}
