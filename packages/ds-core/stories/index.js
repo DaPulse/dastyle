@@ -10,7 +10,7 @@ storiesOf('Welcome', module)
 
 storiesOf('Button', module)
   .add('primary with text', () => (
-    <Button color='primary' onClick={action('clicked')} onMouseEnter={action('hover in')}>Active</Button>
+    <Button onClick={action('clicked')} onMouseEnter={action('hover in')}>Active</Button>
   ))
   .add('primary with some emoji', () => (
     <Button color='primary' onClick={action('clicked')}>😀 😎 👍 💯</Button>

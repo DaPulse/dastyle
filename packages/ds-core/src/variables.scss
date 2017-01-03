@@ -173,6 +173,10 @@ $font-family-base: Roboto !default;
 // Pixel value used to responsively scale all typography. Applied to the `<html>` element.
 $font-size-root: 15px !default;
 
+body {
+  font-size: $font-size-root;
+}
+
 $font-size-base: 15px !default;
 $font-size-lg:   1.25rem !default;
 $font-size-sm:   .875rem !default;
