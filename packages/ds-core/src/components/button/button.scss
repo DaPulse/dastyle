@@ -62,55 +62,53 @@ fieldset[disabled] a.btn {
 
 
 //
-// Alternate buttons
+// Primary button specific disabled handling
 //
 
 .ds-btn-primary {
   @include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
-  &.disabled,
-  &:disabled {
-    cursor: $cursor-disabled;
-    color: $american-gray;
-    background-color: $explosive;
-    border-color: lighten($explosive, 10%);
-    @include box-shadow(none);
-  }
 }
+
+//
+// Color Coding
+//
+
 .ds-btn-secondary {
   @include button-variant($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
 }
-.ds-btn-info {
-  @include button-variant($btn-info-color, $btn-info-bg, $btn-info-border);
-}
-.ds-btn-success {
-  @include button-variant($btn-success-color, $btn-success-bg, $btn-success-border);
-}
-.ds-btn-warning {
-  @include button-variant($btn-warning-color, $btn-warning-bg, $btn-warning-border);
-}
-.ds-btn-danger {
-  @include button-variant($btn-danger-color, $btn-danger-bg, $btn-danger-border);
+
+.ds-btn-shareable {
+  @include button-variant($btn-shareable-color, $btn-shareable-bg, $btn-shareable-border);
 }
 
-// Remove all backgrounds
-.ds-btn-outline-primary {
-  @include button-outline-variant($btn-primary-bg);
+.ds-btn-private {
+  @include button-variant($btn-private-color, $btn-private-bg, $btn-private-border);
 }
-.ds-btn-outline-secondary {
-  @include button-outline-variant($btn-secondary-border);
+
+.ds-btn-alert {
+  @include button-variant($btn-alert-color, $btn-alert-bg, $btn-alert-border);
 }
-.ds-btn-outline-info {
-  @include button-outline-variant($btn-info-bg);
-}
-.ds-btn-outline-success {
-  @include button-outline-variant($btn-success-bg);
-}
-.ds-btn-outline-warning {
-  @include button-outline-variant($btn-warning-bg);
-}
-.ds-btn-outline-danger {
-  @include button-outline-variant($btn-danger-bg);
-}
+
+
+// // Remove all backgrounds
+// .ds-btn-outline-primary {
+//   @include button-outline-variant($btn-primary-bg);
+// }
+// .ds-btn-outline-secondary {
+//   @include button-outline-variant($btn-secondary-border);
+// }
+// .ds-btn-outline-info {
+//   @include button-outline-variant($btn-info-bg);
+// }
+// .ds-btn-outline-success {
+//   @include button-outline-variant($btn-success-bg);
+// }
+// .ds-btn-outline-warning {
+//   @include button-outline-variant($btn-warning-bg);
+// }
+// .ds-btn-outline-danger {
+//   @include button-outline-variant($btn-danger-bg);
+// }
 
 
 //

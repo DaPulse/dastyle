@@ -22,14 +22,10 @@
   &:focus,
   &.focus {
     outline: none;
-    color: $color;
-    background-color: $active-background;
-        border-color: $active-border;
   }
 
   &:active,
-  &.active,
-  .open > &.dropdown-toggle {
+  &.active{
     outline: none;
     color: $color;
     background-color: $active-background;
@@ -38,9 +34,7 @@
     background-image: none;
     @include box-shadow($btn-active-box-shadow);
 
-    &:hover,
-    &:focus,
-    &.focus {
+    &:hover {
       outline: none;
       color: $color;
       background-color: darken($background, 20%);
@@ -50,9 +44,14 @@
 
   &.disabled,
   &:disabled {
+    cursor: $cursor-disabled;
+    border-color: lighten($explosive, 10%);
+    background-color: $explosive;
+    color: $american-gray;
+    @include box-shadow(none);
     &:focus,
     &.focus {
-      background-color: $background;
+      background-color: $explosive;
           border-color: $border;
     }
     @include hover {
@@ -78,9 +77,6 @@
   &:focus,
   &.focus {
     outline: none;
-    color: $color-hover;
-    background-color: $color;
-        border-color: $color;
   }
 
   &:active,
