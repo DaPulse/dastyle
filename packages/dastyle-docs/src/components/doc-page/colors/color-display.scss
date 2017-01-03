@@ -4,12 +4,12 @@
     border-radius: 4px;
     position: relative;
     user-select: none;
+    margin: 5px;
 
     .hex-title {
         position: absolute;
         top: 10px;
         left: 10px;
-        font-family: 'Roboto', sans-serif;
         font-size: 20px;
         text-align: left;
     }
@@ -20,9 +20,11 @@
         position: absolute;
         bottom: 10px;
         left: 10px;
+        letter-spacing: 0.0006em;
+
 
         .color-title{
-          font-weight: bold;
+          font-weight: 500;
         }
 
         .copy-text{
@@ -36,17 +38,23 @@
     }
 
     &:hover {
+      animation: filteranim 0.6s;
+      @keyframes filteranim {
+        0%    {filter: brightness(100%);}
+        50%   {filter: brightness(90%);}
+        100%  {filter: brightness(100%);}
+      }
         .mouseIn {
             opacity: 1.0;
             transition: all 0.2s ease-in-out;
         }
-
         .mouseOut {
             opacity: 0.0;
             transition: all 0.2s ease-out-in;
+
         }
     }
     &:active{
-      filter: brightness(92%);
+      filter: brightness(80%);
     }
 }

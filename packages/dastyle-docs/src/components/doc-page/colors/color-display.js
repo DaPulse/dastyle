@@ -1,53 +1,58 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import Clipboard from 'clipboard/dist/clipboard.min';
 import './color-display.scss';
 import './color-classes.scss';
 
-class ColorDisplayComponent extends React.Component {
+class ColorDisplayComponent extends Component {
   // ({ colorName, colorTitle, colorText, copyOption }) => {
   constructor(props) {
     super(props);
-    this.state = {
-      color: '',
-    };
+    this.textToCopy = '';
+    this.colorText = [0, 0, 0];
+    // this.decideColorFormat(props.copyOption);
   }
-
   componentDidMount() {
-    this.doOnUpdate();
-  }
-  componentWillReceiveProps(prevProps) {
-    this.doOnUpdate();
-  }
-
-  doOnUpdate() {
-    this.colorRGB = getComputedStyle(this.myRef).getPropertyValue('background-color');
-    this.colorHEX = '#' + this.colorRGB.substr(4, this.colorRGB.indexOf(')') - 5).split(',').map(color => parseInt(color, 10).toString(16)).join('');
-    this.setState({ color: this.decideColorFormat() });
+    new Clipboard(this.myRef, { text: () => this.textToCopy });
+    this.decideColorFormat();
+    this.forceUpdate();
   }
   decideColorFormat() {
-    switch (this.props.copyOption) {
-      case 0:
-        return '$' + this.props.colorName;
-      case 1:
-        return this.props.colorName;
-      case 2: {
-        return this.colorHEX;
+    if (this.myRef) {
+      this.colorRGB = getComputedStyle(this.myRef).getPropertyValue('background-color');
+      const rgbArray = this.colorRGB.substr(4, this.colorRGB.indexOf(')') - 4).split(',');
+      this.textColor = Math.round(
+        ((parseInt(rgbArray[0], 10) * 299) +
+          (parseInt(rgbArray[1], 10) * 587) +
+          (parseInt(rgbArray[2], 10) * 114)) / 1000) > 180 ?
+          'black' : 'white';
+      switch (this.props.copyOption) {
+        case 0:
+          this.textToCopy = '$' + this.props.colorName;
+          break;
+        case 1:
+          this.textToCopy = this.props.colorName;
+          break;
+        case 2:
+          this.textToCopy = '#' + rgbArray.map(color => parseInt(color, 10).toString(16)).join('');
+          break;
+        case 3:
+          this.textToCopy = this.colorRGB;
+          break;
+        default:
       }
-      default:
-        return '';
     }
+    return this.textToCopy;
   }
   render() {
     return (
       <div
-        className={`color-display-container ${this.props.colorName}`}
-        onClick={e => new Clipboard(e.target, {
-          text: this.decideColorFormat(e.target),
-        })}
+        className={`color-display-container btn ${this.props.colorName}`}
+        onClick={e => new Clipboard(e.target, { text: this.copyOnClick })}
         ref={(e) => { this.myRef = e; }}
+        style={{ color: this.textColor }}
       >
         <span className="hex-title">
-          {this.state.color}
+          {this.decideColorFormat()}
         </span>
         <div className="color-display-text-container mouseOut">
           <span className="color-title">

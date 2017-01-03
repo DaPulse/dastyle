@@ -1,18 +1,3 @@
-.left-side-bar {
-    box-flex: 1;
-    display: flex;
-    flex-flow: column nowrap;
-    flex-basis: 314px;
-    background-color: black;
-    top: 0;
-    left: 0;
-    height: 1490px;
-    background-color: rgba(255, 255, 255, 1);
-    box-shadow: 2px 0 8px 0 rgba(51, 51, 51, 0.1);
-
-    .dapulse-logo {
-        margin-left: -50px;
-        margin-bottom: 38px;
-        margin-top: 38px;
-    }
+.colors-view-container{
+  margin-top: 40px
 }
