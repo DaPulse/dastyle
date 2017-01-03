@@ -9,12 +9,17 @@ storiesOf('Welcome', module)
   ));
 
 storiesOf('Button', module)
-  .add('primary with text', () => (
-    <Button onClick={action('clicked')} onMouseEnter={action('hover in')}>Active</Button>
-  ))
-  .add('primary with some emoji', () => (
-    <Button color='primary' onClick={action('clicked')}>😀 😎 👍 💯</Button>
+  .add('primary with text, three sizes', () => (
+    <div>
+      <Button color="primary" size='lg'>Active</Button>
+      <Button color="primary">Active</Button>
+      <Button color="primary" size='sm'>Active</Button>
+    </div>
   ))
   .add('disabled with text', () => (
-    <Button color='primary' disabled onClick={action('clicked')}>Disabled</Button>
+    <div>
+      <Button color="primary" disabled size='lg'>Disabled</Button>
+      <Button color="primary" disabled>Disabled</Button>
+      <Button color="primary" disabled size='sm'>Disabled</Button>
+    </div>
   ));
