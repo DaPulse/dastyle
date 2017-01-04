@@ -1,5 +1,6 @@
 import React from 'react';
-import ColorDocComponent from './colors/color-doc'
+import ColorDocComponent from './colors/color-doc';
+import ButtonLayoutComponent from './buttons/button-layout';
 import './doc-page.css';
 
 
@@ -8,6 +9,9 @@ const DocPage = ({ route }) => {
     if (route.contentEntry[0].type === 'component') {
       if (/color-doc/i.test(route.contentEntry[0].ref)) {
         return <ColorDocComponent />;
+      }
+      if (/button-layout/i.test(route.contentEntry[0].ref)) {
+        return <ButtonLayoutComponent />;
       }
     }
     return false;

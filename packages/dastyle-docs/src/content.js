@@ -1,15 +1,8 @@
 const Content = {
   Button: [
     {
-      type: 'header',
-      content: 'Button',
-    }, {
-      type: 'text',
-      content: 'button is cool button',
-    }, {
-      type: 'code',
-      language: 'jsx',
-      content: '<Button onClick={...} />',
+      type: 'component',
+      ref: 'buttons/button-layout',
     },
   ],
   Colors: [

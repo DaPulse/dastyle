@@ -1,0 +1,17 @@
+.ds-container{
+  width: 500px;
+}
+
+.ds-row{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-bottom: 20px;
+  .ds-col{
+    flex-basis: 33%;
+    .ds-table-element{
+      vertical-align: middle;
+      text-align: center;
+    }
+  }
+}
