@@ -8,6 +8,7 @@ const propTypes = {
   block: PropTypes.bool,
   color: PropTypes.string,
   disabled: PropTypes.bool,
+  loading: PropTypes.bool,
   outline: PropTypes.bool,
   tag: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
   getRef: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
@@ -48,6 +49,7 @@ class Button extends Component {
       color,
       outline,
       size,
+      loading,
       tag: Tag,
       getRef,
       ...attributes
@@ -56,7 +58,7 @@ class Button extends Component {
     const classes = classNames(
       className,
       'ds-btn',
-      `ds-btn${outline ? '-outline' : ''}-${color}`,
+      `ds-btn${outline ? '-outline' : ''}-${color}${loading ? '-loading' : ''}`,
       size ? `ds-btn-${size}` : false,
       block ? 'ds-btn-block' : false,
       { active, disabled: this.props.disabled }
@@ -65,9 +67,10 @@ class Button extends Component {
     if (attributes.href && Tag === 'button') {
       Tag = 'a';
     }
-
     return (
-      <Tag {...attributes} className={classes} ref={getRef} onClick={this.onClick} />
+      <Tag {...attributes} className={classes} ref={getRef} onClick={this.onClick}>{
+        loading ? <div className='loader'></div> : this.props.children
+      }</Tag>
     );
   }
 }

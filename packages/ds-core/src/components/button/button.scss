@@ -19,8 +19,9 @@
   vertical-align: middle;
   cursor: pointer;
   user-select: none;
+  animation: all 1s ease;
   border: $input-btn-border-width solid transparent;
-  @include button-size($btn-padding-y, $btn-padding-x, $font-size-base, $btn-border-radius);
+  @include button-size($btn-padding-y, $btn-padding-x, $font-size-base, $btn-border-radius, $btn-loader-size-base);
   @include transition($btn-transition);
 
   &,
@@ -96,21 +97,22 @@ fieldset[disabled] a.btn {
 .ds-btn-outline-primary {
   @include button-outline-variant($btn-primary-bg);
 }
-// .ds-btn-outline-secondary {
-//   @include button-outline-variant($btn-secondary-border);
-// }
-// .ds-btn-outline-info {
-//   @include button-outline-variant($btn-info-bg);
-// }
-// .ds-btn-outline-success {
-//   @include button-outline-variant($btn-success-bg);
-// }
-// .ds-btn-outline-warning {
-//   @include button-outline-variant($btn-warning-bg);
-// }
-// .ds-btn-outline-danger {
-//   @include button-outline-variant($btn-danger-bg);
-// }
+
+.ds-btn-outline-secondary {
+  @include button-outline-variant($btn-secondary-bg);
+}
+
+.ds-btn-outline-shareable {
+  @include button-outline-variant($btn-shareable-bg);
+}
+
+.ds-btn-outline-private {
+  @include button-outline-variant($btn-private-bg);
+}
+
+.ds-btn-outline-alert {
+  @include button-outline-variant($btn-alert-bg);
+}
 
 
 //
@@ -158,11 +160,11 @@ fieldset[disabled] a.btn {
 
 .ds-btn-lg {
   // line-height: ensure even-numbered height of button next to large input
-  @include button-size($btn-padding-y-lg, $btn-padding-x-lg, $font-size-lg, $btn-border-radius-lg);
+  @include button-size($btn-padding-y-lg, $btn-padding-x-lg, $font-size-lg, $btn-border-radius-lg, $btn-loader-size-lg);
 }
 .ds-btn-sm {
   // line-height: ensure proper height of button next to small input
-  @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $btn-border-radius-sm);
+  @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $btn-border-radius-sm, $btn-loader-size-sm);
 }
 
 
@@ -187,4 +189,48 @@ input[type="button"] {
   &.ds-btn-block {
     width: 100%;
   }
+}
+
+// loading
+
+.ds-btn-primary-loading {
+  @include button-loading-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
+}
+
+.ds-btn-secondary-loading {
+  @include button-loading-variant($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
+}
+
+.ds-btn-shareable-loading {
+  @include button-loading-variant($btn-shareable-color, $btn-shareable-bg, $btn-shareable-border);
+}
+
+.ds-btn-private-loading {
+  @include button-loading-variant($btn-private-color, $btn-private-bg, $btn-private-border);
+}
+
+.ds-btn-alert-loading {
+  @include button-loading-variant($btn-alert-color, $btn-alert-bg, $btn-alert-border);
+}
+
+// ouline + loading
+
+.ds-btn-outline-primary-loading {
+  @include button-outline-loading-variant($btn-primary-bg);
+}
+
+.ds-btn-outline-secondary-loading {
+  @include button-outline-loading-variant($btn-secondary-bg);
+}
+
+.ds-btn-outline-shareable-loading {
+  @include button-outline-loading-variant($btn-shareable-bg);
+}
+
+.ds-btn-outline-private-loading {
+  @include button-outline-loading-variant($btn-private-bg);
+}
+
+.ds-btn-outline-alert-loading {
+  @include button-outline-loading-variant($btn-alert-bg);
 }
