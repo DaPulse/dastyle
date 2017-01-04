@@ -1,0 +1,539 @@
+exports[`test Button variations for color and size 1`] = `
+<button
+  className="ds-btn ds-btn-secondary"
+  disabled={undefined}
+  onClick={[Function]}>
+  Test Button
+</button>
+`;
+
+exports[`test Button variations for color and size 2`] = `
+<button
+  className="ds-btn ds-btn-secondary ds-btn-sm"
+  disabled={undefined}
+  onClick={[Function]}>
+  Test Button
+</button>
+`;
+
+exports[`test Button variations for color and size 3`] = `
+<button
+  className="ds-btn ds-btn-secondary ds-btn-lg"
+  disabled={undefined}
+  onClick={[Function]}>
+  Test Button
+</button>
+`;
+
+exports[`test Button variations for color and size 4`] = `
+<button
+  className="ds-btn ds-btn-primary"
+  disabled={undefined}
+  onClick={[Function]}>
+  Test Button
+</button>
+`;
+
+exports[`test Button variations for color and size 5`] = `
+<button
+  className="ds-btn ds-btn-primary ds-btn-sm"
+  disabled={undefined}
+  onClick={[Function]}>
+  Test Button
+</button>
+`;
+
+exports[`test Button variations for color and size 6`] = `
+<button
+  className="ds-btn ds-btn-primary ds-btn-lg"
+  disabled={undefined}
+  onClick={[Function]}>
+  Test Button
+</button>
+`;
+
+exports[`test Button variations for color and size 7`] = `
+<button
+  className="ds-btn ds-btn-alert"
+  disabled={undefined}
+  onClick={[Function]}>
+  Test Button
+</button>
+`;
+
+exports[`test Button variations for color and size 8`] = `
+<button
+  className="ds-btn ds-btn-alert ds-btn-sm"
+  disabled={undefined}
+  onClick={[Function]}>
+  Test Button
+</button>
+`;
+
+exports[`test Button variations for color and size 9`] = `
+<button
+  className="ds-btn ds-btn-alert ds-btn-lg"
+  disabled={undefined}
+  onClick={[Function]}>
+  Test Button
+</button>
+`;
+
+exports[`test Button variations for color and size 10`] = `
+<button
+  className="ds-btn ds-btn-shareable"
+  disabled={undefined}
+  onClick={[Function]}>
+  Test Button
+</button>
+`;
+
+exports[`test Button variations for color and size 11`] = `
+<button
+  className="ds-btn ds-btn-shareable ds-btn-sm"
+  disabled={undefined}
+  onClick={[Function]}>
+  Test Button
+</button>
+`;
+
+exports[`test Button variations for color and size 12`] = `
+<button
+  className="ds-btn ds-btn-shareable ds-btn-lg"
+  disabled={undefined}
+  onClick={[Function]}>
+  Test Button
+</button>
+`;
+
+exports[`test Button variations for color and size 13`] = `
+<button
+  className="ds-btn ds-btn-private"
+  disabled={undefined}
+  onClick={[Function]}>
+  Test Button
+</button>
+`;
+
+exports[`test Button variations for color and size 14`] = `
+<button
+  className="ds-btn ds-btn-private ds-btn-sm"
+  disabled={undefined}
+  onClick={[Function]}>
+  Test Button
+</button>
+`;
+
+exports[`test Button variations for color and size 15`] = `
+<button
+  className="ds-btn ds-btn-private ds-btn-lg"
+  disabled={undefined}
+  onClick={[Function]}>
+  Test Button
+</button>
+`;
+
+exports[`test Button variations for color and size 16`] = `
+<button
+  className="ds-btn ds-btn-outline-secondary"
+  disabled={undefined}
+  onClick={[Function]}>
+  Test Button
+</button>
+`;
+
+exports[`test Button variations for color and size 17`] = `
+<button
+  className="ds-btn ds-btn-outline-secondary ds-btn-sm"
+  disabled={undefined}
+  onClick={[Function]}>
+  Test Button
+</button>
+`;
+
+exports[`test Button variations for color and size 18`] = `
+<button
+  className="ds-btn ds-btn-outline-secondary ds-btn-lg"
+  disabled={undefined}
+  onClick={[Function]}>
+  Test Button
+</button>
+`;
+
+exports[`test Button variations for color and size 19`] = `
+<button
+  className="ds-btn ds-btn-outline-primary"
+  disabled={undefined}
+  onClick={[Function]}>
+  Test Button
+</button>
+`;
+
+exports[`test Button variations for color and size 20`] = `
+<button
+  className="ds-btn ds-btn-outline-primary ds-btn-sm"
+  disabled={undefined}
+  onClick={[Function]}>
+  Test Button
+</button>
+`;
+
+exports[`test Button variations for color and size 21`] = `
+<button
+  className="ds-btn ds-btn-outline-primary ds-btn-lg"
+  disabled={undefined}
+  onClick={[Function]}>
+  Test Button
+</button>
+`;
+
+exports[`test Button variations for color and size 22`] = `
+<button
+  className="ds-btn ds-btn-outline-alert"
+  disabled={undefined}
+  onClick={[Function]}>
+  Test Button
+</button>
+`;
+
+exports[`test Button variations for color and size 23`] = `
+<button
+  className="ds-btn ds-btn-outline-alert ds-btn-sm"
+  disabled={undefined}
+  onClick={[Function]}>
+  Test Button
+</button>
+`;
+
+exports[`test Button variations for color and size 24`] = `
+<button
+  className="ds-btn ds-btn-outline-alert ds-btn-lg"
+  disabled={undefined}
+  onClick={[Function]}>
+  Test Button
+</button>
+`;
+
+exports[`test Button variations for color and size 25`] = `
+<button
+  className="ds-btn ds-btn-outline-shareable"
+  disabled={undefined}
+  onClick={[Function]}>
+  Test Button
+</button>
+`;
+
+exports[`test Button variations for color and size 26`] = `
+<button
+  className="ds-btn ds-btn-outline-shareable ds-btn-sm"
+  disabled={undefined}
+  onClick={[Function]}>
+  Test Button
+</button>
+`;
+
+exports[`test Button variations for color and size 27`] = `
+<button
+  className="ds-btn ds-btn-outline-shareable ds-btn-lg"
+  disabled={undefined}
+  onClick={[Function]}>
+  Test Button
+</button>
+`;
+
+exports[`test Button variations for color and size 28`] = `
+<button
+  className="ds-btn ds-btn-outline-private"
+  disabled={undefined}
+  onClick={[Function]}>
+  Test Button
+</button>
+`;
+
+exports[`test Button variations for color and size 29`] = `
+<button
+  className="ds-btn ds-btn-outline-private ds-btn-sm"
+  disabled={undefined}
+  onClick={[Function]}>
+  Test Button
+</button>
+`;
+
+exports[`test Button variations for color and size 30`] = `
+<button
+  className="ds-btn ds-btn-outline-private ds-btn-lg"
+  disabled={undefined}
+  onClick={[Function]}>
+  Test Button
+</button>
+`;
+
+exports[`test Button variations for color and size 31`] = `
+<button
+  className="ds-btn ds-btn-secondary disabled"
+  disabled={true}
+  onClick={[Function]}>
+  Test Button
+</button>
+`;
+
+exports[`test Button variations for color and size 32`] = `
+<button
+  className="ds-btn ds-btn-secondary ds-btn-sm disabled"
+  disabled={true}
+  onClick={[Function]}>
+  Test Button
+</button>
+`;
+
+exports[`test Button variations for color and size 33`] = `
+<button
+  className="ds-btn ds-btn-secondary ds-btn-lg disabled"
+  disabled={true}
+  onClick={[Function]}>
+  Test Button
+</button>
+`;
+
+exports[`test Button variations for color and size 34`] = `
+<button
+  className="ds-btn ds-btn-primary disabled"
+  disabled={true}
+  onClick={[Function]}>
+  Test Button
+</button>
+`;
+
+exports[`test Button variations for color and size 35`] = `
+<button
+  className="ds-btn ds-btn-primary ds-btn-sm disabled"
+  disabled={true}
+  onClick={[Function]}>
+  Test Button
+</button>
+`;
+
+exports[`test Button variations for color and size 36`] = `
+<button
+  className="ds-btn ds-btn-primary ds-btn-lg disabled"
+  disabled={true}
+  onClick={[Function]}>
+  Test Button
+</button>
+`;
+
+exports[`test Button variations for color and size 37`] = `
+<button
+  className="ds-btn ds-btn-alert disabled"
+  disabled={true}
+  onClick={[Function]}>
+  Test Button
+</button>
+`;
+
+exports[`test Button variations for color and size 38`] = `
+<button
+  className="ds-btn ds-btn-alert ds-btn-sm disabled"
+  disabled={true}
+  onClick={[Function]}>
+  Test Button
+</button>
+`;
+
+exports[`test Button variations for color and size 39`] = `
+<button
+  className="ds-btn ds-btn-alert ds-btn-lg disabled"
+  disabled={true}
+  onClick={[Function]}>
+  Test Button
+</button>
+`;
+
+exports[`test Button variations for color and size 40`] = `
+<button
+  className="ds-btn ds-btn-shareable disabled"
+  disabled={true}
+  onClick={[Function]}>
+  Test Button
+</button>
+`;
+
+exports[`test Button variations for color and size 41`] = `
+<button
+  className="ds-btn ds-btn-shareable ds-btn-sm disabled"
+  disabled={true}
+  onClick={[Function]}>
+  Test Button
+</button>
+`;
+
+exports[`test Button variations for color and size 42`] = `
+<button
+  className="ds-btn ds-btn-shareable ds-btn-lg disabled"
+  disabled={true}
+  onClick={[Function]}>
+  Test Button
+</button>
+`;
+
+exports[`test Button variations for color and size 43`] = `
+<button
+  className="ds-btn ds-btn-private disabled"
+  disabled={true}
+  onClick={[Function]}>
+  Test Button
+</button>
+`;
+
+exports[`test Button variations for color and size 44`] = `
+<button
+  className="ds-btn ds-btn-private ds-btn-sm disabled"
+  disabled={true}
+  onClick={[Function]}>
+  Test Button
+</button>
+`;
+
+exports[`test Button variations for color and size 45`] = `
+<button
+  className="ds-btn ds-btn-private ds-btn-lg disabled"
+  disabled={true}
+  onClick={[Function]}>
+  Test Button
+</button>
+`;
+
+exports[`test Button variations for color and size 46`] = `
+<button
+  className="ds-btn ds-btn-outline-secondary disabled"
+  disabled={true}
+  onClick={[Function]}>
+  Test Button
+</button>
+`;
+
+exports[`test Button variations for color and size 47`] = `
+<button
+  className="ds-btn ds-btn-outline-secondary ds-btn-sm disabled"
+  disabled={true}
+  onClick={[Function]}>
+  Test Button
+</button>
+`;
+
+exports[`test Button variations for color and size 48`] = `
+<button
+  className="ds-btn ds-btn-outline-secondary ds-btn-lg disabled"
+  disabled={true}
+  onClick={[Function]}>
+  Test Button
+</button>
+`;
+
+exports[`test Button variations for color and size 49`] = `
+<button
+  className="ds-btn ds-btn-outline-primary disabled"
+  disabled={true}
+  onClick={[Function]}>
+  Test Button
+</button>
+`;
+
+exports[`test Button variations for color and size 50`] = `
+<button
+  className="ds-btn ds-btn-outline-primary ds-btn-sm disabled"
+  disabled={true}
+  onClick={[Function]}>
+  Test Button
+</button>
+`;
+
+exports[`test Button variations for color and size 51`] = `
+<button
+  className="ds-btn ds-btn-outline-primary ds-btn-lg disabled"
+  disabled={true}
+  onClick={[Function]}>
+  Test Button
+</button>
+`;
+
+exports[`test Button variations for color and size 52`] = `
+<button
+  className="ds-btn ds-btn-outline-alert disabled"
+  disabled={true}
+  onClick={[Function]}>
+  Test Button
+</button>
+`;
+
+exports[`test Button variations for color and size 53`] = `
+<button
+  className="ds-btn ds-btn-outline-alert ds-btn-sm disabled"
+  disabled={true}
+  onClick={[Function]}>
+  Test Button
+</button>
+`;
+
+exports[`test Button variations for color and size 54`] = `
+<button
+  className="ds-btn ds-btn-outline-alert ds-btn-lg disabled"
+  disabled={true}
+  onClick={[Function]}>
+  Test Button
+</button>
+`;
+
+exports[`test Button variations for color and size 55`] = `
+<button
+  className="ds-btn ds-btn-outline-shareable disabled"
+  disabled={true}
+  onClick={[Function]}>
+  Test Button
+</button>
+`;
+
+exports[`test Button variations for color and size 56`] = `
+<button
+  className="ds-btn ds-btn-outline-shareable ds-btn-sm disabled"
+  disabled={true}
+  onClick={[Function]}>
+  Test Button
+</button>
+`;
+
+exports[`test Button variations for color and size 57`] = `
+<button
+  className="ds-btn ds-btn-outline-shareable ds-btn-lg disabled"
+  disabled={true}
+  onClick={[Function]}>
+  Test Button
+</button>
+`;
+
+exports[`test Button variations for color and size 58`] = `
+<button
+  className="ds-btn ds-btn-outline-private disabled"
+  disabled={true}
+  onClick={[Function]}>
+  Test Button
+</button>
+`;
+
+exports[`test Button variations for color and size 59`] = `
+<button
+  className="ds-btn ds-btn-outline-private ds-btn-sm disabled"
+  disabled={true}
+  onClick={[Function]}>
+  Test Button
+</button>
+`;
+
+exports[`test Button variations for color and size 60`] = `
+<button
+  className="ds-btn ds-btn-outline-private ds-btn-lg disabled"
+  disabled={true}
+  onClick={[Function]}>
+  Test Button
+</button>
+`;

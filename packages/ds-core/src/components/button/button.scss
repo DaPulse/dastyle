@@ -90,10 +90,12 @@ fieldset[disabled] a.btn {
 }
 
 
-// // Remove all backgrounds
-// .ds-btn-outline-primary {
-//   @include button-outline-variant($btn-primary-bg);
-// }
+
+
+// Remove all backgrounds
+.ds-btn-outline-primary {
+  @include button-outline-variant($btn-primary-bg);
+}
 // .ds-btn-outline-secondary {
 //   @include button-outline-variant($btn-secondary-border);
 // }

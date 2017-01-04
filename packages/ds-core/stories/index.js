@@ -44,6 +44,15 @@ storiesOf('Button', module)
       <Button color="primary" disabled size='sm'>Disabled</Button>
     </div>
   ))
+
+  .add('outline: [3 sizes + non primary brand colors]', () => (
+    <div>
+      <Button color='primary' outline size='lg'>outline</Button>
+      <Button color='primary' outline>outline</Button>
+      <Button color='primary' outline size='sm'>outline</Button>
+    </div>
+  ))
+
   .add('Not meant to be used disabled: [3 sizes + non primary brand colors]', () => (
     <div>
       <Button color="private" disabled size='lg'>Disabled - P</Button>
