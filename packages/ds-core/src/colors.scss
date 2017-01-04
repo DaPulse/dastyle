@@ -3,12 +3,13 @@
 
 // Primary UI Colors:
 
-$dark-blue:                 #0087bc !default;
+$dark-blue:                 #0086c3 !default;
 $basic-blue:                #00a1e5 !default;
 $light-blue:                #61caf7 !default;
 $link-blue:                 #256bc9 !default;
 $done-green:                #00ca72 !default;
-$acid-green:                #00EFA4 !default;
+$acid-green:                #00efa4 !default;
+$grass-green:               #037f4c !default;
 $dark-purple:               #839dc5 !default;
 $purple:                    #a25ddc !default;
 $stuck-red:                 #e2445c !default;
@@ -16,7 +17,6 @@ $bazooka:                   #f6577c !default;
 $working-orange:            #fdab3d !default;
 $egg-yolk:                  #ffcb00 !default;
 $jeans:                     #597bfc !default;
-$grass-green:               #037f4c !default;
 $poop:                      #cab641 !default;
 
 // Grayscale Pallete:
@@ -27,9 +27,7 @@ $explosive:                 #c4c4c4 !default;
 $dark-marble:               #f1f1f1 !default;
 $marble:                    #f7f7f7 !default;
 
-$brand-primary:             #0fa2e2 !default;
-$brand-success:             #5cb85c !default;
-$brand-info:                #5bc0de !default;
-$brand-warning:             #f0ad4e !default;
-$brand-danger:              #d9534f !default;
-$brand-inverse:             $american-gray !default;
+$brand-primary:             $basic-blue !default;
+$brand-shareable:           $purple     !default;
+$brand-private:             $bazooka    !default;
+$brand-alert:               $stuck-red  !default;
