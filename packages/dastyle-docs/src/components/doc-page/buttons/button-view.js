@@ -16,7 +16,6 @@ const ButtonViewComponent = ({ buttonFamiliesArray }) => {
 };
 ButtonViewComponent.propTypes = {
   buttonFamiliesArray: React.PropTypes.any,
-  buttonCopyMode: React.PropTypes.number.isRequired,
 };
 
 export default ButtonViewComponent;

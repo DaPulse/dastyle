@@ -22,7 +22,7 @@ const StatesTextComponent = ({ text }) => {
   );
 };
 StatesTextComponent.propTypes = {
-  buttonsToShow: React.PropTypes.string.any,
+  text: React.PropTypes.any,
 };
 
 export default StatesTextComponent;

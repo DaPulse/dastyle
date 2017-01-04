@@ -9,8 +9,10 @@
   flex-direction: row;
   align-items: center;
   padding-bottom: 20px;
+  width: 100%;
   .ds-col{
-    flex-basis: 33%;
+    flex-basis: 0;
+    flex-grow: 1;
     .ds-table-element{
       vertical-align: middle;
       text-align: center;

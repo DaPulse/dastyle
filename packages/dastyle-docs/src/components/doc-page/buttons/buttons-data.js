@@ -1,5 +1,7 @@
 import primaryImg from './img/primary.svg';
 import secondaryImg from './img/secondary.png';
+import statesImg from './img/states.png';
+
 
 const Content = {
   'Standard Buttons': [
@@ -46,19 +48,53 @@ const Content = {
     {
       title: 'States',
       text: 'Buttons can be used to seitch between states. State A is the initial action we wish to encourage the user to do (e.g. join a board); State B is the opposite action and will revert back to the original state (e.g. unsubscribe from a board)',
-      buttonLayoutName: 'secondary',
+      buttonLayoutName: 'states',
       statesText: [
-        ['Secondary Button', 'Active #C4C4C4 // Hover #999999 // Select #808080'],
+        ['State A',	'Type #FFFFFF // Background #0FA2E2'],
+        ['State B',	'Type #0FA2E2 // Border #0086C3'],
 
       ],
       cssCode: [
-        '<button class=“button state-active”>Active</button>',
-        '<button class=“button state-inactive>Inactive</button>',
+        '<button class=“button state-active”>State A</button>',
+        '<button class=“button outline">State B</button>',
       ],
       reactCode: [
-        '<Button color="secondary" >Secondary</Button>',
+        '<Button color="primary"> State A < /Button>',
+        '<Button color="primary" outline> State B </Button>',
       ],
-      imgPath: { secondaryImg },
+      imgPath: { statesImg },
+    },
+    {
+      title: 'Buttons with Icon',
+      text: 'An icon may be added to a button to visually emphasize its action.',
+      buttonLayoutName: 'icons',
+      statesText: [],
+      cssCode: [
+        '<Button color="primary"> State A < /Button>',
+        '<Button color="primary" outline> State B </Button>',
+      ],
+      reactCode: [
+        '<Button color="primary"> State A < /Button>',
+        '<Button color="primary" outline> State B </Button>',
+      ],
+      imgPath: false,
+    },
+    {
+      title: 'Color Coding',
+      text: 'An icon may be added to a button to visually emphasize its action.',
+      buttonLayoutName: 'colors',
+      statesText: [],
+      cssCode: [
+        '<button class=“button private”>Sharable</button>',
+        '<button class=“button shareable”>Private</button>',
+        '<button class=“button alert”>Alert</button>',
+      ],
+      reactCode: [
+        '<Button color="shareable">Sharable</Button>',
+        '<Button color="private">Private</Button>',
+        '<Button color="alert">Alert</Button>',
+      ],
+      imgPath: false,
     },
   ],
 };
