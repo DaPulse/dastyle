@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
+import Highlight from 'react-highlight'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import './button-family.scss';
+import ButtonLayoutComponent from './button-layout';
 import StatesTextComponent from './states-text';
-import CodeViewerComponent from './code-viewer';
+import './button-family.scss';
+import './railscasts.css';
+const _ = require('lodash');
+
 
 const ButtonFamilyComponent = ({ buttonFamilyObject }) => {
   console.log('render buttons view');
@@ -18,35 +22,32 @@ const ButtonFamilyComponent = ({ buttonFamilyObject }) => {
       </span>
       <br />
       <div className="button-container">
-        {
-          React.createElement(buttonFamilyObject.buttonComponentName, {})
-        }
+        <ButtonLayoutComponent buttonsToShow={buttonFamilyObject.buttonLayoutName} />
         <StatesTextComponent
           text={buttonFamilyObject.statesText}
         />
         <Tabs
           selectedIndex={0}
+          className="tab"
         >
           <TabList>
             <Tab> CSS </Tab>
             <Tab> REACT </Tab>
           </TabList>
           <TabPanel>
-            <CodeViewerComponent
-              text={buttonFamilyObject.classNamesArray}
-              type="css"
-            />
+            <Highlight className="HTML">
+              {buttonFamilyObject.cssCode.join('\r\n')}
+            </Highlight>
           </TabPanel>
           <TabPanel>
-            <CodeViewerComponent
-              text={buttonFamilyObject.classNamesArray}
-              type="react"
-            />
+            <Highlight className="HTML">
+              {buttonFamilyObject.reactCode.join('\r\n')}
+            </Highlight>
           </TabPanel>
         </Tabs>
         <img
           className="screenShot"
-          src={buttonFamilyObject.imgPath}
+          src={_.values(buttonFamilyObject.imgPath)[0]}
           role="presentation"
         />
       </div>
