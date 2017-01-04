@@ -1,0 +1,23 @@
+.states-text-container {
+  border: 1px solid rgba(241, 241, 241, 1);
+  border-radius: 4px 4px 4px 0;
+  display: flex;
+  flex-direction: row;
+
+  .keyWord {
+    font-family: Roboto;
+    font-size: 15px;
+    color: rgba(51, 51, 51, 1);
+    text-align: left;
+    margin-left: 20px;
+    width: 20px;
+  }
+
+  .commentedText {
+    font-family: Roboto;
+    font-size: 15px;
+    color: rgba(128, 128, 128, 1);
+    text-align: left;
+    letter-spacing: 0.0006em;
+  }
+}
