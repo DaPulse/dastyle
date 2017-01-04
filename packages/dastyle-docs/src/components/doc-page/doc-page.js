@@ -1,6 +1,6 @@
 import React from 'react';
 import ColorDocComponent from './colors/color-doc';
-import ButtonLayoutComponent from './buttons/button-layout';
+import ButtonDocComponent from './buttons/button-doc';
 import './doc-page.css';
 
 
@@ -11,7 +11,7 @@ const DocPage = ({ route }) => {
         return <ColorDocComponent />;
       }
       if (/button-layout/i.test(route.contentEntry[0].ref)) {
-        return <ButtonLayoutComponent />;
+        return <ButtonDocComponent />;
       }
     }
     return false;

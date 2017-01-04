@@ -3,7 +3,7 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-select/dist/react-select.css';
 import ButtonsObject from './buttons-data';
 import ButtonViewComponent from './button-view';
-import './button.scss';
+import './button-doc.scss';
 
 const _ = require('lodash');
 

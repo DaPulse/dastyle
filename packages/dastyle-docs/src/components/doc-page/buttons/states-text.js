@@ -6,8 +6,8 @@ const StatesTextComponent = ({ text }) => {
   return (
     <div className="states-text-container">
       {
-        text.map(line=>
-          <div>
+        text.map(line =>
+          <div className="line">
             <span className="keyWord">
               {line[0]}
             </span>
