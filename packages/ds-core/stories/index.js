@@ -60,4 +60,10 @@ storiesOf('Button', module)
       <Button color="alert" disabled size='sm'>Disabled - A</Button>
     </div>
   ))
+
+  .add('animated: [3 sizes + non primary brand colors]', () => (
+    <div>
+      <Button color='primary' outline size='lg'>outline</Button>
+    </div>
+  ))
   ;
