@@ -9,6 +9,12 @@ const _ = require('lodash');
 
 
 const ButtonFamilyComponent = ({ buttonFamilyObject }) => {
+  const shouldPrintStates = () => {
+    if (buttonFamilyObject.statesText) {
+      return <StatesTextComponent text={buttonFamilyObject.statesText} />
+    }
+    return false;
+  }
   console.log('render buttons view');
   return (
     <div className="button-family-container">
@@ -23,9 +29,7 @@ const ButtonFamilyComponent = ({ buttonFamilyObject }) => {
       <br />
       <div className="button-container">
         <ButtonLayoutComponent buttonsToShow={buttonFamilyObject.buttonLayoutName} />
-        <StatesTextComponent
-          text={buttonFamilyObject.statesText}
-        />
+        {shouldPrintStates()}
         <Tabs
           selectedIndex={0}
           className="tab"
