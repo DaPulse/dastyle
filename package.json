@@ -1,11 +1,11 @@
 {
   "name": "dastyle",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": true,
   "description": "drafting the style of the universe",
   "scripts": {
     "bootstrap": "lerna bootstrap",
-    "deploy":"lerna exec --scope ds-core -- npm run build && cp packages/ds-core/build/static/js/main.js index.js && git commit -am 'bump version' && npm version patch && git push origin master && git push --tags"
+    "deploy": "lerna exec --scope ds-core -- npm run build && cp packages/ds-core/build/static/js/main.js index.js && git commit -am 'bump version' && npm version patch && git push origin master && git push --tags"
   },
   "engines": {
     "node": ">= 6.5"
