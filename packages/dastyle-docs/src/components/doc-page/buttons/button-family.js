@@ -15,7 +15,7 @@ const ButtonFamilyComponent = ({ buttonFamilyObject }) => {
     }
     return false;
   }
-  console.log('render buttons view');
+  
   return (
     <div className="button-family-container">
       <span className="buttons-main-title">
