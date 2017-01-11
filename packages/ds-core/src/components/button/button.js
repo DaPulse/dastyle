@@ -52,9 +52,10 @@ class Button extends Component {
       loading,
       tag: Tag,
       getRef,
+      icon,
       ...attributes
     } = this.props;
-
+    icon = 3;
     const classes = classNames(
       className,
       'ds-btn',
@@ -68,9 +69,13 @@ class Button extends Component {
       Tag = 'a';
     }
     return (
-      <Tag {...attributes} className={classes} ref={getRef} onClick={this.onClick}>{
-        loading ? <div className='loader'></div> : this.props.children
-      }</Tag>
+      <Tag {...attributes} className={classes} ref={getRef} onClick={this.onClick}>
+      {loading ?
+        <div className='loader'></div>
+      :
+        icon ? <span className={icon}><span></span> <span>{this.props.children}</span></span> : this.props.children
+      }
+      </Tag>
     );
   }
 }
