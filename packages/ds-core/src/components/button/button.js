@@ -55,7 +55,7 @@ class Button extends Component {
       icon,
       ...attributes
     } = this.props;
-    
+
     const classes = classNames(
       className,
       'ds-btn',
@@ -73,7 +73,7 @@ class Button extends Component {
       {loading ?
         <div className='loader'></div>
       :
-        icon ? <span className={icon}><span></span> <span>{this.props.children}</span></span> : this.props.children
+        icon ? <span><span className={icon}></span> <span>{this.props.children}</span></span> : this.props.children
       }
       </Tag>
     );
