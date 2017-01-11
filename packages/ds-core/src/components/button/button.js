@@ -55,7 +55,7 @@ class Button extends Component {
       icon,
       ...attributes
     } = this.props;
-    icon = 3;
+    
     const classes = classNames(
       className,
       'ds-btn',
