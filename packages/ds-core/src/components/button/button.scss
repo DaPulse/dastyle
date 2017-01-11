@@ -19,7 +19,7 @@
   vertical-align: middle;
   cursor: pointer;
   user-select: none;
-  animation: all 1s ease;
+  animation: all 0.5s ease;
   border: $input-btn-border-width solid transparent;
   @include button-size($btn-padding-y, $btn-padding-x, $font-size-base, $btn-border-radius, $btn-loader-size-base);
   @include transition($btn-transition);

@@ -1,6 +1,7 @@
 import React from 'react';
 import { storiesOf, action, linkTo } from '@kadira/storybook';
 import Button from '../src/components/button/button';
+import ButtonExample from './button-example';
 import Welcome from './Welcome';
 
 storiesOf('Welcome', module)
@@ -142,4 +143,7 @@ storiesOf('Button', module)
         <Button outline color='alert' size='sm'>load</Button>
       </div>
     </div>
+  ))
+  .add('interactive loader button', () => (
+    <ButtonExample />
   ));
