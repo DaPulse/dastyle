@@ -3,6 +3,8 @@ import Button from '../src/components/button/button';
 import renderer from 'react-test-renderer';
 
 test('Button variations for color and size', () => {
+  // TODO: add icon tests
+  // TODO: add Link tests (a)
   [undefined, true].forEach(loading => {
     [undefined, true].forEach(disabled => {
       [undefined, true].forEach(outline => {

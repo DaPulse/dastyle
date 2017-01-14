@@ -5,8 +5,8 @@ const styles = {
     margin: 15,
     maxWidth: 600,
     lineHeight: 1.4,
-    fontSize: 15,
-    fontFamily: 'Roboto',
+    // fontSize: 15,
+    // fontFamily: 'Roboto',
   },
 
   logo: {

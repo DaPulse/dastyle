@@ -14,6 +14,7 @@
   display: inline-block;
   font-weight: $btn-font-weight;
   line-height: $btn-line-height;
+  font-family: $font-family-base;
   text-align: center;
   white-space: nowrap;
   vertical-align: middle;
@@ -75,7 +76,36 @@ fieldset[disabled] a.btn {
 //
 
 .ds-btn-secondary {
-  @include button-variant($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
+  font-weight: $font-weight-normal;
+  color: $btn-secondary-color;
+  border-radius: 0;
+
+  &,
+  &:active,
+  &.active,
+  &:disabled {
+    background-color: transparent;
+    @include box-shadow(none);
+  }
+  &,
+  &:focus,
+  &:active {
+    border-color: transparent;
+  }
+  @include hover {
+    border-color: transparent;
+  }
+  @include hover-focus {
+    color: $blackish;
+    text-decoration: none;
+    background-color: transparent;
+  }
+  &:disabled {
+    // @include hover-focus {
+    //   color: $btn-link-disabled-color;
+    //   text-decoration: none;
+    // }
+  }
 }
 
 .ds-btn-shareable {

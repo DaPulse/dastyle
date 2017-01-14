@@ -1,8 +1,19 @@
 import React from 'react';
 import { storiesOf, action, linkTo } from '@kadira/storybook';
+
+import Welcome from './Welcome';
+
 import Button from '../src/components/button/button';
 import ButtonExample from './button-example';
-import Welcome from './Welcome';
+
+import Form from '../src/components/forms/form';
+import FormGroup from '../src/components/forms/form-group';
+import InputCaption from '../src/components/forms/input-caption';
+import InputGroup from '../src/components/forms/input-group';
+import InputGroupAddon from '../src/components/forms/input-group-addon';
+import Input from '../src/components/forms/input';
+import Label from '../src/components/forms/label';
+
 
 storiesOf('Welcome', module)
   .add('to Storybook', () => (
@@ -19,16 +30,16 @@ storiesOf('Button', module)
   ))
   .add('secondary with text: [3 sizes]', () => (
     <div>
-      <Button color="secondary" size='lg'>Active</Button>
-      <Button color="secondary">Active</Button>
-      <Button color="secondary" size='sm'>Active</Button>
+      <Button color="secondary" size='lg'>Secondary</Button>
+      <Button color="secondary">Secondary</Button>
+      <Button color="secondary" size='sm'>Secondary</Button>
     </div>
   ))
   .add('[should not use] disabled secondary with text: [3 sizes]', () => (
     <div>
-      <Button color="secondary" disabled size='lg'>Active</Button>
-      <Button color="secondary" disabled>Active</Button>
-      <Button color="secondary" disabled size='sm'>Active</Button>
+      <Button color="secondary" disabled size='lg'>Secondary</Button>
+      <Button color="secondary" disabled>Secondary</Button>
+      <Button color="secondary" disabled size='sm'>Secondary</Button>
     </div>
   ))
   .add('disabled with text: [3 sizes]', () => (
@@ -147,3 +158,100 @@ storiesOf('Button', module)
   .add('interactive loader button', () => (
     <ButtonExample />
   ));
+  storiesOf('Forms', module)
+    .add('Default Input', () => (
+      <div style={{ marginLeft: 100, width: '70%'}}>
+        <h3>Default Input Field (text)</h3>
+        <Input type='text' placeholder='Try typing something...' />
+      </div>
+    ))
+    .add('Fixed Input', () => (
+      <div style={{ marginLeft: 100, width: '70%'}}>
+        <h3>Default Input Field (text)</h3>
+        <InputGroup>
+          <InputGroupAddon>Prefix</InputGroupAddon>
+          <Input placeholder="input" />
+        </InputGroup>
+        <InputGroup>
+          <Input placeholder="input" />
+          <InputGroupAddon>Sufix</InputGroupAddon>
+        </InputGroup>
+      </div>
+    ))
+    .add('Input Caption', () => (
+      <div style={{ marginLeft: 100, width: '70%'}}>
+        <h3>Input Caption</h3>
+        <Form>
+          <FormGroup>
+            <Input placeholder="password"/>
+            <InputCaption color="basic-blue">Forgot your password?</InputCaption>
+          </FormGroup>
+          <FormGroup>
+            <Input placeholder="Email Address"/>
+            <InputCaption right color="bazooka">Required</InputCaption>
+          </FormGroup>
+        </Form>
+      </div>
+    ))
+    .add('Set Password', () => (
+      <Form style={{ marginLeft: 100, width: '70%'}}>
+        <h1>In Constructions C:</h1>
+      </Form>
+    ))
+    .add('Input with Feedback', () => (
+      <div style={{ marginLeft: 100, width: '70%'}}>
+        <Form>
+          <h3>Input with Feedback</h3>
+          <FormGroup color="success">
+            <Input state="success" placeholder="Input"/>
+            <InputCaption right color="success">Feedback Caption</InputCaption>
+          </FormGroup>
+          <FormGroup color="alert">
+            <Input state="alert" placeholder="Input"/>
+            <InputCaption right color="alert">Feedback Caption</InputCaption>
+          </FormGroup>
+        </Form>
+      </div>
+    ))
+    .add('Checkbox', () => (
+      <Form style={{ marginLeft: 100, width: '70%'}}>
+        <h3>Checkbox</h3>
+        <FormGroup>
+          <Input type='checkbox'/>
+        </FormGroup>
+        <FormGroup>
+          <Input type='checkbox' disabled/>
+        </FormGroup>
+      </Form>
+    ))
+    .add('Radio Button', () => (
+      <Form style={{ marginLeft: 100, width: '70%'}}>
+        <h3>Radio Button</h3>
+        <FormGroup>
+          <Input type='radio'/>
+        </FormGroup>
+        <FormGroup>
+          <Input type='radio' disabled/>
+        </FormGroup>
+      </Form>
+    ))
+    .add('Inline Edit', () => (
+      <Form style={{ marginLeft: 100, width: '70%'}}>
+        <h1>In Constructions C:</h1>
+      </Form>
+    ))
+    .add('Text Area - Default', () => (
+      <Form style={{ marginLeft: 100, width: '70%'}}>
+        <h1>In Constructions C:</h1>
+      </Form>
+    ))
+    .add('Text Area - Write an Update', () => (
+      <Form style={{ marginLeft: 100, width: '70%'}}>
+        <h1>In Constructions C:</h1>
+      </Form>
+    ))
+    .add('File Drop', () => (
+      <Form style={{ marginLeft: 100, width: '70%'}}>
+        <h1>In Constructions C:</h1>
+      </Form>
+    ))

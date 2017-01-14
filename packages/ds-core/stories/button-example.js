@@ -11,7 +11,7 @@ export default class ButtonExample extends Component {
 
   render() {
     return (
-      <Button color='primary' loading={this.state.loading} onClick={this.onClick}>
+      <Button icon='fa fa-star' color='primary' loading={this.state.loading} onClick={this.onClick}>
         Subscribe
       </Button>
     )
