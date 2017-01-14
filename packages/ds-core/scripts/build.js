@@ -23,7 +23,7 @@ var stripAnsi = require('strip-ansi');
 var useYarn = pathExists.sync(paths.yarnLockFile);
 
 // Warn and crash if required files are missing
-if (!checkRequiredFiles([paths.appHtml, paths.appIndexJs])) {
+if (!checkRequiredFiles([paths.appIndexJs])) {
   process.exit(1);
 }
 
@@ -71,8 +71,8 @@ recursive(paths.appBuild, (err, fileNames) => {
   // Start the webpack build
   build(previousSizeMap);
 
-  // Merge with the public folder
-  copyPublicFolder();
+  // // Merge with the public folder
+  // copyPublicFolder();
 });
 
 // Print a detailed summary of build files.

@@ -1,9 +1,9 @@
 const Labels = {
-  'Some Title': [
-    'Button', 'Colors',
+  'Visual Language': [
+    'Colors',
   ],
-  'Another Title': [
-    'Code', 'Headers',
+  'Components': [
+    'Button',
   ],
 };
 export default Labels;
