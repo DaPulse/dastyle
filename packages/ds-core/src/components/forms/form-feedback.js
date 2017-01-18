@@ -20,7 +20,7 @@ const FormFeedback = (props) => {
 
   const classes = mapToCssModules(classNames(
     className,
-    'form-control-feedback'
+    'ds-form-control-feedback'
   );
 
   return (

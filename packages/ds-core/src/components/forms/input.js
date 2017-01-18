@@ -42,25 +42,25 @@ class Input extends React.Component {
     const selectInput = type === 'select';
     let Tag = selectInput || textareaInput ? type : 'input';
 
-    let formControlClass = 'form-control';
+    let formControlClass = 'ds-form-control';
 
     if (staticInput) {
-      formControlClass = `${formControlClass}-static`;
+      formControlClass = `ds-${formControlClass}-static`;
       Tag = tag;
     } else if (fileInput) {
-      formControlClass = `${formControlClass}-file`;
+      formControlClass = `ds-${formControlClass}-file`;
     } else if (checkInput) {
       if (addon) {
         formControlClass = null;
       } else {
-        formControlClass = 'form-check-input';
+        formControlClass = 'ds-form-check-input';
       }
     }
 
     const classes = classNames(
       className,
-      state ? `form-control-${state}` : false,
-      size ? `form-control-${size}` : false,
+      state ? `ds-form-control-${state}` : false,
+      size ? `ds-form-control-${size}` : false,
       formControlClass
     )
 

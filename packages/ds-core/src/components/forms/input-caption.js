@@ -26,9 +26,9 @@ const InputCaption = (props) => {
 
   const classes = classNames(
     className,
-    right ? 'right-align' : false,
-    !inline ? 'input-caption' : false,
-    color ? `text-${color}` : false
+    right ? 'ds-right-align' : false,
+    !inline ? 'ds-input-caption' : false,
+    color ? `ds-text-${color}` : false
   );
 
   return (

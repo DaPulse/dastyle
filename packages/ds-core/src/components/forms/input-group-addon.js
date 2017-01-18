@@ -18,7 +18,7 @@ const InputGroupAddon = (props) => {
   } = props;
   const classes = classNames(
     className,
-    'input-group-addon'
+    'ds-input-group-addon'
   );
 
   return (

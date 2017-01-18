@@ -30,7 +30,6 @@ const defaultProps = {
 const Label = (props) => {
   const {
     className,
-    cssModule,
     hidden,
     tag: Tag,
     check,
@@ -44,7 +43,7 @@ const Label = (props) => {
   const classes = classNames(
     className,
     hidden ? 'sr-only' : false,
-    check ? `form-check-${inline ? 'inline' : 'label'}` : false,
+    check ? `ds-form-check-${inline ? 'inline' : 'label'}` : false,
     check && inline && disabled ? 'disabled' : false,
   );
 

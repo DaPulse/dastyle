@@ -7,7 +7,7 @@
 @import '../../mixins/hover';
 @import '../../mixins/breakpoints';
 
-.form-control {
+.ds-form-control {
   display: block;
   width: 100%;
   padding: $input-padding-y $input-padding-x;
@@ -53,7 +53,7 @@
   }
 }
 
-select.form-control {
+select.ds-form-control {
   &:not([size]):not([multiple]) {
     $select-border-width: ($border-width * 2);
     height: calc(#{$input-height} + #{$select-border-width});
@@ -65,38 +65,38 @@ select.form-control {
   }
 }
 
-.form-control-file,
-.form-control-range {
+.ds-form-control-file,
+.ds-form-control-range {
   display: block;
 }
 
-.col-form-label {
+.ds-col-form-label {
   padding-top: calc(#{$input-padding-y} - #{$input-btn-border-width} * 2);
   padding-bottom: calc(#{$input-padding-y} - #{$input-btn-border-width} * 2);
   margin-bottom: 0;
 }
 
-.col-form-label-lg {
+.ds-col-form-label-lg {
   padding-top: calc(#{$input-padding-y-lg} - #{$input-btn-border-width} * 2);
   padding-bottom: calc(#{$input-padding-y-lg} - #{$input-btn-border-width} * 2);
   font-size: $font-size-lg;
 }
 
-.col-form-label-sm {
+.ds-col-form-label-sm {
   padding-top: calc(#{$input-padding-y-sm} - #{$input-btn-border-width} * 2);
   padding-bottom: calc(#{$input-padding-y-sm} - #{$input-btn-border-width} * 2);
   font-size: $font-size-sm;
 }
 
 
-.col-form-legend {
+.ds-col-form-legend {
   padding-top: $input-padding-y;
   padding-bottom: $input-padding-y;
   margin-bottom: 0;
   font-size: $font-size-base;
 }
 
-.form-control-static {
+.ds-form-control-static {
   padding-top: $input-padding-y;
   padding-bottom: $input-padding-y;
   margin-bottom: 0; // match inputs if this class comes on inputs with default margins
@@ -104,67 +104,67 @@ select.form-control {
   border: solid transparent;
   border-width: $input-btn-border-width 0;
 
-  &.form-control-sm,
-  &.form-control-lg {
+  &.ds-form-control-sm,
+  &.ds-form-control-lg {
     padding-right: 0;
     padding-left: 0;
   }
 }
 
-.form-control-sm {
+.ds-form-control-sm {
   padding: $input-padding-y-sm $input-padding-x-sm;
   font-size: $font-size-sm;
   @include border-radius($input-border-radius-sm);
 }
 
-select.form-control-sm {
+select.ds-form-control-sm {
   &:not([size]):not([multiple]) {
     height: $input-height-sm;
   }
 }
 
-.form-control-lg {
+.ds-form-control-lg {
   padding: $input-padding-y-lg $input-padding-x-lg;
   font-size: $font-size-lg;
   @include border-radius($input-border-radius-lg);
 }
 
-select.form-control-lg {
+select.ds-form-control-lg {
   &:not([size]):not([multiple]) {
     height: $input-height-lg;
   }
 }
 
-.form-group {
+.ds-form-group {
   margin-bottom: $form-group-margin-bottom;
 }
 
-.input-caption {
+.ds-input-caption {
   display: block;
   margin-top: $input-caption-margin-top;
 }
 
 
-.form-check {
+.ds-form-check {
   position: relative;
   display: block;
   margin-bottom: $form-check-margin-bottom;
 
   &.disabled {
-    .form-check-label {
+    .ds-form-check-label {
       color: $text-muted;
       cursor: $cursor-disabled;
     }
   }
 }
 
-.form-check-label {
+.ds-form-check-label {
   padding-left: $form-check-input-gutter;
   margin-bottom: 0; // Override default `<label>` bottom margin
   cursor: pointer;
 }
 
-.form-check-input {
+.ds-form-check-input {
   position: absolute;
   margin-top: $form-check-input-margin-y;
   margin-left: -$form-check-input-gutter;
@@ -175,25 +175,25 @@ select.form-control-lg {
 }
 
 // Radios and checkboxes on same line
-.form-check-inline {
+.ds-form-check-inline {
   display: inline-block;
 
-  .form-check-label {
+  .ds-form-check-label {
     vertical-align: middle;
   }
 
-  + .form-check-inline {
+  + .ds-form-check-inline {
     margin-left: $form-check-inline-margin-x;
   }
 }
 
-.form-control-feedback {
+.ds-form-control-feedback {
   margin-top: $form-feedback-margin-top;
 }
 
-.form-control-success,
-.form-control-warning,
-.form-control-danger {
+.ds-form-control-success,
+.ds-form-control-warning,
+.ds-form-control-danger {
   padding-right: ($input-padding-x * 3);
   background-repeat: no-repeat;
   background-position: center right ($input-height / 4);
@@ -201,28 +201,28 @@ select.form-control-lg {
 }
 
 // Form validation states
-.has-success {
+.ds-has-success {
   @include form-control-validation($brand-success);
 
-  .form-control-success {
+  .ds-form-control-success {
 
   }
 }
 
-.has-alert {
+.ds-has-alert {
   @include form-control-validation($brand-alert);
 
-  .form-control-alert {
+  .ds-form-control-alert {
 
   }
 }
 
-.form-inline {
+.ds-form-inline {
   display: flex;
   flex-flow: row wrap;
   align-items: center;
 
-  .form-check {
+  .ds-form-check {
     width: 100%;
   }
 
@@ -235,7 +235,7 @@ select.form-control-lg {
     }
 
     // Inline-block all the things for "inline"
-    .form-group {
+    .ds-form-group {
       display: flex;
       flex: 0 0 auto;
       flex-flow: row wrap;
@@ -243,30 +243,30 @@ select.form-control-lg {
       margin-bottom: 0;
     }
 
-    // Allow folks to *not* use `.form-group`
-    .form-control {
+    // Allow folks to *not* use `.ds-form-group`
+    .ds-form-control {
       display: inline-block;
-      width: auto; // Prevent labels from stacking above inputs in `.form-group`
+      width: auto; // Prevent labels from stacking above inputs in `.ds-form-group`
       vertical-align: middle;
     }
 
     // Make static controls behave like regular ones
-    .form-control-static {
+    .ds-form-control-static {
       display: inline-block;
     }
 
-    .input-group {
+    .ds-input-group {
       width: auto;
     }
 
-    .form-control-label {
+    .ds-form-control-label {
       margin-bottom: 0;
       vertical-align: middle;
     }
 
     // Remove default margin on radios/checkboxes that were used for stacking, and
     // then undo the floating of radios and checkboxes to match.
-    .form-check {
+    .ds-form-check {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -274,10 +274,10 @@ select.form-control-lg {
       margin-top: 0;
       margin-bottom: 0;
     }
-    .form-check-label {
+    .ds-form-check-label {
       padding-left: 0;
     }
-    .form-check-input {
+    .ds-form-check-input {
       position: relative;
       margin-top: 0;
       margin-right: $form-check-input-margin-x;
@@ -285,13 +285,13 @@ select.form-control-lg {
     }
 
     // Custom form controls
-    .custom-control {
+    .ds-custom-control {
       display: flex;
       align-items: center;
       justify-content: center;
       padding-left: 0;
     }
-    .custom-control-indicator {
+    .ds-custom-control-indicator {
       position: static;
       display: inline-block;
       margin-right: $form-check-input-margin-x; // Flexbox alignment means we lose our HTML space here, so we compensate.
@@ -299,7 +299,7 @@ select.form-control-lg {
     }
 
     // Re-override the feedback icon.
-    .has-feedback .form-control-feedback {
+    .ds-has-feedback .ds-form-control-feedback {
       top: 0;
     }
   }

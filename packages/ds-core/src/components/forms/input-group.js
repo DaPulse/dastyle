@@ -21,8 +21,8 @@ const InputGroup = (props) => {
   } = props;
   const classes = classNames(
     className,
-    'input-group',
-    size ? `input-group-${size}` : null
+    'ds-input-group',
+    size ? `ds-input-group-${size}` : null
   );
 
   return (

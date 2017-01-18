@@ -25,7 +25,7 @@ const Form = props => {
 
   const classes = classNames(
     className,
-    inline ? 'form-inline' : false
+    inline ? 'ds-form-inline' : false
   );
 
   return (

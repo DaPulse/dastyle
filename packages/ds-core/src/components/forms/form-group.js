@@ -28,9 +28,9 @@ const FormGroup = (props) => {
 
   const classes = classNames(
     className,
-    color ? `has-${color}` : false,
-    row ? 'row' : false,
-    check ? 'form-check' : 'form-group',
+    color ? `ds-has-${color}` : false,
+    row ? 'ds-row' : false,
+    check ? 'ds-form-check' : 'ds-form-group',
     check && disabled ? 'disabled' : false
   );
 

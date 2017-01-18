@@ -2,7 +2,7 @@
 @import '../../mixins/hover';
 @import '../../mixins/border-radius';
 
-.input-group {
+.ds-input-group {
   position: relative;
   display: flex;
   width: 100%;
@@ -25,9 +25,9 @@
   }
 }
 
-.input-group-addon,
-.input-group-btn,
-.input-group .form-control {
+.ds-input-group-addon,
+.ds-input-group-btn,
+.ds-input-group .form-control {
   // Vertically centers the content of the addons within the input group
   display: flex;
   flex-direction: column;
@@ -38,8 +38,8 @@
   }
 }
 
-.input-group-addon,
-.input-group-btn {
+.ds-input-group-addon,
+.ds-input-group-btn {
   white-space: nowrap;
   vertical-align: middle; // Match the inputs
 }
@@ -50,15 +50,15 @@
 // Remix the default form control sizing classes into new ones for easier
 // manipulation.
 
-.input-group-lg > .form-control,
-.input-group-lg > .input-group-addon,
-.input-group-lg > .input-group-btn > .btn {
-  @extend .form-control-lg;
+.ds-input-group-lg > .ds-form-control,
+.ds-input-group-lg > .ds-input-group-addon,
+.ds-input-group-lg > .ds-input-group-btn > .btn {
+  @extend .ds-form-control-lg;
 }
-.input-group-sm > .form-control,
-.input-group-sm > .input-group-addon,
-.input-group-sm > .input-group-btn > .btn {
-  @extend .form-control-sm;
+.ds-input-group-sm > .ds-form-control,
+.ds-input-group-sm > .ds-input-group-addon,
+.ds-input-group-sm > .ds-input-group-btn > .btn {
+  @extend .ds-form-control-sm;
 }
 
 
@@ -66,7 +66,7 @@
 // Text input groups
 //
 
-.input-group-addon {
+.ds-input-group-addon {
   padding: $input-padding-y $input-padding-x;
   margin-bottom: 0; // Allow use of <label> elements by overriding our default margin-bottom
   font-size: $font-size-base; // Match inputs
@@ -79,12 +79,12 @@
   @include border-radius($input-border-radius);
 
   // Sizing
-  &.form-control-sm {
+  &.ds-form-control-sm {
     padding: $input-padding-y-sm $input-padding-x-sm;
     font-size: $font-size-sm;
     @include border-radius($input-border-radius-sm);
   }
-  &.form-control-lg {
+  &.ds-form-control-lg {
     padding: $input-padding-y-lg $input-padding-x-lg;
     font-size: $font-size-lg;
     @include border-radius($input-border-radius-lg);
@@ -104,28 +104,28 @@
 // Reset rounded corners
 //
 
-.input-group .form-control:not(:last-child),
-.input-group-addon:not(:last-child),
-.input-group-btn:not(:last-child) > .btn,
-.input-group-btn:not(:last-child) > .btn-group > .btn,
-.input-group-btn:not(:last-child) > .dropdown-toggle,
-.input-group-btn:not(:first-child) > .btn:not(:last-child):not(.dropdown-toggle),
-.input-group-btn:not(:first-child) > .btn-group:not(:last-child) > .btn {
+.ds-input-group .ds-form-control:not(:last-child),
+.ds-input-group-addon:not(:last-child),
+.ds-input-group-btn:not(:last-child) > .ds-btn,
+.ds-input-group-btn:not(:last-child) > .ds-btn-group > .ds-btn,
+.ds-input-group-btn:not(:last-child) > .ds-dropdown-toggle,
+.ds-input-group-btn:not(:first-child) > .ds-btn:not(:last-child):not(.ds-dropdown-toggle),
+.ds-input-group-btn:not(:first-child) > .ds-btn-group:not(:last-child) > .btn {
   @include border-right-radius(0);
 }
-.input-group-addon:not(:last-child) {
+.ds-input-group-addon:not(:last-child) {
   border-right: 0;
 }
-.input-group .form-control:not(:first-child),
-.input-group-addon:not(:first-child),
-.input-group-btn:not(:first-child) > .btn,
-.input-group-btn:not(:first-child) > .btn-group > .btn,
-.input-group-btn:not(:first-child) > .dropdown-toggle,
-.input-group-btn:not(:last-child) > .btn:not(:first-child),
-.input-group-btn:not(:last-child) > .btn-group:not(:first-child) > .btn {
+.ds-input-group .ds-form-control:not(:first-child),
+.ds-input-group-addon:not(:first-child),
+.ds-input-group-btn:not(:first-child) > .ds-btn,
+.ds-input-group-btn:not(:first-child) > .ds-btn-group > .ds-btn,
+.ds-input-group-btn:not(:first-child) > .ds-dropdown-toggle,
+.ds-input-group-btn:not(:last-child) > .ds-btn:not(:first-child),
+.ds-input-group-btn:not(:last-child) > .ds-btn-group:not(:first-child) > .btn {
   @include border-left-radius(0);
 }
-.form-control + .input-group-addon:not(:first-child) {
+.ds-form-control + .ds-input-group-addon:not(:first-child) {
   border-left: 0;
 }
 
@@ -133,7 +133,7 @@
 // Button input groups
 //
 
-.input-group-btn {
+.ds-input-group-btn {
   position: relative;
   // Jankily prevent input button groups from wrapping with `white-space` and
   // `font-size` in combination with `inline-block` on buttons.
@@ -142,12 +142,12 @@
 
   // Negative margin for spacing, position for bringing hovered/focused/actived
   // element above the siblings.
-  > .btn {
+  > .ds-btn {
     position: relative;
     // Vertically stretch the button and center its content
     flex: 1;
 
-    + .btn {
+    + .ds-btn {
       margin-left: (-$input-btn-border-width);
     }
 
@@ -159,14 +159,14 @@
 
   // Negative margin to only have a single, shared border between the two
   &:not(:last-child) {
-    > .btn,
-    > .btn-group {
+    > .ds-btn,
+    > .ds-btn-group {
       margin-right: (-$input-btn-border-width);
     }
   }
   &:not(:first-child) {
-    > .btn,
-    > .btn-group {
+    > .ds-btn,
+    > .ds-btn-group {
       z-index: 2;
       margin-left: (-$input-btn-border-width);
       // Because specificity

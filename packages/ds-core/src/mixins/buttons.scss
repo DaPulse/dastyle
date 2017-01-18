@@ -81,7 +81,7 @@
 
   &:active,
   &.active,
-  .open > &.dropdown-toggle {
+  .open > &.ds-dropdown-toggle {
     outline: none;
     color: $color-hover;
     background-color: $color;
@@ -162,7 +162,7 @@
 
   &:active,
   &.active,
-  .open > &.dropdown-toggle {
+  .ds-open > &.ds-dropdown-toggle {
     outline: none;
 
     &:hover,
@@ -193,7 +193,7 @@
   padding: $padding-y $padding-x;
   font-size: $font-size;
   line-height: $btn-line-height;
-  height: ($btn-line-height * $font-size) + (2 * $padding-y + 2rem/15);
+  height: ($btn-line-height * $font-size) + (2 * $padding-y + 2rem/15); //fix this hack (border thickness is missing)
   @include border-radius($border-radius);
   .loader {
     font-size: $loader-size;
