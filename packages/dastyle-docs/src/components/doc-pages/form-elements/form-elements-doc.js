@@ -15,7 +15,7 @@ class FormElementsDoc extends Component {
         <Tabs selectedIndex={0}>
           <TabList>
           {contentByCategories.map(category =>
-            <Tab key={category.name}></Tab>
+            <Tab key={category.name}>{category.name}</Tab>
           )}
           </TabList>
           {contentByCategories.map(category =>
