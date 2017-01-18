@@ -14,8 +14,8 @@ const Content = {
   Colors: [
     {
       type: 'component',
-      ref: 'colors/color-doc',
-    },
+      ref: 'colors',
+    }
   ]
 };
 

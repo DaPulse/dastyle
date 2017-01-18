@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import _ from 'lodash';
 import 'react-select/dist/react-select.css';
-import Content from './content';
+import contentByCategories from './content';
 
 
 class FormElementsDoc extends Component {
@@ -14,22 +14,13 @@ class FormElementsDoc extends Component {
         </div>
         <Tabs selectedIndex={0}>
           <TabList>
-            {
-              _.keys(Content).map(tab =>
-                <Tab keys>
-                  {tab}
-                </Tab>,
-              )
-            }
+          {contentByCategories.map(category =>
+            <Tab key={category.name}></Tab>
+          )}
           </TabList>
-          {
-            _.keys(Content).map(tab =>
-              <TabPanel>
-
-              </TabPanel>,
-            )
-          }
-
+          {contentByCategories.map(category =>
+            <TabPanel key={category.name}></TabPanel>
+          )}
         </Tabs>
       </div>
     );
