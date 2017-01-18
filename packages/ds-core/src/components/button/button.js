@@ -31,7 +31,7 @@ class Button extends Component {
   }
 
   onClick(e) {
-    if (this.props.disabled) {
+    if (this.props.disabled || this.props.loading) {
       e.preventDefault();
       return;
     }
@@ -73,7 +73,7 @@ class Button extends Component {
       {loading ?
         <div className='loader'></div>
       :
-        icon ? <span><span className={icon}></span> <span>{this.props.children}</span></span> : this.props.children
+        icon ? <span><span className={`ds-i ${icon}`}></span> <span>{this.props.children}</span></span> : this.props.children
       }
       </Tag>
     );

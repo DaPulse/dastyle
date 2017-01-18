@@ -2,7 +2,7 @@ import React from "react";
 import "./button-layout.scss";
 import { Button } from "../../../../../ds-core/build/static/js/main";
 
-const ButtonLayoutComponent = ({ buttonsToShow }) => {
+const Buttons = ({ buttonsToShow }) => {
   const Primary = () => {
     return (
       <div className="ds-container">
@@ -168,7 +168,6 @@ const ButtonLayoutComponent = ({ buttonsToShow }) => {
       </div>
     );
   };
-  console.log('render buttons view');
   if (buttonsToShow === 'primary') {
     return Primary();
   }
@@ -187,8 +186,8 @@ const ButtonLayoutComponent = ({ buttonsToShow }) => {
 
 
 };
-ButtonLayoutComponent.propTypes = {
+Buttons.propTypes = {
   buttonsToShow: React.PropTypes.any,
 };
 
-export default ButtonLayoutComponent;
+export default Buttons;

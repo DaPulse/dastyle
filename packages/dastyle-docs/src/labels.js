@@ -3,7 +3,8 @@ const Labels = {
     'Colors',
   ],
   'Components': [
-    'Button',
+    'Buttons',
+    'Form Elements',
   ],
 };
 export default Labels;

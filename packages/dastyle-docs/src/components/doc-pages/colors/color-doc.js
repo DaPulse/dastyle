@@ -4,12 +4,12 @@ import Select from 'react-select';
 import 'react-select/dist/react-select.css';
 import './color-doc.scss';
 import ColorsViewComponent from './colors-view';
-import colorsObject from './colors-data';
+import colors from './colors-data';
 
 const _ = require('lodash');
 
 
-class ColorDocComponent extends Component {
+class ColorDoc extends Component {
 
   constructor(props) {
     super(props);
@@ -37,23 +37,17 @@ class ColorDocComponent extends Component {
           clearable={false}
           searchable={false}
         />
-        <Tabs
-          selectedIndex={0}
-        >
+        <Tabs selectedIndex={0}>
           <TabList>
-            {
-              _.keys(colorsObject).map(tab =>
-                <Tab>
-                  {tab}
-                </Tab>,
-              )
-            }
+          {_.keys(colors).map(colorCategoty =>
+            <Tab key={colorCategoty}>{colorCategoty}</Tab>
+          )}
           </TabList>
           {
-            _.keys(colorsObject).map(tab =>
+            _.keys(colors).map(colorCategoty =>
               <TabPanel>
                 <ColorsViewComponent
-                  colorFamiliesArray={colorsObject[tab]}
+                  colorFamiliesArray={colors[colorCategoty]}
                   colorCopyMode={this.state.colorCopyMode.value}
                 />
               </TabPanel>
@@ -66,4 +60,4 @@ class ColorDocComponent extends Component {
   }
 };
 
-export default ColorDocComponent;
+export default ColorDoc;

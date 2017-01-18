@@ -20,8 +20,11 @@
   vertical-align: middle;
   cursor: pointer;
   user-select: none;
-  animation: all 0.5s ease;
   border: $input-btn-border-width solid transparent;
+  .ds-i {
+    margin-left: -$font-size-base/3;
+    margin-right: $font-size-base/6;
+  }
   @include button-size($btn-padding-y, $btn-padding-x, $font-size-base, $btn-border-radius, $btn-loader-size-base);
   @include transition($btn-transition);
 
@@ -79,6 +82,7 @@ fieldset[disabled] a.btn {
   font-weight: $font-weight-normal;
   color: $btn-secondary-color;
   border-radius: 0;
+  outline: none;
 
   &,
   &:active,
@@ -86,25 +90,37 @@ fieldset[disabled] a.btn {
   &:disabled {
     background-color: transparent;
     @include box-shadow(none);
+    outline: none;
   }
   &,
   &:focus,
   &:active {
     border-color: transparent;
+    outline: none;
   }
+  &,
+  &:active,
+  &.active {
+    &:focus,
+    &.focus {
+    outline: none;
+  }}
   @include hover {
     border-color: transparent;
+    outline: none;
   }
   @include hover-focus {
     color: $blackish;
     text-decoration: none;
     background-color: transparent;
+    outline: none;
   }
   &:disabled {
-    // @include hover-focus {
-    //   color: $btn-link-disabled-color;
-    //   text-decoration: none;
-    // }
+    @include hover-focus {
+      color: $btn-link-disabled-color;
+      text-decoration: none;
+      outline: none;
+    }
   }
 }
 

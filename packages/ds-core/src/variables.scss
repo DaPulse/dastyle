@@ -229,9 +229,9 @@ $btn-padding-y-sm:               .15rem !default;
 $btn-padding-x-lg:               1.9rem !default;
 $btn-padding-y-lg:               .333rem !default;
 
-$btn-loader-size-base:           0.625rem !default;
+$btn-loader-size-base:           0.642rem !default;
 $btn-loader-size-lg:             0.750rem !default;
-$btn-loader-size-sm:             0.5rem !default;
+$btn-loader-size-sm:             0.45rem !default;
 
 $btn-line-height:                1.25 !default;
 $btn-font-weight:                $font-weight-normal !default;
@@ -270,7 +270,7 @@ $btn-border-radius:              $rounded-radius !default;
 $btn-border-radius-lg:           $rounded-radius !default;
 $btn-border-radius-sm:           $rounded-radius !default;
 
-$btn-transition:                 all .2s ease-in-out !default;
+$btn-transition:                 padding-left .3s cubic-bezier(0.19, 1, 0.22, 1), padding-right .3s cubic-bezier(0.19, 1, 0.22, 1), color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-color 0.2s ease-in-out !default;
 
 // *Forms specifics
 
@@ -423,6 +423,7 @@ html {
   line-height: 1.15;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: subpixel-antialiased;
 }
 
 body {
