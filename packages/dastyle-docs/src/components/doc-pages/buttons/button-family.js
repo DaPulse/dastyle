@@ -1,65 +1,65 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Highlight from 'react-highlight'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import ButtonLayoutComponent from './button-layout';
-import StatesTextComponent from './states-text';
+import Buttons from './buttons';
+import StatesText from './states-text';
 import './button-family.scss';
 import './railscasts.css';
 const _ = require('lodash');
 
 
-const ButtonFamilyComponent = ({ buttonFamilyObject }) => {
+const ButtonFamily = ({ content }) => {
   const shouldPrintStates = () => {
-    if (buttonFamilyObject.statesText) {
-      return <StatesTextComponent text={buttonFamilyObject.statesText} />
+    if (content.statesText) {
+      return <StatesText text={content.statesText} />
     }
     return false;
   }
-  
+
   return (
     <div className="button-family-container">
       <span className="buttons-main-title">
-        {buttonFamilyObject.title}
+        {content.title}
       </span>
       <br />
       <br />
       <span className="buttons-description-text">
-        {buttonFamilyObject.text}
+        {content.text}
       </span>
       <br />
       <div className="button-container">
-        <ButtonLayoutComponent buttonsToShow={buttonFamilyObject.buttonLayoutName} />
+        <Buttons buttonsToShow={content.buttonLayoutName} />
         {shouldPrintStates()}
         <Tabs
           selectedIndex={0}
           className="tab"
         >
           <TabList>
-            <Tab> CSS </Tab>
-            <Tab> REACT </Tab>
+            <Tab>React</Tab>
+            <Tab>CSS</Tab>
           </TabList>
           <TabPanel>
             <Highlight className="HTML">
-              {buttonFamilyObject.cssCode.join('\r\n')}
+              {content.reactCode.join('\r\n')}
             </Highlight>
           </TabPanel>
           <TabPanel>
             <Highlight className="HTML">
-              {buttonFamilyObject.reactCode.join('\r\n')}
+              {content.cssCode.join('\r\n')}
             </Highlight>
           </TabPanel>
         </Tabs>
         <img
           className="screenShot"
-          src={_.values(buttonFamilyObject.imgPath)[0]}
+          src={_.values(content.imgPath)[0]}
           role="presentation"
         />
       </div>
     </div>
   );
 };
-ButtonFamilyComponent.propTypes = {
-  buttonFamilyObject: React.PropTypes.any,
+ButtonFamily.propTypes = {
+  content: React.PropTypes.any,
 };
 
-export default ButtonFamilyComponent;
+export default ButtonFamily;

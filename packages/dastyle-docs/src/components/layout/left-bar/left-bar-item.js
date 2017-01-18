@@ -1,23 +1,15 @@
 import React, {Component, PropTypes,} from 'react';
 import { Link } from 'react-router';
-import RotatingArrow from './rotating-arrow';
+import RotatingArrow from '../../rotating-arrow';
 import './left-bar-item.scss';
 
 export default class LeftBarItem extends Component {
-  constructor() {
-    super();
-    this.onArrowClick = this.onArrowClick.bind(this);
-    this.state = {
-      opened: false,
-    };
-  }
+  state = {
+    opened: false,
+  };
 
-  onArrowClick() {
-    console.log('click');
-    this.setState({
-      opened: !this.state.opened,
-    });
-  }
+  onArrowClick = () => this.setState({ opened: !this.state.opened })
+
   subMenuGenerator(isOpened) {
     if (isOpened) {
       return (this.props.innerItemsNames.map(entry => <div className="side-bar-sub-item">
@@ -27,7 +19,6 @@ export default class LeftBarItem extends Component {
     return [];
   }
   render() {
-    console.log('render left bar item');
     return (
       <div className="left-bar-item">
         <div className="left-bar-shown-line" onClick={() => this.onArrowClick()}>

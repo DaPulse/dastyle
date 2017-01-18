@@ -1,0 +1,26 @@
+@import '../../../ds-core/src/colors';
+
+.rotating-arrow {
+  user-select: none;
+  flex-basis: 20px;
+  text-align: center;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  transition: all .2s ease-in-out;
+  background: transparent;
+  img.closed {
+    margin-top: 30%;
+    transition: all .2s ease-in-out;
+    transform: rotateZ(180Deg);
+  }
+  img.opened {
+    margin-top: 20%;
+    transition: all .2s ease-in-out;
+    transform: rotateZ(0Deg);
+  }
+  &:hover {
+    background: #eee;
+    border-radius: 50%;
+  }
+}

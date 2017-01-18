@@ -91,33 +91,33 @@ storiesOf('Button', module)
     <div>
       <div>
         <Button color='primary' loading size='lg'>outline</Button>
-        <Button color='primary' size='lg'>load</Button>
+        <Button color='primary' size='lg'>Load</Button>
         <Button color='shareable' loading size='lg'>outline</Button>
-        <Button color='shareable' size='lg'>load</Button>
+        <Button color='shareable' size='lg'>Load</Button>
         <Button color='private' loading size='lg'>outline</Button>
-        <Button color='private' size='lg'>load</Button>
+        <Button color='private' size='lg'>Load</Button>
         <Button color='alert' loading size='lg'>outline</Button>
-        <Button color='alert' size='lg'>load</Button>
+        <Button color='alert' size='lg'>Load</Button>
       </div><br />
       <div>
         <Button color='primary' loading>outline</Button>
-        <Button color='primary'>load</Button>
+        <Button color='primary'>Load</Button>
         <Button color='shareable' loading>outline</Button>
-        <Button color='shareable'>load</Button>
+        <Button color='shareable'>Load</Button>
         <Button color='private' loading>outline</Button>
-        <Button color='private'>load</Button>
+        <Button color='private'>Load</Button>
         <Button color='alert' loading>outline</Button>
-        <Button color='alert'>load</Button>
+        <Button color='alert'>Load</Button>
       </div><br />
       <div>
         <Button color='primary' loading size='sm'>outline</Button>
-        <Button color='primary' size='sm'>load</Button>
+        <Button color='primary' size='sm'>Load</Button>
         <Button color='shareable' loading size='sm'>outline</Button>
-        <Button color='shareable' size='sm'>load</Button>
+        <Button color='shareable' size='sm'>Load</Button>
         <Button color='private' loading size='sm'>outline</Button>
-        <Button color='private' size='sm'>load</Button>
+        <Button color='private' size='sm'>Load</Button>
         <Button color='alert' loading size='sm'>outline</Button>
-        <Button color='alert' size='sm'>load</Button>
+        <Button color='alert' size='sm'>Load</Button>
       </div>
     </div>
   ))
@@ -125,38 +125,40 @@ storiesOf('Button', module)
     <div>
       <div>
         <Button outline color='primary' loading size='lg'>outline</Button>
-        <Button outline color='primary' size='lg'>load</Button>
+        <Button outline color='primary' size='lg' icon="fa fa-star-o">Load</Button>
         <Button outline color='shareable' loading size='lg'>outline</Button>
-        <Button outline color='shareable' size='lg'>load</Button>
+        <Button outline color='shareable' size='lg' icon="fa fa-star-o">Load</Button>
         <Button outline color='private' loading size='lg'>outline</Button>
-        <Button outline color='private' size='lg'>load</Button>
+        <Button outline color='private' size='lg' icon="fa fa-star-o">Load</Button>
         <Button outline color='alert' loading size='lg'>outline</Button>
-        <Button outline color='alert' size='lg'>load</Button>
+        <Button outline color='alert' size='lg' icon="fa fa-star-o">Load</Button>
       </div><br />
       <div>
         <Button outline color='primary' loading>outline</Button>
-        <Button outline color='primary'>load</Button>
+        <Button outline color='primary' icon="fa fa-star-o">Load</Button>
         <Button outline color='shareable' loading>outline</Button>
-        <Button outline color='shareable'>load</Button>
+        <Button outline color='shareable' icon="fa fa-star-o">Load</Button>
         <Button outline color='private' loading>outline</Button>
-        <Button outline color='private'>load</Button>
+        <Button outline color='private' icon="fa fa-star-o">Load</Button>
         <Button outline color='alert' loading>outline</Button>
-        <Button outline color='alert'>load</Button>
+        <Button outline color='alert' icon="fa fa-star-o">Load</Button>
       </div><br />
       <div>
         <Button outline color='primary' loading size='sm'>outline</Button>
-        <Button outline color='primary' size='sm'>load</Button>
+        <Button outline color='primary' size='sm' icon="fa fa-star-o">Load</Button>
         <Button outline color='shareable' loading size='sm'>outline</Button>
-        <Button outline color='shareable' size='sm'>load</Button>
+        <Button outline color='shareable' size='sm' icon="fa fa-star-o">Load</Button>
         <Button outline color='private' loading size='sm'>outline</Button>
-        <Button outline color='private' size='sm'>load</Button>
+        <Button outline color='private' size='sm' icon="fa fa-star-o">Load</Button>
         <Button outline color='alert' loading size='sm'>outline</Button>
-        <Button outline color='alert' size='sm'>load</Button>
+        <Button outline color='alert' size='sm' icon="fa fa-star-o">Load</Button>
       </div>
     </div>
   ))
   .add('interactive loader button', () => (
-    <ButtonExample />
+    <div style={{marginTop: '25%', width: '100%', textAlign: 'center'}}>
+      <ButtonExample />
+    </div>
   ));
   storiesOf('Forms', module)
     .add('Default Input', () => (
@@ -183,12 +185,12 @@ storiesOf('Button', module)
         <h3>Input Caption</h3>
         <Form>
           <FormGroup>
-            <Input placeholder="password"/>
-            <InputCaption color="basic-blue">Forgot your password?</InputCaption>
+            <Input placeholder="Email Address"/>
+            <InputCaption right color="alert">Required</InputCaption>
           </FormGroup>
           <FormGroup>
-            <Input placeholder="Email Address"/>
-            <InputCaption right color="bazooka">Required</InputCaption>
+            <Input type='password' placeholder="Password"/>
+            <InputCaption color="basic-blue">Forgot your password?</InputCaption>
           </FormGroup>
         </Form>
       </div>
@@ -196,6 +198,13 @@ storiesOf('Button', module)
     .add('Set Password', () => (
       <Form style={{ marginLeft: 100, width: '70%'}}>
         <h1>In Constructions C:</h1>
+        <FormGroup>
+          <InputGroup>
+            <Input type='password' placeholder="Password"/>
+            <InputGroupAddon>Show</InputGroupAddon>
+          </InputGroup>
+          <InputCaption color="basic-blue">Forgot your password?</InputCaption>
+        </FormGroup>
       </Form>
     ))
     .add('Input with Feedback', () => (

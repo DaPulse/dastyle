@@ -6,26 +6,25 @@ import dapulseLogo from './dapulse_style_logo.svg';
 const _ = require('lodash');
 
 
-const LeftBarComponent = ({ labels, items }) => {
-  console.log('render side bar');
+const LeftBar = ({ labels, items }) => {
   return (
     <div className="left-side-bar">
       <img className="dapulse-logo" role="presentation" src={dapulseLogo} />
-      {_.keys(labels).map(entry =>
+      {_.keys(labels).map(label =>
         <LeftBarItem
-          title={entry}
-          innerItemsNames={labels[entry]}
+          title={label}
+          innerItemsNames={labels[label]}
           items={items}
-          key={entry}
+          key={label}
         />,
         )
       }
     </div>
   );
 };
-LeftBarComponent.propTypes = {
+LeftBar.propTypes = {
   labels: React.PropTypes.objectOf(React.PropTypes.array).isRequired,
   items: React.PropTypes.objectOf(React.PropTypes.array).isRequired,
 };
 
-export default LeftBarComponent;
+export default LeftBar;

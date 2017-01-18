@@ -1,22 +1,15 @@
 import React, { Component } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import _ from 'lodash';
 import 'react-select/dist/react-select.css';
+
 import Content from './content';
-import ButtonViewComponent from './button-view';
+import ButtonView from './button-view';
 import './button-doc.scss';
 
-const _ = require('lodash');
 
 
-class ButtonDocComponent extends Component {
-
-  constructor(props) {
-    super(props);
-    this.state = { colorCopyMode: { value: 0 } };
-  }
-  onChange(val) {
-    this.setState({ colorCopyMode: val });
-  }
+class ButtonDoc extends Component {
   render() {
     return (
       <div>
@@ -38,7 +31,7 @@ class ButtonDocComponent extends Component {
           {
             _.keys(Content).map(tab =>
               <TabPanel>
-                <ButtonViewComponent
+                <ButtonView
                   buttonFamiliesArray={Content[tab]}
                 />
               </TabPanel>,
@@ -51,4 +44,4 @@ class ButtonDocComponent extends Component {
   }
 }
 
-export default ButtonDocComponent;
+export default ButtonDoc;
