@@ -15,9 +15,14 @@
   line-height: $input-line-height;
   color: $input-color;
   background-color: $input-bg;
+  font-weight: $font-weight-normal;
   background-image: none;
   background-clip: padding-box;
   border: $input-btn-border-width solid $input-border-color;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+
 
   @if $enable-rounded {
     border-radius: $input-border-radius;

@@ -418,6 +418,12 @@ $grid-breakpoints: (
 @include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
 @include _assert-starts-at-zero($grid-breakpoints);
 
+body {
+  font-family: $font-family-base;
+  font-size: $font-size-root;
+  font-weight: 300;
+}
+
 .ds-right-align {
   text-align: right;
 }
