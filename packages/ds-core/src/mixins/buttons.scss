@@ -142,8 +142,8 @@
     -webkit-transform: translateZ(0);
     -ms-transform: translateZ(0);
     transform: translateZ(0);
-    -webkit-animation: spin_accel 1s infinite ease;
-    animation: spin_accel 1s infinite ease;
+    -webkit-animation: spin_accel .8s infinite ease;
+    animation: spin_accel .8s infinite ease;
   }
 }
 
@@ -182,8 +182,8 @@
     -webkit-transform: translateZ(0);
     -ms-transform: translateZ(0);
     transform: translateZ(0);
-    -webkit-animation: spin_accel 1.2s infinite ease;
-    animation: spin_accel 1.2s infinite ease;
+    -webkit-animation: spin_accel .8s infinite ease;
+    animation: spin_accel .8s infinite ease;
   }
 }
 
