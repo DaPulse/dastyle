@@ -1,16 +1,18 @@
 import React, { PropTypes } from 'react';
 import classNames from 'classnames';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-const renderer = require('react-test-renderer');
+import renderer from 'react-test-renderer';
+import prettyFormat from 'pretty-format';
+import reactTestPlugin from 'pretty-format/build/plugins/ReactTestComponent';
+import reactElementPlugin from 'pretty-format/build/plugins/ReactElement';
+// import { shallow, mount, render } from 'enzyme';
+// import { shallowToJson } from 'enzyme-to-json';
 import Highlight from 'react-highlight'
 import Section from './section';
 import Row from './row';
 import Col from './col';
 import * as Examples from './examples';
 
-/* eslint import/no-webpack-loader-syntax: 0 */
-import rowjs from 'raw-loader!./row.js';
-console.log(rowjs);
 const propTypes = {
   children: PropTypes.node,
   categorySections: PropTypes.any,
@@ -32,11 +34,6 @@ const CategoryView = (props) => {
   );
 
   const Example = ({exampleRef}) => Examples[exampleRef]()
-
-  const prettyFormat = require('pretty-format');
-  const reactTestPlugin = require('pretty-format/build/plugins/ReactTestComponent');
-  const reactElementPlugin = require('pretty-format/build/plugins/ReactElement');
-
 
   return (
     <div {...attributes} className={classes}>
@@ -69,7 +66,9 @@ const CategoryView = (props) => {
             </TabPanel>
             <TabPanel>
               <Highlight>
-                const React = Code;
+                {prettyFormat(renderer.create(Examples[section.examples[0].ref](), ).toJSON(), {
+                  plugins: [reactTestPlugin, reactElementPlugin],
+                })}
               </Highlight>
             </TabPanel>
           </Tabs>
