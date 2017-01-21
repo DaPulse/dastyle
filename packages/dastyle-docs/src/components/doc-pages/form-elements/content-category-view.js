@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import classNames from 'classnames';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import ReactDOMServer from 'react-dom/server';
+const renderer = require('react-test-renderer');
 import Highlight from 'react-highlight'
 import Section from './section';
 import Row from './row';
@@ -33,6 +33,11 @@ const CategoryView = (props) => {
 
   const Example = ({exampleRef}) => Examples[exampleRef]()
 
+  const prettyFormat = require('pretty-format');
+  const reactTestPlugin = require('pretty-format/build/plugins/ReactTestComponent');
+  const reactElementPlugin = require('pretty-format/build/plugins/ReactElement');
+
+
   return (
     <div {...attributes} className={classes}>
       {categorySections.map((section, index) =>
@@ -56,8 +61,10 @@ const CategoryView = (props) => {
               </Tab>
             </TabList>
             <TabPanel>
-              <Highlight language="xml">
-                {ReactDOMServer.renderToStaticMarkup(Examples[section.examples[0].ref]())}
+              <Highlight>
+                {prettyFormat(renderer.create(Examples[section.examples[0].ref](), ).toJSON(), {
+                  plugins: [reactTestPlugin, reactElementPlugin],
+                })}
               </Highlight>
             </TabPanel>
             <TabPanel>
