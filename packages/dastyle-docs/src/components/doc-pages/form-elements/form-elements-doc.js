@@ -3,7 +3,9 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import _ from 'lodash';
 import 'react-select/dist/react-select.css';
 import contentByCategories from './content';
+import ContentCategoryView from './content-category-view';
 
+// TODO: refactor to pure function with props
 
 class FormElementsDoc extends Component {
   render() {
@@ -19,7 +21,9 @@ class FormElementsDoc extends Component {
           )}
           </TabList>
           {contentByCategories.map(category =>
-            <TabPanel key={category.name}></TabPanel>
+            <TabPanel key={category.name}>
+              <ContentCategoryView categorySections={category.sections} />
+            </TabPanel>
           )}
         </Tabs>
       </div>

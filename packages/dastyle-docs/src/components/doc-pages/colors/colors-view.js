@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './colors-view.scss';
 import ColorFamilyComponent from './color-family';
 

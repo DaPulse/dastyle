@@ -6,7 +6,7 @@ import DocPage from './components/doc-pages';
 import items from './content';
 import labels from './labels';
 import Layout from './components/layout';
-import './index.css';
+import './index.scss';
 
 render(
   <Router history={hashHistory}>

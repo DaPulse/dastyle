@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import './color-family.scss';
+import React from 'react';
 import ColorDisplayComponent from './color-display';
+import './color-family.scss';
 
 const ColorFamilyComponent = ({ colorFamilyObject, colorCopyMode }) => {
   console.log('render colors view');

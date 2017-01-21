@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Clipboard from 'clipboard/dist/clipboard.min';
+import Clipboard from 'clipboard';
 import './color-display.scss';
 import './color-classes.scss';
 

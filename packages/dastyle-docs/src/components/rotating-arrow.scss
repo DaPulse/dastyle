@@ -9,14 +9,15 @@
   height: 30px;
   transition: all .2s ease-in-out;
   background: transparent;
-  img.closed {
-    margin-top: 30%;
+  img {
     transition: all .2s ease-in-out;
+  }
+  img.closed {
+    margin-top: 13px;
     transform: rotateZ(180Deg);
   }
   img.opened {
-    margin-top: 20%;
-    transition: all .2s ease-in-out;
+    margin-top: 10px;
     transform: rotateZ(0Deg);
   }
   &:hover {

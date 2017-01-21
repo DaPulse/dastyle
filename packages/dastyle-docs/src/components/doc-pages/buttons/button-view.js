@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './button-view.scss';
 import ButtonFamily from './button-family';
 

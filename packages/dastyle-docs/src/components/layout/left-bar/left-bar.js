@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import './left-bar.scss';
+import React from 'react';
 import LeftBarItem from './left-bar-item';
 import dapulseLogo from './dapulse_style_logo.svg';
+import './left-bar.scss';
 
 const _ = require('lodash');
 
