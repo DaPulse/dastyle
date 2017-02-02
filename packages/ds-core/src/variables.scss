@@ -275,7 +275,7 @@ $btn-transition:                 padding-left .35s cubic-bezier(0.19, 1, 0.22, 1
 // *Forms specifics
 
 $input-btn-border-width:         $border-width !default; // For form controls and buttons
-$cursor-disabled:                not-allowed !default;
+$cursor-disabled:                default !default;
 
 // 9.Forms
 

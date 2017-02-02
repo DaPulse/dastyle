@@ -136,6 +136,11 @@ fieldset[disabled] a.btn {
   @include button-variant($btn-alert-color, $btn-alert-bg, $btn-alert-border);
 }
 
+.ds-btn-success {
+  @include button-variant($btn-primary-color, $brand-success, $brand-success);
+}
+
+
 
 
 

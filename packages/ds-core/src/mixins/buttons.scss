@@ -44,7 +44,7 @@
 
   &.disabled,
   &:disabled {
-    cursor: $cursor-disabled;
+    cursor: arrow;
     border-color: lighten($explosive, 10%);
     background-color: $explosive;
     color: $american-gray;
@@ -52,7 +52,7 @@
     &:focus,
     &.focus {
       background-color: $explosive;
-          border-color: $border;
+          border-color: $explosive;
     }
     @include hover {
       background-color: $explosive;
@@ -99,12 +99,20 @@
 
   &.disabled,
   &:disabled {
+    cursor: arrow;
+    border-color: lighten($explosive, 10%);
+    background-color: $explosive;
+    color: $american-gray;
+    @include box-shadow(none);
     &:focus,
     &.focus {
-      border-color: lighten($color, 20%);
+      background-color: $explosive;
+          border-color: $explosive;
     }
     @include hover {
-      border-color: lighten($color, 20%);
+      background-color: $explosive;
+          border-color: lighten($explosive, 10%);
+                 color: $american-gray;
     }
   }
 }

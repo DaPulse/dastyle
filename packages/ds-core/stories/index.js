@@ -49,6 +49,21 @@ storiesOf('Button', module)
       <Button color="primary" disabled size='sm'>Disabled</Button>
     </div>
   ))
+  .add('success with text: [3 sizes]', () => (
+    <div>
+      <Button color="success" size='lg'>Success</Button>
+      <Button color="success">Success</Button>
+      <Button color="success" size='sm'>Success</Button>
+    </div>
+  ))
+
+  .add('success disabled with text: [3 sizes]', () => (
+    <div>
+      <Button color="success" disabled size='lg'>Disabled</Button>
+      <Button color="success" disabled>Disabled</Button>
+      <Button color="success" disabled size='sm'>Disabled</Button>
+    </div>
+  ))
   .add('shareable with text: [3 sizes]', () => (
     <div>
       <Button color="shareable" size='lg'>Shareable</Button>
@@ -76,6 +91,14 @@ storiesOf('Button', module)
       <Button color='primary' outline size='lg'>Outline</Button>
       <Button color='primary' outline>Outline</Button>
       <Button color='primary' outline size='sm'>Outline</Button>
+    </div>
+  ))
+
+  .add('outline: [3 sizes + non primary brand colors] disabled', () => (
+    <div>
+      <Button color='primary' disabled outline size='lg'>Outline</Button>
+      <Button color='primary' disabled outline>Outline</Button>
+      <Button color='primary' disabled outline size='sm'>Outline</Button>
     </div>
   ))
 
