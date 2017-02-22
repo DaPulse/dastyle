@@ -13,7 +13,7 @@ export default class ButtonExample extends Component {
 
   render() {
     return (
-      <Button icon={`fa fa-star${this.state.status ? '' : '-o'}`} color='primary' loading={this.state.loading} outline={!this.state.status} onClick={this.onClick}>
+      <Button keepsize={this.props.keepsize} icon={`fa fa-star${this.state.status ? '' : '-o'}`} color='primary' loading={this.state.loading} outline={!this.state.status} onClick={this.onClick}>
         {this.state.status? 'Subscribe' : 'Unsubscribe'}
       </Button>
     )

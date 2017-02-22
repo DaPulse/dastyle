@@ -9,6 +9,7 @@ const propTypes = {
   color: PropTypes.string,
   disabled: PropTypes.bool,
   loading: PropTypes.bool,
+  keepsize: PropTypes.bool,
   outline: PropTypes.bool,
   tag: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
   getRef: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
@@ -19,7 +20,7 @@ const propTypes = {
 };
 
 const defaultProps = {
-  color: 'secondary',
+  color: 'primary',
   tag: 'button',
 };
 
@@ -50,6 +51,7 @@ class Button extends Component {
       outline,
       size,
       loading,
+      keepsize,
       tag: Tag,
       getRef,
       icon,

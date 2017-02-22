@@ -182,6 +182,11 @@ storiesOf('Button', module)
     <div style={{marginTop: '25%', width: '100%', textAlign: 'center'}}>
       <ButtonExample />
     </div>
+  ))
+  .add('interactive loader button keepsize', () => (
+    <div style={{marginTop: '25%', width: '100%', textAlign: 'center'}}>
+      <ButtonExample keepsize/>
+    </div>
   ));
   storiesOf('Forms', module)
     .add('Default Input', () => (

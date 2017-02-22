@@ -1,6 +1,6 @@
 exports[`test Button variations for color and size 1`] = `
 <button
-  className="ds-btn ds-btn-secondary"
+  className="ds-btn ds-btn-primary"
   disabled={undefined}
   onClick={[Function]}>
   Test Button
@@ -9,7 +9,7 @@ exports[`test Button variations for color and size 1`] = `
 
 exports[`test Button variations for color and size 2`] = `
 <button
-  className="ds-btn ds-btn-secondary ds-btn-sm"
+  className="ds-btn ds-btn-primary ds-btn-sm"
   disabled={undefined}
   onClick={[Function]}>
   Test Button
@@ -18,7 +18,7 @@ exports[`test Button variations for color and size 2`] = `
 
 exports[`test Button variations for color and size 3`] = `
 <button
-  className="ds-btn ds-btn-secondary ds-btn-lg"
+  className="ds-btn ds-btn-primary ds-btn-lg"
   disabled={undefined}
   onClick={[Function]}>
   Test Button
@@ -162,7 +162,7 @@ exports[`test Button variations for color and size 18`] = `
 
 exports[`test Button variations for color and size 19`] = `
 <button
-  className="ds-btn ds-btn-outline-secondary"
+  className="ds-btn ds-btn-outline-primary"
   disabled={undefined}
   onClick={[Function]}>
   Test Button
@@ -171,7 +171,7 @@ exports[`test Button variations for color and size 19`] = `
 
 exports[`test Button variations for color and size 20`] = `
 <button
-  className="ds-btn ds-btn-outline-secondary ds-btn-sm"
+  className="ds-btn ds-btn-outline-primary ds-btn-sm"
   disabled={undefined}
   onClick={[Function]}>
   Test Button
@@ -180,7 +180,7 @@ exports[`test Button variations for color and size 20`] = `
 
 exports[`test Button variations for color and size 21`] = `
 <button
-  className="ds-btn ds-btn-outline-secondary ds-btn-lg"
+  className="ds-btn ds-btn-outline-primary ds-btn-lg"
   disabled={undefined}
   onClick={[Function]}>
   Test Button
@@ -324,7 +324,7 @@ exports[`test Button variations for color and size 36`] = `
 
 exports[`test Button variations for color and size 37`] = `
 <button
-  className="ds-btn ds-btn-secondary disabled"
+  className="ds-btn ds-btn-primary disabled"
   disabled={true}
   onClick={[Function]}>
   Test Button
@@ -333,7 +333,7 @@ exports[`test Button variations for color and size 37`] = `
 
 exports[`test Button variations for color and size 38`] = `
 <button
-  className="ds-btn ds-btn-secondary ds-btn-sm disabled"
+  className="ds-btn ds-btn-primary ds-btn-sm disabled"
   disabled={true}
   onClick={[Function]}>
   Test Button
@@ -342,7 +342,7 @@ exports[`test Button variations for color and size 38`] = `
 
 exports[`test Button variations for color and size 39`] = `
 <button
-  className="ds-btn ds-btn-secondary ds-btn-lg disabled"
+  className="ds-btn ds-btn-primary ds-btn-lg disabled"
   disabled={true}
   onClick={[Function]}>
   Test Button
@@ -486,7 +486,7 @@ exports[`test Button variations for color and size 54`] = `
 
 exports[`test Button variations for color and size 55`] = `
 <button
-  className="ds-btn ds-btn-outline-secondary disabled"
+  className="ds-btn ds-btn-outline-primary disabled"
   disabled={true}
   onClick={[Function]}>
   Test Button
@@ -495,7 +495,7 @@ exports[`test Button variations for color and size 55`] = `
 
 exports[`test Button variations for color and size 56`] = `
 <button
-  className="ds-btn ds-btn-outline-secondary ds-btn-sm disabled"
+  className="ds-btn ds-btn-outline-primary ds-btn-sm disabled"
   disabled={true}
   onClick={[Function]}>
   Test Button
@@ -504,7 +504,7 @@ exports[`test Button variations for color and size 56`] = `
 
 exports[`test Button variations for color and size 57`] = `
 <button
-  className="ds-btn ds-btn-outline-secondary ds-btn-lg disabled"
+  className="ds-btn ds-btn-outline-primary ds-btn-lg disabled"
   disabled={true}
   onClick={[Function]}>
   Test Button
@@ -648,7 +648,7 @@ exports[`test Button variations for color and size 72`] = `
 
 exports[`test Button variations for color and size 73`] = `
 <button
-  className="ds-btn ds-btn-secondary-loading"
+  className="ds-btn ds-btn-primary-loading"
   disabled={undefined}
   onClick={[Function]}>
   <div
@@ -658,7 +658,7 @@ exports[`test Button variations for color and size 73`] = `
 
 exports[`test Button variations for color and size 74`] = `
 <button
-  className="ds-btn ds-btn-secondary-loading ds-btn-sm"
+  className="ds-btn ds-btn-primary-loading ds-btn-sm"
   disabled={undefined}
   onClick={[Function]}>
   <div
@@ -668,7 +668,7 @@ exports[`test Button variations for color and size 74`] = `
 
 exports[`test Button variations for color and size 75`] = `
 <button
-  className="ds-btn ds-btn-secondary-loading ds-btn-lg"
+  className="ds-btn ds-btn-primary-loading ds-btn-lg"
   disabled={undefined}
   onClick={[Function]}>
   <div
@@ -828,7 +828,7 @@ exports[`test Button variations for color and size 90`] = `
 
 exports[`test Button variations for color and size 91`] = `
 <button
-  className="ds-btn ds-btn-outline-secondary-loading"
+  className="ds-btn ds-btn-outline-primary-loading"
   disabled={undefined}
   onClick={[Function]}>
   <div
@@ -838,7 +838,7 @@ exports[`test Button variations for color and size 91`] = `
 
 exports[`test Button variations for color and size 92`] = `
 <button
-  className="ds-btn ds-btn-outline-secondary-loading ds-btn-sm"
+  className="ds-btn ds-btn-outline-primary-loading ds-btn-sm"
   disabled={undefined}
   onClick={[Function]}>
   <div
@@ -848,7 +848,7 @@ exports[`test Button variations for color and size 92`] = `
 
 exports[`test Button variations for color and size 93`] = `
 <button
-  className="ds-btn ds-btn-outline-secondary-loading ds-btn-lg"
+  className="ds-btn ds-btn-outline-primary-loading ds-btn-lg"
   disabled={undefined}
   onClick={[Function]}>
   <div
@@ -1008,7 +1008,7 @@ exports[`test Button variations for color and size 108`] = `
 
 exports[`test Button variations for color and size 109`] = `
 <button
-  className="ds-btn ds-btn-secondary-loading disabled"
+  className="ds-btn ds-btn-primary-loading disabled"
   disabled={true}
   onClick={[Function]}>
   <div
@@ -1018,7 +1018,7 @@ exports[`test Button variations for color and size 109`] = `
 
 exports[`test Button variations for color and size 110`] = `
 <button
-  className="ds-btn ds-btn-secondary-loading ds-btn-sm disabled"
+  className="ds-btn ds-btn-primary-loading ds-btn-sm disabled"
   disabled={true}
   onClick={[Function]}>
   <div
@@ -1028,7 +1028,7 @@ exports[`test Button variations for color and size 110`] = `
 
 exports[`test Button variations for color and size 111`] = `
 <button
-  className="ds-btn ds-btn-secondary-loading ds-btn-lg disabled"
+  className="ds-btn ds-btn-primary-loading ds-btn-lg disabled"
   disabled={true}
   onClick={[Function]}>
   <div
@@ -1188,7 +1188,7 @@ exports[`test Button variations for color and size 126`] = `
 
 exports[`test Button variations for color and size 127`] = `
 <button
-  className="ds-btn ds-btn-outline-secondary-loading disabled"
+  className="ds-btn ds-btn-outline-primary-loading disabled"
   disabled={true}
   onClick={[Function]}>
   <div
@@ -1198,7 +1198,7 @@ exports[`test Button variations for color and size 127`] = `
 
 exports[`test Button variations for color and size 128`] = `
 <button
-  className="ds-btn ds-btn-outline-secondary-loading ds-btn-sm disabled"
+  className="ds-btn ds-btn-outline-primary-loading ds-btn-sm disabled"
   disabled={true}
   onClick={[Function]}>
   <div
@@ -1208,7 +1208,7 @@ exports[`test Button variations for color and size 128`] = `
 
 exports[`test Button variations for color and size 129`] = `
 <button
-  className="ds-btn ds-btn-outline-secondary-loading ds-btn-lg disabled"
+  className="ds-btn ds-btn-outline-primary-loading ds-btn-lg disabled"
   disabled={true}
   onClick={[Function]}>
   <div
