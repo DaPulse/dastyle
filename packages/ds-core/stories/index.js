@@ -96,17 +96,18 @@ storiesOf('Button', module)
 
   .add('outline: [3 sizes + non primary brand colors] disabled', () => (
     <div>
-      <Button color='primary' disabled outline size='lg'>Outline</Button>
       <Button color='primary' disabled outline>Outline</Button>
-      <Button color='primary' disabled outline size='sm'>Outline</Button>
+      <Button color='primary' disabled outline>Outline</Button>
+      <Button color='primary' disabled outline>Outline</Button>
     </div>
   ))
 
   .add('Not meant to be used disabled: [3 sizes + non primary brand colors]', () => (
     <div>
-      <Button color="private" disabled size='lg'>Disabled - P</Button>
+      <Button color="private" disabled>Disabled - P</Button>
       <Button color="shareable" disabled>Disabled - S</Button>
-      <Button color="alert" disabled size='sm'>Disabled - A</Button>
+      <Button color="alert" disabled>Disabled - A</Button>
+      <Button color="success" disabled>Disabled - S</Button>
     </div>
   ))
 
@@ -121,6 +122,8 @@ storiesOf('Button', module)
         <Button color='private' size='lg'>Load</Button>
         <Button color='alert' loading size='lg'>outline</Button>
         <Button color='alert' size='lg'>Load</Button>
+        <Button color='success' loading size='lg'>outline</Button>
+        <Button color='success' size='lg'>Load</Button>
       </div><br />
       <div>
         <Button color='primary' loading>outline</Button>
@@ -131,6 +134,8 @@ storiesOf('Button', module)
         <Button color='private'>Load</Button>
         <Button color='alert' loading>outline</Button>
         <Button color='alert'>Load</Button>
+        <Button color='success' loading>outline</Button>
+        <Button color='success'>Load</Button>
       </div><br />
       <div>
         <Button color='primary' loading size='sm'>outline</Button>
@@ -141,6 +146,8 @@ storiesOf('Button', module)
         <Button color='private' size='sm'>Load</Button>
         <Button color='alert' loading size='sm'>outline</Button>
         <Button color='alert' size='sm'>Load</Button>
+        <Button color='success' loading size='sm'>outline</Button>
+        <Button color='success' size='sm'>Load</Button>
       </div>
     </div>
   ))
@@ -155,6 +162,8 @@ storiesOf('Button', module)
         <Button outline color='private' size='lg' icon="fa fa-star-o">Load</Button>
         <Button outline color='alert' loading size='lg'>outline</Button>
         <Button outline color='alert' size='lg' icon="fa fa-star-o">Load</Button>
+        <Button outline color='success' loading size='lg'>outline</Button>
+        <Button outline color='success' size='lg' icon="fa fa-star-o">Load</Button>
       </div><br />
       <div>
         <Button outline color='primary' loading>outline</Button>
@@ -165,6 +174,8 @@ storiesOf('Button', module)
         <Button outline color='private' icon="fa fa-star-o">Load</Button>
         <Button outline color='alert' loading>outline</Button>
         <Button outline color='alert' icon="fa fa-star-o">Load</Button>
+        <Button outline color='success' loading>outline</Button>
+        <Button outline color='success' icon="fa fa-star-o">Load</Button>
       </div><br />
       <div>
         <Button outline color='primary' loading size='sm'>outline</Button>
@@ -175,6 +186,8 @@ storiesOf('Button', module)
         <Button outline color='private' size='sm' icon="fa fa-star-o">Load</Button>
         <Button outline color='alert' loading size='sm'>outline</Button>
         <Button outline color='alert' size='sm' icon="fa fa-star-o">Load</Button>
+        <Button outline color='success' loading size='sm'>outline</Button>
+        <Button outline color='success' size='sm' icon="fa fa-star-o">Load</Button>
       </div>
     </div>
   ))

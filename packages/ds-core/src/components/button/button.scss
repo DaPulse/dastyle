@@ -165,6 +165,10 @@ fieldset[disabled] a.btn {
   @include button-outline-variant($btn-alert-bg);
 }
 
+.ds-btn-outline-success {
+  @include button-outline-variant($btn-success-bg);
+}
+
 
 //
 // Link buttons
@@ -262,6 +266,10 @@ input[type="button"] {
 
 .ds-btn-alert-loading {
   @include button-loading-variant($btn-alert-color, $btn-alert-bg, $btn-alert-border);
+}
+
+.ds-btn-success-loading {
+  @include button-loading-variant($btn-success-color, $btn-success-bg, $btn-success-border);
 }
 
 // ouline + loading
