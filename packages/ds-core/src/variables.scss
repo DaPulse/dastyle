@@ -134,8 +134,8 @@ $font-family-base: 'Roboto' !default;
 $font-size-root: 15px !default;
 
 $font-size-base: 1rem !default;
-$font-size-lg:   1.333rem !default;
-$font-size-sm:   .8667rem !default;
+$font-size-lg:   1.1333rem !default;
+$font-size-sm:   1rem !default;
 $font-size-xs:   .75rem !default;
 
 $font-weight-normal: 300 !default;
@@ -221,17 +221,17 @@ $transition-collapse:    height .35s ease !default;
 //
 
 $btn-padding-x:                  1.767rem !default;
-$btn-padding-y:                  .333rem !default;
+$btn-padding-y:                  0.4rem !default;
 
 $btn-padding-x-sm:               1.5rem !default;
-$btn-padding-y-sm:               .15rem !default;
+$btn-padding-y-sm:               .233rem !default;
 
 $btn-padding-x-lg:               1.9rem !default;
-$btn-padding-y-lg:               .333rem !default;
+$btn-padding-y-lg:               .633rem !default;
 
-$btn-loader-size-base:           0.642rem !default;
-$btn-loader-size-lg:             0.750rem !default;
-$btn-loader-size-sm:             0.45rem !default;
+$btn-loader-size-base:           0.675rem !default;
+$btn-loader-size-lg:             0.866rem !default;
+$btn-loader-size-sm:             0.6rem !default;
 
 $btn-line-height:                1.25 !default;
 $btn-font-weight:                $font-weight-normal !default;

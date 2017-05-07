@@ -30,6 +30,7 @@
     color: $color;
     background-color: $active-background;
         border-color: $active-border;
+        transform: scale(0.97);
     // Remove the gradient for the pressed/active state
     background-image: none;
     @include box-shadow($btn-active-box-shadow);
@@ -83,6 +84,7 @@
   &.active,
   .open > &.ds-dropdown-toggle {
     outline: none;
+    transform: scale(0.97);
     color: $color-hover;
     background-color: $color;
         border-color: $color;

@@ -293,3 +293,7 @@ input[type="button"] {
 .ds-btn-outline-alert-loading {
   @include button-outline-loading-variant($btn-alert-bg);
 }
+
+.ds-btn-outline-success-loading {
+  @include button-outline-loading-variant($btn-success-bg);
+}
