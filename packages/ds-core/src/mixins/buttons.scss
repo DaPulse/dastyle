@@ -35,7 +35,9 @@
     background-image: none;
     @include box-shadow($btn-active-box-shadow);
 
-    &:hover {
+    &:hover,
+    &:focus,
+    &.focus {
       outline: none;
       color: $color;
       background-color: darken($background, 20%);
