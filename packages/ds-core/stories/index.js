@@ -1,6 +1,5 @@
 import React from 'react';
 import { storiesOf, action, linkTo } from '@kadira/storybook';
-
 import Welcome from './Welcome';
 
 import Button from '../src/components/button/button';
@@ -18,6 +17,56 @@ import Label from '../src/components/forms/label';
 storiesOf('Welcome', module)
   .add('to Storybook', () => (
     <Welcome showApp={linkTo('Button')}/>
+  ));
+storiesOf('Button style guide', module)
+  .add('Button sizes', () => (
+    <div>
+      <Button color="primary" size='lg'>Button</Button>
+      <Button color="primary">Button</Button>
+      <Button color="primary" size='sm'>Button</Button>
+    </div>
+  ))
+  .add('Button states', () => (
+    <div>
+      <Button color="primary" size='sm'>Button</Button>
+      <Button color="primary" size='sm'>Hover</Button>
+      <Button color="primary" size='sm' active>Hover and Pressed</Button>
+      <Button color="primary" size='sm' disabled>Button</Button>
+    </div>
+  ))
+  .add('Switch button', () => (
+    <div>
+      <Button color="primary" size='sm'>Join</Button>
+      <Button color="primary" size='sm'>Hover</Button>
+      <Button color="primary" size='sm' outline>Join</Button>
+      <Button className="myTest" color="primary" size='sm' outline>Hover</Button>
+    </div>
+  ))
+  .add('Indication', () => (
+      <div>
+        <Button color="primary" size='sm' >Copy</Button>
+        <Button color="primary" size='sm' active>Copied</Button>
+        <Button color="primary" size='sm' active>V</Button>
+      </div>
+  ))
+  .add('Colors', () => (
+    <div>
+      <Button color="success" size='sm' >Button</Button>
+      <Button color="private" size='sm' >Button</Button>
+      <Button color="shareable" size='sm' >Button</Button>
+      <Button color="primary" size='sm' outline>Turn on</Button>
+      <Button color="primary" size='sm' >Star</Button>
+    </div>
+  ))
+  .add('Variations', () => (
+    <div>
+      <Button color="secondary" size='sm' >Button</Button>     
+    </div>
+  ))
+  .add('Loading', () => (
+    <div>
+      <Button color='primary' loading size='sm'>outline</Button>
+    </div>
   ));
 
 storiesOf('Button', module)

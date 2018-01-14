@@ -5,7 +5,7 @@
 
 @mixin button-variant($color, $background, $border) {
   $active-background: darken($background, 10%);
-  $active-border: darken($border, 12%);
+  $active-border: darken($border, 10%);
   outline: none;
   color: $color;
   background-color: $background;
@@ -40,15 +40,15 @@
     &.focus {
       outline: none;
       color: $color;
-      background-color: darken($background, 20%);
-          border-color: darken($border, 23%);
+      background-color: darken($background, 15%);
+          border-color: darken($border, 15%);
     }
   }
 
   &.disabled,
   &:disabled {
     cursor: arrow;
-    border-color: lighten($explosive, 10%);
+    border-color: $explosive;
     background-color: $explosive;
     color: $american-gray;
     @include box-shadow(none);
@@ -59,7 +59,7 @@
     }
     @include hover {
       background-color: $explosive;
-          border-color: lighten($explosive, 10%);
+          border-color: $explosive;
                  color: $american-gray;
     }
   }
@@ -97,14 +97,14 @@
       outline: none;
       color: $color-hover;
       background-color: darken($color, 17%);
-          border-color: darken($color, 25%);
+          border-color: darken($color, 17%);
     }
   }
 
   &.disabled,
   &:disabled {
     cursor: arrow;
-    border-color: lighten($explosive, 10%);
+    border-color: $explosive;
     background-color: $explosive;
     color: $american-gray;
     @include box-shadow(none);
@@ -115,7 +115,7 @@
     }
     @include hover {
       background-color: $explosive;
-          border-color: lighten($explosive, 10%);
+          border-color: $explosive;
                  color: $american-gray;
     }
   }
@@ -123,7 +123,7 @@
 
 @mixin button-loading-variant($color, $background, $border) {
   $active-background: darken($background, 10%);
-  $active-border: darken($border, 12%);
+  $active-border: darken($border, 10%);
   outline: none;
   color: $color;
   cursor: default;
