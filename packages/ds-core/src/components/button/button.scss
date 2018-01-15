@@ -140,6 +140,10 @@ fieldset[disabled] a.btn {
   @include button-variant($btn-primary-color, $brand-success, $brand-success);
 }
 
+.ds-btn-blackish {
+  @include button-variant($btn-blackish-color, $btn-blackish-bg, $btn-blackish-border);
+}
+
 
 
 
@@ -167,6 +171,10 @@ fieldset[disabled] a.btn {
 
 .ds-btn-outline-success {
   @include button-outline-variant($btn-success-bg);
+}
+
+.ds-btn-outline-blackish {
+  @include button-outline-variant($btn-blackish-bg);
 }
 
 
@@ -305,6 +313,10 @@ input[type="button"] {
   @include button-loading-variant($btn-success-color, $btn-success-bg, $btn-success-border);
 }
 
+.ds-btn-blackish-loading {
+  @include button-loading-variant($btn-blackish-color, $btn-blackish-bg, $btn-blackish-border);
+}
+
 // ouline + loading
 
 .ds-btn-outline-primary-loading {
@@ -329,4 +341,8 @@ input[type="button"] {
 
 .ds-btn-outline-success-loading {
   @include button-outline-loading-variant($btn-success-bg);
+}
+
+.ds-btn-outline-blackish-loading {
+  @include button-outline-loading-variant($btn-blackish-bg);
 }

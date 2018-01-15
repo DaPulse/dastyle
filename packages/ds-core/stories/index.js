@@ -49,8 +49,9 @@ storiesOf('Button style guide', module)
   ))
   .add('Colors', () => (
     <div>
-        <Button color="success" size='sm' >Button</Button>
         <Button color="alert" size='sm' >Button</Button>
+        <Button color="success" size='sm' >Button</Button>
+        <Button color="blackish" size='sm' >Button</Button>
         <Button color="private" size='sm' >Button</Button>
         <Button color="shareable" size='sm' >Button</Button>
         <Button color="primary" size='sm' icon={'fa fa-star'}>Star</Button>
@@ -58,11 +59,32 @@ storiesOf('Button style guide', module)
   ))
   .add('Outline Colors', () => (
     <div>
-      <Button color="success" size='sm' outline>Turn on</Button>
       <Button color="alert" size='sm' outline>Turn on</Button>
+      <Button color="success" size='sm' outline>Turn on</Button>
+      <Button color="blackish" size='sm' outline>Turn on</Button>
       <Button color="private" size='sm' outline>Turn on</Button>
       <Button color="shareable" size='sm' outline>Turn on</Button>
       <Button color="primary" size='sm' outline>Turn on</Button>
+    </div>
+  ))
+  .add('Loading Colors', () => (
+    <div>
+      <Button color="alert" size='sm' loading>Button</Button>
+      <Button color="success" size='sm' loading>Button</Button>
+      <Button color="blackish" size='sm' loading>Button</Button>
+      <Button color="private" size='sm' loading>Button</Button>
+      <Button color="shareable" size='sm' loading>Button</Button>
+      <Button color="primary" size='sm' loading>Button</Button>
+    </div>
+  ))
+  .add('Outline Loading Colors', () => (
+    <div>
+      <Button color="alert" size='sm' outline loading>Turn on</Button>
+      <Button color="success" size='sm' outline loading>Turn on</Button>
+      <Button color="blackish" size='sm' outline loading>Turn on</Button>
+      <Button color="private" size='sm' outline loading>Turn on</Button>
+      <Button color="shareable" size='sm' outline loading>Turn on</Button>
+      <Button color="primary" size='sm' outline loading>Turn on</Button>
     </div>
   ))
   .add('Variations', () => (
