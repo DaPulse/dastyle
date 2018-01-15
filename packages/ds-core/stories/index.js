@@ -45,7 +45,6 @@ storiesOf('Button style guide', module)
   .add('Indication', () => (
       <div>
         <Button color="primary" size='sm' changeOnClick>Copy</Button>
-        <Button color="primary" size='sm' changeOnClick textOnClick='Copied'>Copy</Button>
       </div>
   ))
   .add('Colors', () => (

@@ -17,8 +17,7 @@ const propTypes = {
   size: PropTypes.string,
   children: PropTypes.node,
   className: PropTypes.string,
-  changeOnClick: PropTypes.bool,
-  textOnClick: PropTypes.string
+  changeOnClick: PropTypes.bool
 };
 
 const defaultProps = {
@@ -44,6 +43,7 @@ class Button extends Component {
     }
     
     if(this.props.changeOnClick) {
+      this.contentWidthBeforeClick = this.content.offsetWidth;
       this.setState({ clicked: true }, () =>
       setTimeout(() =>
         this.setState({clicked: false}), 1500)
@@ -51,13 +51,12 @@ class Button extends Component {
     }
   }
 
-  renderContent(loading, icon, changeOnClick, textOnClick) {
+  renderContent(loading, icon, changeOnClick) {
     if(loading) {
       return <div className='loader'></div>;
     }
     if (changeOnClick && this.state.clicked) {
-      const content = textOnClick || 'Done';
-      return <span>{content}</span>;
+      return <span style={{width: this.contentWidthBeforeClick}} className="fa fa-check"></span>;
     }
     if (icon) {
       return <span><span className={`ds-i ${icon}`}></span> <span>{this.props.children}</span></span>;
@@ -79,7 +78,6 @@ class Button extends Component {
       getRef,
       icon,
       changeOnClick,
-      textOnClick,
       ...attributes
     } = this.props;
 
@@ -97,7 +95,7 @@ class Button extends Component {
     }
     return (
       <Tag {...attributes} className={classes} ref={getRef} onClick={this.onClick}>
-        {this.renderContent(loading, icon, changeOnClick, textOnClick)}
+        <div ref={t => this.content = t}>{this.renderContent(loading, icon, changeOnClick)}</div>
       </Tag>
     );
   }
