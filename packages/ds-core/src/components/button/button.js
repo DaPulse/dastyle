@@ -17,6 +17,7 @@ const propTypes = {
   size: PropTypes.string,
   children: PropTypes.node,
   className: PropTypes.string,
+  checkOnClick: PropTypes.bool
 };
 
 const defaultProps = {
@@ -27,18 +28,25 @@ const defaultProps = {
 class Button extends Component {
   constructor(props) {
     super(props);
-
+    this.state = {clicked: false}
     this.onClick = this.onClick.bind(this);
   }
 
   onClick(e) {
-    if (this.props.disabled || this.props.loading) {
+    if (this.props.disabled || this.props.loading || this.state.clicked) {
       e.preventDefault();
       return;
     }
 
     if (this.props.onClick) {
       this.props.onClick(e);
+    }
+    
+    if(this.props.checkOnClick) {
+      this.setState({ clicked: true }, () =>
+      setTimeout(() =>
+        this.setState({clicked: false}), 1500)
+      )
     }
   }
 
@@ -55,6 +63,7 @@ class Button extends Component {
       tag: Tag,
       getRef,
       icon,
+      checkOnClick,
       ...attributes
     } = this.props;
 
@@ -64,6 +73,7 @@ class Button extends Component {
       `ds-btn${outline ? '-outline' : ''}-${color}${loading ? '-loading' : ''}`,
       size ? `ds-btn-${size}` : false,
       block ? 'ds-btn-block' : false,
+      this.state.clicked ? 'ds-btn-clicked' : false,
       { active, disabled: this.props.disabled }
     );
 
@@ -75,6 +85,7 @@ class Button extends Component {
       {loading ?
         <div className='loader'></div>
       :
+        (checkOnClick && this.state.clicked) ? <span>Done</span> :
         icon ? <span><span className={`ds-i ${icon}`}></span> <span>{this.props.children}</span></span> : this.props.children
       }
       </Tag>

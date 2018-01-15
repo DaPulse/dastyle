@@ -246,6 +246,36 @@ input[type="button"] {
   }
 }
 
+
+//
+// Clicked button
+//
+
+.ds-btn-clicked {
+  cursor: default;
+  background-color: $brand-success;
+  border-color: $brand-success;
+
+  @include hover {
+    background-color: $brand-success;
+        border-color: $brand-success;
+  }
+
+  &:active,
+  &.active{
+    background-color: $brand-success;
+        border-color: $brand-success;
+        transform: scale(1);
+
+    &:hover,
+    &:focus,
+    &.focus {
+      background-color: $brand-success;
+          border-color: $brand-success;
+    }
+  }
+}
+
 // loading
 
 .ds-btn-primary-loading {

@@ -44,18 +44,16 @@ storiesOf('Button style guide', module)
   ))
   .add('Indication', () => (
       <div>
-        <Button color="primary" size='sm' >Copy</Button>
-        <Button color="primary" size='sm' active>Copied</Button>
-        <Button color="primary" size='sm' active>V</Button>
+        <Button color="primary" size='sm' checkOnClick>Copy</Button>
       </div>
   ))
-  .add('Indication', () => (
+  .add('Colors', () => (
     <div>
         <Button color="success" size='sm' >Button</Button>
         <Button color="alert" size='sm' >Button</Button>
         <Button color="private" size='sm' >Button</Button>
         <Button color="shareable" size='sm' >Button</Button>
-        <Button color="primary" size='sm' icon={'fa fa-star-o'}>Star</Button>
+        <Button color="primary" size='sm' icon={'fa fa-star'}>Star</Button>
       </div>
   ))
   .add('Outline Colors', () => (
