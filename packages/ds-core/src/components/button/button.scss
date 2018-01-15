@@ -255,23 +255,26 @@ input[type="button"] {
   cursor: default;
   background-color: $brand-success;
   border-color: $brand-success;
+  color: $btn-primary-color;
+  outline: none;
 
   @include hover {
-    background-color: $brand-success;
-        border-color: $brand-success;
+    outline: none;
+  }
+
+  &:focus,
+  &.focus {
+    outline: none;
   }
 
   &:active,
   &.active{
-    background-color: $brand-success;
-        border-color: $brand-success;
-        transform: scale(1);
+    outline: none;
 
     &:hover,
     &:focus,
     &.focus {
-      background-color: $brand-success;
-          border-color: $brand-success;
+      outline: none;
     }
   }
 }

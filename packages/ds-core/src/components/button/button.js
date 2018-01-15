@@ -17,7 +17,8 @@ const propTypes = {
   size: PropTypes.string,
   children: PropTypes.node,
   className: PropTypes.string,
-  checkOnClick: PropTypes.bool
+  changeOnClick: PropTypes.bool,
+  textOnClick: PropTypes.string
 };
 
 const defaultProps = {
@@ -42,7 +43,7 @@ class Button extends Component {
       this.props.onClick(e);
     }
     
-    if(this.props.checkOnClick) {
+    if(this.props.changeOnClick) {
       this.setState({ clicked: true }, () =>
       setTimeout(() =>
         this.setState({clicked: false}), 1500)
@@ -50,8 +51,22 @@ class Button extends Component {
     }
   }
 
+  renderContent(loading, icon, changeOnClick, textOnClick) {
+    if(loading) {
+      return <div className='loader'></div>;
+    }
+    if (changeOnClick && this.state.clicked) {
+      const content = textOnClick || 'Done';
+      return <span>{content}</span>;
+    }
+    if (icon) {
+      return <span><span className={`ds-i ${icon}`}></span> <span>{this.props.children}</span></span>;
+    }
+    return this.props.children; 
+  }
+
   render() {
-    let {
+    let { 
       active,
       block,
       className,
@@ -63,17 +78,17 @@ class Button extends Component {
       tag: Tag,
       getRef,
       icon,
-      checkOnClick,
+      changeOnClick,
+      textOnClick,
       ...attributes
     } = this.props;
 
     const classes = classNames(
       className,
       'ds-btn',
-      `ds-btn${outline ? '-outline' : ''}-${color}${loading ? '-loading' : ''}`,
+      (changeOnClick && this.state.clicked) ? 'ds-btn-clicked' : `ds-btn${outline ? '-outline' : ''}-${color}${loading ? '-loading' : ''}`,
       size ? `ds-btn-${size}` : false,
       block ? 'ds-btn-block' : false,
-      this.state.clicked ? 'ds-btn-clicked' : false,
       { active, disabled: this.props.disabled }
     );
 
@@ -82,12 +97,7 @@ class Button extends Component {
     }
     return (
       <Tag {...attributes} className={classes} ref={getRef} onClick={this.onClick}>
-      {loading ?
-        <div className='loader'></div>
-      :
-        (checkOnClick && this.state.clicked) ? <span>Done</span> :
-        icon ? <span><span className={`ds-i ${icon}`}></span> <span>{this.props.children}</span></span> : this.props.children
-      }
+        {this.renderContent(loading, icon, changeOnClick, textOnClick)}
       </Tag>
     );
   }
