@@ -30,7 +30,7 @@ storiesOf('Button style guide', module)
     <div>
       <Button color="primary" size='sm'>Button</Button>
       <Button color="primary" size='sm'>Hover</Button>
-      <Button color="primary" size='sm' active>Hover and Pressed</Button>
+      <Button color="primary" size='sm'>Hover and Pressed</Button>
       <Button color="primary" size='sm' disabled>Button</Button>
     </div>
   ))
@@ -49,13 +49,22 @@ storiesOf('Button style guide', module)
         <Button color="primary" size='sm' active>V</Button>
       </div>
   ))
-  .add('Colors', () => (
+  .add('Indication', () => (
     <div>
-      <Button color="success" size='sm' >Button</Button>
-      <Button color="private" size='sm' >Button</Button>
-      <Button color="shareable" size='sm' >Button</Button>
+        <Button color="success" size='sm' >Button</Button>
+        <Button color="alert" size='sm' >Button</Button>
+        <Button color="private" size='sm' >Button</Button>
+        <Button color="shareable" size='sm' >Button</Button>
+        <Button color="primary" size='sm' icon={'fa fa-star-o'}>Star</Button>
+      </div>
+  ))
+  .add('Outline Colors', () => (
+    <div>
+      <Button color="success" size='sm' outline>Turn on</Button>
+      <Button color="alert" size='sm' outline>Turn on</Button>
+      <Button color="private" size='sm' outline>Turn on</Button>
+      <Button color="shareable" size='sm' outline>Turn on</Button>
       <Button color="primary" size='sm' outline>Turn on</Button>
-      <Button color="primary" size='sm' >Star</Button>
     </div>
   ))
   .add('Variations', () => (
