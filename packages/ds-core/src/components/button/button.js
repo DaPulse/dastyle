@@ -17,7 +17,7 @@ const propTypes = {
   size: PropTypes.string,
   children: PropTypes.node,
   className: PropTypes.string,
-  changeOnClick: PropTypes.bool
+  iconAfterClick: PropTypes.string
 };
 
 const defaultProps = {
@@ -33,16 +33,18 @@ class Button extends Component {
   }
 
   onClick(e) {
-    if (this.props.disabled || this.props.loading || this.state.clicked) {
+    const { disabled, loading, onClick, iconAfterClick} = this.props;
+    const { clicked } = this.state;
+    if (disabled || loading || clicked) {
       e.preventDefault();
       return;
     }
 
-    if (this.props.onClick) {
-      this.props.onClick(e);
+    if (onClick) {
+      onClick(e);
     }
     
-    if(this.props.changeOnClick) {
+    if(iconAfterClick) {
       this.contentWidthBeforeClick = this.content.offsetWidth;
       this.setState({ clicked: true }, () =>
       setTimeout(() =>
@@ -51,12 +53,12 @@ class Button extends Component {
     }
   }
 
-  renderContent(loading, icon, changeOnClick) {
+  renderContent(loading, icon, iconAfterClick) {
     if(loading) {
       return <div className='loader'></div>;
     }
-    if (changeOnClick && this.state.clicked) {
-      return <span style={{width: this.contentWidthBeforeClick}} className="fa fa-check"></span>;
+    if (iconAfterClick && this.state.clicked) {
+      return <span style={{width: this.contentWidthBeforeClick}} className={iconAfterClick}></span>;
     }
     if (icon) {
       return <span><span className={`ds-i ${icon}`}></span> <span>{this.props.children}</span></span>;
@@ -77,14 +79,14 @@ class Button extends Component {
       tag: Tag,
       getRef,
       icon,
-      changeOnClick,
+      iconAfterClick,
       ...attributes
     } = this.props;
 
     const classes = classNames(
       className,
       'ds-btn',
-      (changeOnClick && this.state.clicked) ? 'ds-btn-clicked' : `ds-btn${outline ? '-outline' : ''}-${color}${loading ? '-loading' : ''}`,
+      (iconAfterClick && this.state.clicked) ? 'ds-btn-clicked' : `ds-btn${outline ? '-outline' : ''}-${color}${loading ? '-loading' : ''}`,
       size ? `ds-btn-${size}` : false,
       block ? 'ds-btn-block' : false,
       { active, disabled: this.props.disabled }
@@ -95,7 +97,7 @@ class Button extends Component {
     }
     return (
       <Tag {...attributes} className={classes} ref={getRef} onClick={this.onClick}>
-        <div ref={t => this.content = t}>{this.renderContent(loading, icon, changeOnClick)}</div>
+        <div ref={t => this.content = t}>{this.renderContent(loading, icon, iconAfterClick)}</div>
       </Tag>
     );
   }

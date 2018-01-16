@@ -44,7 +44,7 @@ storiesOf('Button style guide', module)
   ))
   .add('Indication', () => (
       <div>
-        <Button color="primary" size='sm' changeOnClick>Copy</Button>
+        <Button color="primary" size='sm' iconAfterClick='fa fa-check'>Copy</Button>
       </div>
   ))
   .add('Colors', () => (
@@ -54,7 +54,7 @@ storiesOf('Button style guide', module)
         <Button color="blackish" size='sm' >Button</Button>
         <Button color="private" size='sm' >Button</Button>
         <Button color="shareable" size='sm' >Button</Button>
-        <Button color="primary" size='sm' icon={'fa fa-star'}>Star</Button>
+        <Button color="primary" size='sm' icon='fa fa-star'>Star</Button>
       </div>
   ))
   .add('Outline Colors', () => (
