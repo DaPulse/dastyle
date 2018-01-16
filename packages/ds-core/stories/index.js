@@ -95,6 +95,9 @@ storiesOf('Button style guide', module)
   .add('Loading', () => (
     <div>
       <Button color='primary' loading size='sm'>outline</Button>
+      <Button color='primary' loading loadingPaddingX='22px' size='sm'>outline</Button>
+      <Button color='primary' loading size='lg'>outline</Button>
+      <Button color='primary' loading loadingPaddingX='33px' size='lg'>outline</Button>
     </div>
   ));
 

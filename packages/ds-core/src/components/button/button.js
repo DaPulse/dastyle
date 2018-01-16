@@ -17,7 +17,8 @@ const propTypes = {
   size: PropTypes.string,
   children: PropTypes.node,
   className: PropTypes.string,
-  iconAfterClick: PropTypes.string
+  iconAfterClick: PropTypes.string,
+  loadingPaddingX: PropTypes.string
 };
 
 const defaultProps = {
@@ -80,6 +81,7 @@ class Button extends Component {
       getRef,
       icon,
       iconAfterClick,
+      loadingPaddingX,
       ...attributes
     } = this.props;
 
@@ -95,8 +97,9 @@ class Button extends Component {
     if (attributes.href && Tag === 'button') {
       Tag = 'a';
     }
+    let style = loading && loadingPaddingX ? {paddingRight:loadingPaddingX, paddingLeft:loadingPaddingX} : {}
     return (
-      <Tag {...attributes} className={classes} ref={getRef} onClick={this.onClick}>
+      <Tag {...attributes} className={classes} ref={getRef} onClick={this.onClick} style={style}>
         <div ref={t => this.content = t}>{this.renderContent(loading, icon, iconAfterClick)}</div>
       </Tag>
     );
