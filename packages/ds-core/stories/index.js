@@ -67,6 +67,20 @@ storiesOf('Button style guide', module)
       <Button color="primary" size='sm' outline>Turn on</Button>
     </div>
   ))
+  .add('Variations', () => (
+    <div>
+      <Button color="secondary" size='sm' >Button</Button>
+      <Button color="primary" size='sm' getRef={t => console.log(t)}>GetRef console log</Button>   
+    </div>
+  ))
+  .add('Loading', () => (
+    <div>
+      <Button color='primary' loading size='sm'>outline</Button>
+      <Button color='primary' loading loadingPaddingX='22px' size='sm'>outline</Button>
+      <Button color='primary' loading size='lg'>outline</Button>
+      <Button color='primary' loading loadingPaddingX='33px' size='lg'>outline</Button>
+    </div>
+  ))
   .add('Loading Colors', () => (
     <div>
       <Button color="alert" size='sm' loading>Button</Button>
@@ -85,19 +99,6 @@ storiesOf('Button style guide', module)
       <Button color="private" size='sm' outline loading>Turn on</Button>
       <Button color="shareable" size='sm' outline loading>Turn on</Button>
       <Button color="primary" size='sm' outline loading>Turn on</Button>
-    </div>
-  ))
-  .add('Variations', () => (
-    <div>
-      <Button color="secondary" size='sm' >Button</Button>     
-    </div>
-  ))
-  .add('Loading', () => (
-    <div>
-      <Button color='primary' loading size='sm'>outline</Button>
-      <Button color='primary' loading loadingPaddingX='22px' size='sm'>outline</Button>
-      <Button color='primary' loading size='lg'>outline</Button>
-      <Button color='primary' loading loadingPaddingX='33px' size='lg'>outline</Button>
     </div>
   ));
 
