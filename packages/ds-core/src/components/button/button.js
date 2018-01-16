@@ -46,7 +46,7 @@ class Button extends Component {
     }
     
     if(iconAfterClick) {
-      this.contentWidthBeforeClick = this.content.offsetWidth;
+      this.widthBeforeClick = this.tag.offsetWidth;
       this.setState({ clicked: true }, () =>
       setTimeout(() =>
         this.setState({clicked: false}), 1500)
@@ -59,7 +59,7 @@ class Button extends Component {
       return <div className='loader'></div>;
     }
     if (iconAfterClick && this.state.clicked) {
-      return <span style={{width: this.contentWidthBeforeClick}} className={iconAfterClick}></span>;
+      return <span className={iconAfterClick}></span>;
     }
     if (icon) {
       return <span><span className={`ds-i ${icon}`}></span> <span>{this.props.children}</span></span>;
@@ -84,11 +84,11 @@ class Button extends Component {
       loadingPaddingX,
       ...attributes
     } = this.props;
-
+    const {clicked} = this.state;
     const classes = classNames(
       className,
       'ds-btn',
-      (iconAfterClick && this.state.clicked) ? 'ds-btn-clicked' : `ds-btn${outline ? '-outline' : ''}-${color}${loading ? '-loading' : ''}`,
+      (iconAfterClick && clicked) ? 'ds-btn-clicked' : `ds-btn${outline ? '-outline' : ''}-${color}${loading ? '-loading' : ''}`,
       size ? `ds-btn-${size}` : false,
       block ? 'ds-btn-block' : false,
       { active, disabled: this.props.disabled }
@@ -97,10 +97,11 @@ class Button extends Component {
     if (attributes.href && Tag === 'button') {
       Tag = 'a';
     }
-    let style = loading && loadingPaddingX ? {paddingRight:loadingPaddingX, paddingLeft:loadingPaddingX} : {}
+    let style = loading && loadingPaddingX ? {paddingRight:loadingPaddingX, paddingLeft:loadingPaddingX} : 
+                iconAfterClick && clicked  ? {width: this.widthBeforeClick} : null
     return (
-      <Tag {...attributes} className={classes} ref={getRef} onClick={this.onClick} style={style}>
-        <div ref={t => this.content = t}>{this.renderContent(loading, icon, iconAfterClick)}</div>
+      <Tag {...attributes} className={classes} ref={t => {this.tag = t; if(getRef) {getRef(t)}}} onClick={this.onClick} {...style ? {style:style} : {}}>
+        {this.renderContent(loading, icon, iconAfterClick)}
       </Tag>
     );
   }

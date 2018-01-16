@@ -98,19 +98,20 @@ fieldset[disabled] a.btn {
     border-color: transparent;
     outline: none;
   }
-  &,
+  
   &:active,
   &.active {
+    color: $blackish;
     &:focus,
     &.focus {
-    outline: none;
+      outline: none;
   }}
   @include hover {
+    color: $blackish;
     border-color: transparent;
     outline: none;
   }
   @include hover-focus {
-    color: $blackish;
     text-decoration: none;
     background-color: transparent;
     outline: none;
