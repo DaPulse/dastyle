@@ -98,19 +98,20 @@ fieldset[disabled] a.btn {
     border-color: transparent;
     outline: none;
   }
-  &,
+  
   &:active,
   &.active {
+    color: $blackish;
     &:focus,
     &.focus {
-    outline: none;
+      outline: none;
   }}
   @include hover {
+    color: $blackish;
     border-color: transparent;
     outline: none;
   }
   @include hover-focus {
-    color: $blackish;
     text-decoration: none;
     background-color: transparent;
     outline: none;
@@ -140,6 +141,10 @@ fieldset[disabled] a.btn {
   @include button-variant($btn-primary-color, $brand-success, $brand-success);
 }
 
+.ds-btn-blackish {
+  @include button-variant($btn-blackish-color, $btn-blackish-bg, $btn-blackish-border);
+}
+
 
 
 
@@ -167,6 +172,10 @@ fieldset[disabled] a.btn {
 
 .ds-btn-outline-success {
   @include button-outline-variant($btn-success-bg);
+}
+
+.ds-btn-outline-blackish {
+  @include button-outline-variant($btn-blackish-bg);
 }
 
 
@@ -246,6 +255,39 @@ input[type="button"] {
   }
 }
 
+
+//
+// Clicked button
+//
+
+.ds-btn-clicked {
+  cursor: default;
+  background-color: $brand-success;
+  border-color: $brand-success;
+  color: $btn-primary-color;
+  outline: none;
+
+  @include hover {
+    outline: none;
+  }
+
+  &:focus,
+  &.focus {
+    outline: none;
+  }
+
+  &:active,
+  &.active{
+    outline: none;
+
+    &:hover,
+    &:focus,
+    &.focus {
+      outline: none;
+    }
+  }
+}
+
 // loading
 
 .ds-btn-primary-loading {
@@ -272,6 +314,10 @@ input[type="button"] {
   @include button-loading-variant($btn-success-color, $btn-success-bg, $btn-success-border);
 }
 
+.ds-btn-blackish-loading {
+  @include button-loading-variant($btn-blackish-color, $btn-blackish-bg, $btn-blackish-border);
+}
+
 // ouline + loading
 
 .ds-btn-outline-primary-loading {
@@ -296,4 +342,8 @@ input[type="button"] {
 
 .ds-btn-outline-success-loading {
   @include button-outline-loading-variant($btn-success-bg);
+}
+
+.ds-btn-outline-blackish-loading {
+  @include button-outline-loading-variant($btn-blackish-bg);
 }

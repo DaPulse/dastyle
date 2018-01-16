@@ -17,6 +17,8 @@ const propTypes = {
   size: PropTypes.string,
   children: PropTypes.node,
   className: PropTypes.string,
+  iconAfterClick: PropTypes.string,
+  loadingPaddingX: PropTypes.string
 };
 
 const defaultProps = {
@@ -27,23 +29,46 @@ const defaultProps = {
 class Button extends Component {
   constructor(props) {
     super(props);
-
+    this.state = {clicked: false}
     this.onClick = this.onClick.bind(this);
   }
 
   onClick(e) {
-    if (this.props.disabled || this.props.loading) {
+    const { disabled, loading, onClick, iconAfterClick} = this.props;
+    const { clicked } = this.state;
+    if (disabled || loading || clicked) {
       e.preventDefault();
       return;
     }
 
-    if (this.props.onClick) {
-      this.props.onClick(e);
+    if (onClick) {
+      onClick(e);
+    }
+    
+    if(iconAfterClick) {
+      this.widthBeforeClick = this.tag.offsetWidth;
+      this.setState({ clicked: true }, () =>
+      setTimeout(() =>
+        this.setState({clicked: false}), 1500)
+      )
     }
   }
 
+  renderContent(loading, icon, iconAfterClick) {
+    if(loading) {
+      return <div className='loader'></div>;
+    }
+    if (iconAfterClick && this.state.clicked) {
+      return <span className={iconAfterClick}></span>;
+    }
+    if (icon) {
+      return <span><span className={`ds-i ${icon}`}></span> <span>{this.props.children}</span></span>;
+    }
+    return this.props.children; 
+  }
+
   render() {
-    let {
+    let { 
       active,
       block,
       className,
@@ -55,13 +80,15 @@ class Button extends Component {
       tag: Tag,
       getRef,
       icon,
+      iconAfterClick,
+      loadingPaddingX,
       ...attributes
     } = this.props;
-
+    const {clicked} = this.state;
     const classes = classNames(
       className,
       'ds-btn',
-      `ds-btn${outline ? '-outline' : ''}-${color}${loading ? '-loading' : ''}`,
+      (iconAfterClick && clicked) ? 'ds-btn-clicked' : `ds-btn${outline ? '-outline' : ''}-${color}${loading ? '-loading' : ''}`,
       size ? `ds-btn-${size}` : false,
       block ? 'ds-btn-block' : false,
       { active, disabled: this.props.disabled }
@@ -70,13 +97,11 @@ class Button extends Component {
     if (attributes.href && Tag === 'button') {
       Tag = 'a';
     }
+    let style = loading && loadingPaddingX ? {paddingRight:loadingPaddingX, paddingLeft:loadingPaddingX} : 
+                iconAfterClick && clicked  ? {width: this.widthBeforeClick} : null
     return (
-      <Tag {...attributes} className={classes} ref={getRef} onClick={this.onClick}>
-      {loading ?
-        <div className='loader'></div>
-      :
-        icon ? <span><span className={`ds-i ${icon}`}></span> <span>{this.props.children}</span></span> : this.props.children
-      }
+      <Tag {...attributes} className={classes} ref={t => {this.tag = t; if(getRef) {getRef(t)}}} onClick={this.onClick} {...style ? {style:style} : {}}>
+        {this.renderContent(loading, icon, iconAfterClick)}
       </Tag>
     );
   }
