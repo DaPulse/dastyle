@@ -72,12 +72,6 @@ module.exports = {
     publicPath: publicPath
   },
   resolve: {
-    // This allows you to set a fallback for where Webpack should look for modules.
-    // We read `NODE_PATH` environment variable in `paths.js` and pass paths here.
-    // We use `fallback` instead of `root` because we want `node_modules` to "win"
-    // if there any conflicts. This matches Node resolution mechanism.
-    // https://github.com/facebookincubator/create-react-app/issues/253
-    fallback: paths.nodePaths,
     // These are the reasonable defaults supported by the Node ecosystem.
     // We also include JSX as a common component filename extension to support
     // some tools, although we do not recommend using it, see:
@@ -91,16 +85,14 @@ module.exports = {
   },
 
   module: {
-    // First, run the linter.
-    // It's important to do this before Babel processes the JS.
-    preLoaders: [
+    rules: [
+      // First, run the linter.
+      // It's important to do this before Babel processes the JS.
       {
         test: /\.(js|jsx)$/,
-        loader: 'eslint',
+        use: 'eslint-loader',
         include: paths.appSrc
-      }
-    ],
-    loaders: [
+      },
       // Default loader: load all assets that are not handled
       // by other loaders with the url loader.
       // Note: This list needs to be updated with every change of extensions
@@ -122,7 +114,7 @@ module.exports = {
           /\.json$/,
           /\.svg$/
         ],
-        loader: 'url',
+        use: 'url-loader',
         query: {
           limit: 10000,
           name: 'static/media/[name].[hash:8].[ext]'
@@ -132,7 +124,7 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         include: paths.appSrc,
-        loader: 'babel',
+        use: 'babel-loader',
 
       },
       // The notation here is somewhat confusing.
@@ -150,23 +142,43 @@ module.exports = {
       {
         test: /\.scss$/,
         // include: paths.appSrc,
-        loaders: ["style-loader", "css", "sass"]
+        loaders: ["style-loader", "css-loader", "sass-loader"]
       },// TODO: note to myself -> eladams check if the include path can work again :)
       {
         test: /\.css$/,
-        loader: ExtractTextPlugin.extract('style', 'css?importLoaders=1!postcss')
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader', 
+          use: [
+            {
+              loader: "css-loader",
+              options: {
+                importLoaders: 1
+              }
+            },
+            {
+              loader: "postcss-loader",
+              options: {
+                plugins: () => [
+                  autoprefixer({
+                    browsers: [
+                      ">1%",
+                      "last 4 versions",
+                      "Firefox ESR",
+                      "not ie < 9" // React doesn't support IE8 anyway
+                    ]
+                  })
+                ]
+              }
+            }
+          ]
+        })
         // Note: this won't work without `new ExtractTextPlugin()` in `plugins`.
       },
-      // JSON is not enabled by default in Webpack but both Node and Browserify
-      // allow it implicitly so we also enable it.
-      {
-        test: /\.json$/,
-        loader: 'json'
-      },
+
       // "file" loader for svg
       {
         test: /\.svg$/,
-        loader: 'file',
+        use: 'file-loader',
         query: {
           name: 'static/media/[name].[hash:8].[ext]'
         }
@@ -207,10 +219,6 @@ module.exports = {
     // It is absolutely essential that NODE_ENV was set to production here.
     // Otherwise React will be compiled in the very slow development mode.
     new webpack.DefinePlugin(env),
-    // This helps ensure the builds are consistent if source hasn't changed:
-    new webpack.optimize.OccurrenceOrderPlugin(),
-    // Try to dedupe duplicated modules, if any:
-    new webpack.optimize.DedupePlugin(),
     // Minify the code.
     new webpack.optimize.UglifyJsPlugin({
       compress: {
@@ -223,10 +231,13 @@ module.exports = {
       output: {
         comments: false,
         screw_ie8: true
-      }
+      },
+      minimize: true
     }),
     // Note: this won't work without ExtractTextPlugin.extract(..) in `loaders`.
-    new ExtractTextPlugin('static/css/[name].[contenthash:8].css'),
+    new ExtractTextPlugin({
+      filename: 'static/css/[name].[contenthash:8].css'
+    }),
     // Generate a manifest file which contains a mapping of all asset filenames
     // to their corresponding output file so that tools can pick it up without
     // having to parse `index.html`.

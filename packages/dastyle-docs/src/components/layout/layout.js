@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import LeftBar from './left-bar/left-bar'
 import Main from './main';
 import './layout.scss';
@@ -11,8 +12,8 @@ const Layout = ({ children, route }) => (
 );
 
 Layout.propTypes = {
-  children: React.PropTypes.any,
-  route: React.PropTypes.any,
+  children: PropTypes.any,
+  route: PropTypes.any,
 };
 
 export default Layout;

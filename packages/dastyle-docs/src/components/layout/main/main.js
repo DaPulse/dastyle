@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './main.scss';
 
 const MainBar = ({ content }) => (
@@ -8,6 +9,6 @@ const MainBar = ({ content }) => (
 );
 
 MainBar.propTypes = {
-  content: React.PropTypes.any,
+  content: PropTypes.any,
 };
 export default MainBar;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import ColorDisplayComponent from './color-display';
 import './color-family.scss';
 
@@ -31,8 +32,8 @@ const ColorFamilyComponent = ({ colorFamilyObject, colorCopyMode }) => {
   );
 };
 ColorFamilyComponent.propTypes = {
-  colorFamilyObject: React.PropTypes.any,
-  colorCopyMode: React.PropTypes.number.isRequired,
+  colorFamilyObject: PropTypes.any,
+  colorCopyMode: PropTypes.number.isRequired,
 };
 
 export default ColorFamilyComponent;

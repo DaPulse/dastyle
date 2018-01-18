@@ -1,9 +1,9 @@
-import { configure } from '@kadira/storybook';
-import '@kadira/storybook/addons';
-import '@kadira/storybook-addon-knobs/register'
+import { configure } from '@storybook/react';
 
+// automatically import all files ending in *.stories.js
+const req = require.context('../stories', true, /.stories.js$/);
 function loadStories() {
-  require('../stories');
+  req.keys().forEach((filename) => req(filename));
 }
 
 configure(loadStories, module);

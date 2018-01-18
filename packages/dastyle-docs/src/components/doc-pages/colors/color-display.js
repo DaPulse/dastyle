@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Clipboard from 'clipboard';
 import './color-display.scss';
 import './color-classes.scss';
@@ -73,10 +74,10 @@ class ColorDisplayComponent extends Component {
 }
 
 ColorDisplayComponent.propTypes = {
-  colorName: React.PropTypes.string.isRequired,
-  colorTitle: React.PropTypes.string.isRequired,
-  colorText: React.PropTypes.string.isRequired,
-  copyOption: React.PropTypes.number.isRequired,
+  colorName: PropTypes.string.isRequired,
+  colorTitle: PropTypes.string.isRequired,
+  colorText: PropTypes.string.isRequired,
+  copyOption: PropTypes.number.isRequired,
 
 };
 

@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import "./button-layout.scss";
 import { Button } from "../../../../../ds-core/build/static/js/main";
 
@@ -187,7 +188,7 @@ const Buttons = ({ buttonsToShow }) => {
 
 };
 Buttons.propTypes = {
-  buttonsToShow: React.PropTypes.any,
+  buttonsToShow: PropTypes.any,
 };
 
 export default Buttons;

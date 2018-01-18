@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Highlight from 'react-highlight'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import Buttons from './buttons';
@@ -59,7 +60,7 @@ const ButtonFamily = ({ content }) => {
   );
 };
 ButtonFamily.propTypes = {
-  content: React.PropTypes.any,
+  content: PropTypes.any,
 };
 
 export default ButtonFamily;

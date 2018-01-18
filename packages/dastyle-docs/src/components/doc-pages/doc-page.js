@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import ColorDoc from './colors';
 import ButtonDoc from './buttons';
 import FormElementsDoc from './form-elements';
@@ -28,7 +29,7 @@ const DocPage = ({ route }) => {
 };
 
 DocPage.propTypes = {
-  route: React.PropTypes.any.isRequired,
+  route: PropTypes.any.isRequired,
 };
 
 export default DocPage;

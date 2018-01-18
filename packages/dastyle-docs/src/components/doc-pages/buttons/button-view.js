@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './button-view.scss';
 import ButtonFamily from './button-family';
 
@@ -13,7 +14,7 @@ const ButtonView = ({ buttonFamiliesArray }) => (
 );
 
 ButtonView.propTypes = {
-  buttonFamiliesArray: React.PropTypes.any,
+  buttonFamiliesArray: PropTypes.any,
 };
 
 export default ButtonView;

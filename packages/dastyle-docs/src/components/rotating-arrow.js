@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import triangleDown from './triangle-opened.svg';
 import './rotating-arrow.scss';
 
@@ -22,5 +23,5 @@ export default class RotatingArrow extends Component {
 }
 
 RotatingArrow.propTypes = {
-  opened: React.PropTypes.bool.isRequired,
+  opened: PropTypes.bool.isRequired,
 };

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './colors-view.scss';
 import ColorFamilyComponent from './color-family';
 
@@ -16,8 +17,8 @@ const ColorsViewComponent = ({ colorFamiliesArray, colorCopyMode }) => {
   );
 };
 ColorsViewComponent.propTypes = {
-  colorFamiliesArray: React.PropTypes.any,
-  colorCopyMode: React.PropTypes.number.isRequired,
+  colorFamiliesArray: PropTypes.any,
+  colorCopyMode: PropTypes.number.isRequired,
 };
 
 export default ColorsViewComponent;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './states-text.scss';
 
 const StatesText = ({ text }) => {
@@ -15,7 +16,7 @@ const StatesText = ({ text }) => {
   );
 };
 StatesText.propTypes = {
-  text: React.PropTypes.any,
+  text: PropTypes.any,
 };
 
 export default StatesText;

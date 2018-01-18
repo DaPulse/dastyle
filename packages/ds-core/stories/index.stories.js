@@ -1,5 +1,5 @@
 import React from 'react';
-import { storiesOf, action, linkTo } from '@kadira/storybook';
+import { storiesOf, action, linkTo } from '@storybook/react';
 import Welcome from './Welcome';
 
 import Button from '../src/components/button/button';
@@ -160,14 +160,6 @@ storiesOf('Button', module)
       <Button color="private" size='sm'>Private</Button>
     </div>
   ))
-  .add('disabled with text: [3 sizes]', () => (
-    <div>
-      <Button color="primary" disabled size='lg'>Disabled</Button>
-      <Button color="primary" disabled>Disabled</Button>
-      <Button color="primary" disabled size='sm'>Disabled</Button>
-    </div>
-  ))
-
   .add('outline: [3 sizes + non primary brand colors]', () => (
     <div>
       <Button color='primary' outline size='lg'>Outline</Button>

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import LeftBarItem from './left-bar-item';
 import dapulseLogo from './dapulse_style_logo.svg';
 import './left-bar.scss';
@@ -23,8 +24,8 @@ const LeftBar = ({ labels, items }) => {
   );
 };
 LeftBar.propTypes = {
-  labels: React.PropTypes.objectOf(React.PropTypes.array).isRequired,
-  items: React.PropTypes.objectOf(React.PropTypes.array).isRequired,
+  labels: PropTypes.objectOf(PropTypes.array).isRequired,
+  items: PropTypes.objectOf(PropTypes.array).isRequired,
 };
 
 export default LeftBar;
