@@ -29,14 +29,13 @@ const defaultProps = {
 class Button extends Component {
   constructor(props) {
     super(props);
-    this.state = {clicked: false}
+    this.clicked = false;
     this.onClick = this.onClick.bind(this);
   }
 
   onClick(e) {
     const { disabled, loading, onClick, iconAfterClick} = this.props;
-    const { clicked } = this.state;
-    if (disabled || loading || clicked) {
+    if (disabled || loading || this.clicked) {
       e.preventDefault();
       return;
     }
@@ -44,23 +43,34 @@ class Button extends Component {
     if (onClick) {
       onClick(e);
     }
-    
     if(iconAfterClick) {
       this.widthBeforeClick = this.tagRef.offsetWidth;
-      this.setState({ clicked: true }, () =>
+      this.clicked = true;
       setTimeout(() =>
-        this.setState({clicked: false}), 1500)
-      )
+        {
+          this.clicked = false;
+          if (this.isComponentMounted) {
+            this.forceUpdate();
+          }
+        }, 1500)
+      this.forceUpdate()
     }
+  }
+
+  componentDidMount() {
+    this.isComponentMounted = true;
+  }
+
+  componentWillUnmount() {
+    this.isComponentMounted = false;
   }
 
   renderContent() {
     const {loading, icon, iconAfterClick, children} = this.props;
-    const {clicked} = this.state;
     if(loading) {
       return <div className='loader'></div>;
     }
-    if (iconAfterClick && clicked) {
+    if (iconAfterClick && this.clicked) {
       return <span className={iconAfterClick}></span>;
     }
     if (icon) {
@@ -72,9 +82,8 @@ class Button extends Component {
   render() {
     let { active, block, className, color, outline, size, loading, keepsize, tag: Tag, getRef, icon,
       iconAfterClick, loadingPaddingX, ...attributes } = this.props;
-    const {clicked} = this.state;
 
-    const afterClickMode = iconAfterClick && clicked;
+    const afterClickMode = iconAfterClick && this.clicked;
     
     const classes = classNames(
       className,
