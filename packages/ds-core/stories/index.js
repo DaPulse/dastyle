@@ -46,7 +46,7 @@ storiesOf('Button style guide', module)
     <div>
       <Button color="primary" successIcon="fa fa-check" successText="Copied">Copy</Button>
       <Button color="primary" successIcon="fa fa-check" successText="Copied" loading paddingX="31px">Copy</Button>
-      <Button color="primary" successIcon="fa fa-check" successText="Copied" success paddingX="19px">Copy</Button>
+      <Button color="primary" successIcon="fa fa-check" successText="Copied" successMode paddingX="19px">Copy</Button>
     </div>
   ))
   .add('Colors', () => (

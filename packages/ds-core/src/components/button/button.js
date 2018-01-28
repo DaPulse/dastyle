@@ -20,7 +20,7 @@ const propTypes = {
   paddingX: PropTypes.string,
   successIcon: PropTypes.string,
   successText: PropTypes.string,
-  success: PropTypes.bool
+  successMode: PropTypes.bool
 };
 
 const defaultProps = {
@@ -35,8 +35,8 @@ class Button extends Component {
   }
 
   onClick(e) {
-    const { disabled, loading, onClick, success} = this.props;
-    if (disabled || loading || success) {
+    const { disabled, loading, onClick, successMode} = this.props;
+    if (disabled || loading || successMode) {
       e.preventDefault();
       return;
     }
@@ -59,11 +59,11 @@ class Button extends Component {
   }
 
   renderContent() {
-    const {loading, icon, children, successIcon, successText, success} = this.props;
+    const {loading, icon, children, successIcon, successText, successMode} = this.props;
     if(loading) {
       return <div className='loader'></div>;
     }
-    if (success) {
+    if (successMode) {
       return this.renderContentWithIcon(successText, successIcon);
     }
     if (icon) {
@@ -74,12 +74,12 @@ class Button extends Component {
 
   render() {
     let { active, block, className, color, outline, size, loading, keepsize, tag: Tag, getRef, icon,
-      success, paddingX, ...attributes } = this.props;
+      successMode, paddingX, ...attributes } = this.props;
     
     const classes = classNames(
       className,
       'ds-btn',
-      success ? 'ds-btn-success-mode' : `ds-btn${outline ? '-outline' : ''}-${color}${loading ? '-loading' : ''}`,
+      successMode ? 'ds-btn-success-mode' : `ds-btn${outline ? '-outline' : ''}-${color}${loading ? '-loading' : ''}`,
       size ? `ds-btn-${size}` : false,
       block ? 'ds-btn-block' : false,
       { active, disabled: this.props.disabled }
