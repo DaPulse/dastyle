@@ -74,7 +74,7 @@ class Button extends Component {
 
   render() {
     let { active, block, className, color, outline, size, loading, keepsize, tag: Tag, getRef, icon,
-      successMode, paddingX, ...attributes } = this.props;
+      successMode, successText, successIcon, paddingX, ...attributes } = this.props;
     
     const classes = classNames(
       className,
