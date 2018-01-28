@@ -133,6 +133,9 @@
   border-color: $border;
   @include box-shadow($btn-box-shadow);
   padding: 0px 0px;
+  padding-right: 0.24rem;
+  margin-top: 1px;
+  
   &:focus,
   &.focus {
     outline: none;
@@ -170,6 +173,8 @@
   background-color: transparent;
   border-color: $color;
   padding: 0px 0px;
+  padding-right: 0.24rem;
+  margin-top: 1px;
 
   &:focus,
   &.focus {

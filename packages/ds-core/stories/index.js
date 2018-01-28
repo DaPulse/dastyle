@@ -42,10 +42,12 @@ storiesOf('Button style guide', module)
       <Button className="myTest" color="primary" size='sm' outline>Hover</Button>
     </div>
   ))
-  .add('Indication', () => (
-      <div>
-        <Button color="primary" size='sm' iconAfterClick='fa fa-check'>Copy</Button>
-      </div>
+  .add('Indication with Loading', () => (
+    <div>
+      <Button color="primary" successIcon="fa fa-check" successText="Copied">Copy</Button>
+      <Button color="primary" successIcon="fa fa-check" successText="Copied" loading paddingX="31px">Copy</Button>
+      <Button color="primary" successIcon="fa fa-check" successText="Copied" success paddingX="19px">Copy</Button>
+    </div>
   ))
   .add('Colors', () => (
     <div>
@@ -70,15 +72,16 @@ storiesOf('Button style guide', module)
   .add('Variations', () => (
     <div>
       <Button color="secondary" size='sm' >Button</Button>
-      <Button color="primary" size='sm' getRef={t => console.log(t)}>GetRef console log</Button>   
     </div>
   ))
   .add('Loading', () => (
     <div>
       <Button color='primary' loading size='sm'>outline</Button>
-      <Button color='primary' loading loadingPaddingX='22px' size='sm'>outline</Button>
+      <Button color='primary' loading paddingX='22px' size='sm'>outline</Button>
+      <Button color='primary' loading>outline</Button>
+      <Button color='primary' loading paddingX='22px'>outline</Button>
       <Button color='primary' loading size='lg'>outline</Button>
-      <Button color='primary' loading loadingPaddingX='33px' size='lg'>outline</Button>
+      <Button color='primary' loading paddingX='33px' size='lg'>outline</Button>
     </div>
   ))
   .add('Loading Colors', () => (
