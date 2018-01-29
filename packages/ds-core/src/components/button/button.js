@@ -17,8 +17,10 @@ const propTypes = {
   size: PropTypes.string,
   children: PropTypes.node,
   className: PropTypes.string,
-  iconAfterClick: PropTypes.string,
-  loadingPaddingX: PropTypes.string
+  paddingX: PropTypes.string,
+  successIcon: PropTypes.string,
+  successText: PropTypes.string,
+  successMode: PropTypes.bool
 };
 
 const defaultProps = {
@@ -29,31 +31,18 @@ const defaultProps = {
 class Button extends Component {
   constructor(props) {
     super(props);
-    this.clicked = false;
     this.onClick = this.onClick.bind(this);
   }
 
   onClick(e) {
-    const { disabled, loading, onClick, iconAfterClick} = this.props;
-    if (disabled || loading || this.clicked) {
+    const { disabled, loading, onClick, successMode} = this.props;
+    if (disabled || loading || successMode) {
       e.preventDefault();
       return;
     }
 
     if (onClick) {
       onClick(e);
-    }
-    if(iconAfterClick) {
-      this.widthBeforeClick = this.tagRef.offsetWidth;
-      this.clicked = true;
-      setTimeout(() =>
-        {
-          this.clicked = false;
-          if (this.isComponentMounted) {
-            this.forceUpdate();
-          }
-        }, 1500)
-      this.forceUpdate()
     }
   }
 
@@ -65,30 +54,32 @@ class Button extends Component {
     this.isComponentMounted = false;
   }
 
+  renderContentWithIcon(text, icon) {
+    return <span><span className={`ds-i ${icon}`}></span> <span>{text}</span></span>;
+  }
+
   renderContent() {
-    const {loading, icon, iconAfterClick, children} = this.props;
+    const {loading, icon, children, successIcon, successText, successMode} = this.props;
     if(loading) {
       return <div className='loader'></div>;
     }
-    if (iconAfterClick && this.clicked) {
-      return <span className={iconAfterClick}></span>;
+    if (successMode) {
+      return this.renderContentWithIcon(successText, successIcon);
     }
     if (icon) {
-      return <span><span className={`ds-i ${icon}`}></span> <span>{children}</span></span>;
+      return this.renderContentWithIcon(children, icon);
     }
     return children; 
   }
 
   render() {
     let { active, block, className, color, outline, size, loading, keepsize, tag: Tag, getRef, icon,
-      iconAfterClick, loadingPaddingX, ...attributes } = this.props;
-
-    const afterClickMode = iconAfterClick && this.clicked;
+      successMode, successText, successIcon, paddingX, ...attributes } = this.props;
     
     const classes = classNames(
       className,
       'ds-btn',
-      afterClickMode ? 'ds-btn-clicked' : `ds-btn${outline ? '-outline' : ''}-${color}${loading ? '-loading' : ''}`,
+      successMode ? 'ds-btn-success-mode' : `ds-btn${outline ? '-outline' : ''}-${color}${loading ? '-loading' : ''}`,
       size ? `ds-btn-${size}` : false,
       block ? 'ds-btn-block' : false,
       { active, disabled: this.props.disabled }
@@ -98,17 +89,15 @@ class Button extends Component {
       Tag = 'a';
     }
 
-    const style = loading && loadingPaddingX ? {paddingRight:loadingPaddingX, paddingLeft:loadingPaddingX} : 
-                  afterClickMode  ? {width: this.widthBeforeClick} : null
+    const style = paddingX ? {paddingRight:paddingX, paddingLeft:paddingX} : null
 
     let tagProps = {...attributes, className: classes, onClick: this.onClick};
-    tagProps.ref = t => {this.tagRef = t; if(getRef) {getRef(t)}};
     if (style != null) {
       tagProps.style = style
     }
 
     return (
-      <Tag {...tagProps}>
+      <Tag {...tagProps} ref={getRef}>
         {this.renderContent()}
       </Tag>
     );
