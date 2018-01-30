@@ -45,8 +45,8 @@ storiesOf('Button style guide', module)
   .add('Indication with Loading', () => (
     <div>
       <Button color="primary" successIcon="fa fa-check" successText="Copied">Copy</Button>
-      <Button color="primary" successIcon="fa fa-check" successText="Copied" loading paddingX="31px">Copy</Button>
-      <Button color="primary" successIcon="fa fa-check" successText="Copied" successMode paddingX="19px">Copy</Button>
+      <Button color="primary" successIcon="fa fa-check" successText="Copied" loading style={{paddingRight:"31px", paddingLeft:"31px"}}>Copy</Button>
+      <Button color="primary" successIcon="fa fa-check" successText="Copied" success style={{paddingRight:"19px", paddingLeft:"19px"}}>Copy</Button>
     </div>
   ))
   .add('Colors', () => (
@@ -77,11 +77,11 @@ storiesOf('Button style guide', module)
   .add('Loading', () => (
     <div>
       <Button color='primary' loading size='sm'>outline</Button>
-      <Button color='primary' loading paddingX='22px' size='sm'>outline</Button>
+      <Button color='primary' loading style={{paddingRight:"22px", paddingLeft:"22px"}} size='sm'>outline</Button>
       <Button color='primary' loading>outline</Button>
-      <Button color='primary' loading paddingX='22px'>outline</Button>
+      <Button color='primary' loading style={{paddingRight:"22px", paddingLeft:"22px"}}>outline</Button>
       <Button color='primary' loading size='lg'>outline</Button>
-      <Button color='primary' loading paddingX='33px' size='lg'>outline</Button>
+      <Button color='primary' loading style={{paddingRight:"33px", paddingLeft:"33px"}} size='lg'>outline</Button>
     </div>
   ))
   .add('Loading Colors', () => (

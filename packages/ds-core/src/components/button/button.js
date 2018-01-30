@@ -17,10 +17,10 @@ const propTypes = {
   size: PropTypes.string,
   children: PropTypes.node,
   className: PropTypes.string,
-  paddingX: PropTypes.string,
+  style: PropTypes.any,
   successIcon: PropTypes.string,
   successText: PropTypes.string,
-  successMode: PropTypes.bool
+  success: PropTypes.bool
 };
 
 const defaultProps = {
@@ -35,8 +35,8 @@ class Button extends Component {
   }
 
   onClick(e) {
-    const { disabled, loading, onClick, successMode} = this.props;
-    if (disabled || loading || successMode) {
+    const { disabled, loading, onClick, success} = this.props;
+    if (disabled || loading || success) {
       e.preventDefault();
       return;
     }
@@ -59,11 +59,11 @@ class Button extends Component {
   }
 
   renderContent() {
-    const {loading, icon, children, successIcon, successText, successMode} = this.props;
+    const {loading, icon, children, successIcon, successText, success} = this.props;
     if(loading) {
       return <div className='loader'></div>;
     }
-    if (successMode) {
+    if (success) {
       return this.renderContentWithIcon(successText, successIcon);
     }
     if (icon) {
@@ -74,12 +74,12 @@ class Button extends Component {
 
   render() {
     let { active, block, className, color, outline, size, loading, keepsize, tag: Tag, getRef, icon,
-      successMode, successText, successIcon, paddingX, ...attributes } = this.props;
+      success, successText, successIcon, style, ...attributes } = this.props;
     
     const classes = classNames(
       className,
       'ds-btn',
-      successMode ? 'ds-btn-success-mode' : `ds-btn${outline ? '-outline' : ''}-${color}${loading ? '-loading' : ''}`,
+      success ? 'ds-btn-success-mode' : `ds-btn${outline ? '-outline' : ''}-${color}${loading ? '-loading' : ''}`,
       size ? `ds-btn-${size}` : false,
       block ? 'ds-btn-block' : false,
       { active, disabled: this.props.disabled }
@@ -88,8 +88,6 @@ class Button extends Component {
     if (attributes.href && Tag === 'button') {
       Tag = 'a';
     }
-
-    const style = paddingX ? {paddingRight:paddingX, paddingLeft:paddingX} : null
 
     let tagProps = {...attributes, className: classes, onClick: this.onClick};
     if (style != null) {
