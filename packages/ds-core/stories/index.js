@@ -57,6 +57,7 @@ storiesOf('Button style guide', module)
         <Button color="private" size='sm' >Button</Button>
         <Button color="shareable" size='sm' >Button</Button>
         <Button color="primary" size='sm' icon='fa fa-star'>Star</Button>
+        <Button color="primary" size='sm' icon='fa fa-star' rightIcon={true} >RightStar</Button>
       </div>
   ))
   .add('Outline Colors', () => (

@@ -1,7 +1,7 @@
-import React, { Component, PropTypes } from 'react';
-import classNames from 'classnames';
+import React, { Component, PropTypes } from "react";
+import classNames from "classnames";
 
-import './button.scss';
+import "./button.scss";
 
 const propTypes = {
   active: PropTypes.bool,
@@ -20,12 +20,13 @@ const propTypes = {
   style: PropTypes.any,
   successIcon: PropTypes.string,
   successText: PropTypes.string,
+  rightIcon: PropTypes.bool,
   success: PropTypes.bool
 };
 
 const defaultProps = {
-  color: 'primary',
-  tag: 'button',
+  color: "primary",
+  tag: "button"
 };
 
 class Button extends Component {
@@ -35,7 +36,7 @@ class Button extends Component {
   }
 
   onClick(e) {
-    const { disabled, loading, onClick, success} = this.props;
+    const { disabled, loading, onClick, success } = this.props;
     if (disabled || loading || success) {
       e.preventDefault();
       return;
@@ -54,44 +55,79 @@ class Button extends Component {
     this.isComponentMounted = false;
   }
 
-  renderContentWithIcon(text, icon) {
-    return <span><span className={`ds-i ${icon}`}></span> <span>{text}</span></span>;
+  renderText(text) {
+    return <span>{text}</span>;
+  }
+
+  renderIcon(icon, className) {
+    return <span className={`ds-i ${className} ${icon}`} />;
+  }
+
+  renderContentWithIcon(text, icon, isIconOnRightSide) {
+    if (isIconOnRightSide) {
+      return (
+        <span>
+          {this.renderText(text)} {this.renderIcon(icon, "right")}
+        </span>
+      );
+    }
+    return (
+      <span>
+        {this.renderIcon(icon, "left")} {this.renderText(text)}
+      </span>
+    );
   }
 
   renderContent() {
-    const {loading, icon, children, successIcon, successText, success} = this.props;
-    if(loading) {
-      return <div className='loader'></div>;
+    const { loading, icon, rightIcon, children, successIcon, successText, success } = this.props;
+    if (loading) {
+      return <div className="loader" />;
     }
     if (success) {
-      return this.renderContentWithIcon(successText, successIcon);
+      return this.renderContentWithIcon(successText, successIcon, rightIcon);
     }
     if (icon) {
-      return this.renderContentWithIcon(children, icon);
+      return this.renderContentWithIcon(children, icon, rightIcon);
     }
-    return children; 
+    return children;
   }
 
   render() {
-    let { active, block, className, color, outline, size, loading, keepsize, tag: Tag, getRef, icon,
-      success, successText, successIcon, style, ...attributes } = this.props;
-    
+    let {
+      active,
+      block,
+      className,
+      color,
+      outline,
+      size,
+      loading,
+      keepsize,
+      tag: Tag,
+      getRef,
+      icon,
+      success,
+      successText,
+      successIcon,
+      style,
+      ...attributes
+    } = this.props;
+
     const classes = classNames(
       className,
-      'ds-btn',
-      success ? 'ds-btn-success-mode' : `ds-btn${outline ? '-outline' : ''}-${color}${loading ? '-loading' : ''}`,
+      "ds-btn",
+      success ? "ds-btn-success-mode" : `ds-btn${outline ? "-outline" : ""}-${color}${loading ? "-loading" : ""}`,
       size ? `ds-btn-${size}` : false,
-      block ? 'ds-btn-block' : false,
+      block ? "ds-btn-block" : false,
       { active, disabled: this.props.disabled }
     );
 
-    if (attributes.href && Tag === 'button') {
-      Tag = 'a';
+    if (attributes.href && Tag === "button") {
+      Tag = "a";
     }
 
-    let tagProps = {...attributes, className: classes, onClick: this.onClick};
+    let tagProps = { ...attributes, className: classes, onClick: this.onClick };
     if (style != null) {
-      tagProps.style = style
+      tagProps.style = style;
     }
 
     return (

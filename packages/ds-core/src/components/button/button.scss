@@ -1,9 +1,9 @@
-@import '../../variables';
-@import '../../mixins';
-@import '../../mixins/buttons';
-@import '../../mixins/border-radius';
-@import '../../mixins/tab-focus';
-@import '../../mixins/hover';
+@import "../../variables";
+@import "../../mixins";
+@import "../../mixins/buttons";
+@import "../../mixins/border-radius";
+@import "../../mixins/tab-focus";
+@import "../../mixins/hover";
 // scss-lint:disable QualifyingElement
 
 //
@@ -24,6 +24,11 @@
   .ds-i {
     margin-left: -$font-size-base/3;
     margin-right: $font-size-base/6;
+
+    &.right {
+      margin-right: -$font-size-base/3;
+      margin-left: $font-size-base/6;
+    }
   }
   @include button-size($btn-padding-y, $btn-padding-x, $font-size-base, $btn-border-radius, $btn-loader-size-base);
   @include transition($btn-transition);
@@ -65,7 +70,6 @@ fieldset[disabled] a.btn {
   pointer-events: none;
 }
 
-
 //
 // Primary button specific disabled handling
 //
@@ -98,14 +102,15 @@ fieldset[disabled] a.btn {
     border-color: transparent;
     outline: none;
   }
-  
+
   &:active,
   &.active {
     color: $blackish;
     &:focus,
     &.focus {
       outline: none;
-  }}
+    }
+  }
   @include hover {
     color: $blackish;
     border-color: transparent;
@@ -145,10 +150,6 @@ fieldset[disabled] a.btn {
   @include button-variant($btn-blackish-color, $btn-blackish-bg, $btn-blackish-border);
 }
 
-
-
-
-
 // Remove all backgrounds
 .ds-btn-outline-primary {
   @include button-outline-variant($btn-primary-bg);
@@ -177,7 +178,6 @@ fieldset[disabled] a.btn {
 .ds-btn-outline-blackish {
   @include button-outline-variant($btn-blackish-bg);
 }
-
 
 //
 // Link buttons
@@ -217,7 +217,6 @@ fieldset[disabled] a.btn {
   }
 }
 
-
 //
 // Button Sizes
 //
@@ -230,7 +229,6 @@ fieldset[disabled] a.btn {
   // line-height: ensure proper height of button next to small input
   @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $btn-border-radius-sm, $btn-loader-size-sm);
 }
-
 
 //
 // Block button
@@ -255,7 +253,6 @@ input[type="button"] {
   }
 }
 
-
 //
 // Button in success mode
 //
@@ -277,7 +274,7 @@ input[type="button"] {
   }
 
   &:active,
-  &.active{
+  &.active {
     outline: none;
 
     &:hover,
