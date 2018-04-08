@@ -20,6 +20,7 @@ const propTypes = {
   style: PropTypes.any,
   successIcon: PropTypes.string,
   successText: PropTypes.string,
+  rightIcon: PropTypes.bool,
   success: PropTypes.bool
 };
 
@@ -54,20 +55,23 @@ class Button extends Component {
     this.isComponentMounted = false;
   }
 
-  renderContentWithIcon(text, icon) {
+  renderContentWithIcon(text, icon, isIconOnRightSide) {
+    if (isIconOnRightSide) {
+      return <span><span>{text}</span> <span className={`ds-i right ${icon}`}></span></span>;      
+    }
     return <span><span className={`ds-i ${icon}`}></span> <span>{text}</span></span>;
   }
 
   renderContent() {
-    const {loading, icon, children, successIcon, successText, success} = this.props;
+    const {loading, icon, rightIcon, children, successIcon, successText, success} = this.props;
     if(loading) {
       return <div className='loader'></div>;
     }
     if (success) {
-      return this.renderContentWithIcon(successText, successIcon);
+      return this.renderContentWithIcon(successText, successIcon, rightIcon);
     }
     if (icon) {
-      return this.renderContentWithIcon(children, icon);
+      return this.renderContentWithIcon(children, icon, rightIcon);
     }
     return children; 
   }
