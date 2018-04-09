@@ -107,6 +107,7 @@ class Button extends Component {
       icon,
       success,
       successText,
+      rightIcon,
       successIcon,
       style,
       ...attributes
