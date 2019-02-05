@@ -48,18 +48,18 @@
   &.disabled,
   &:disabled {
     cursor: arrow;
-    border-color: $explosive;
-    background-color: $explosive;
+    border-color: $dark-marble;
+    background-color: $dark-marble;
     color: $american-gray;
     @include box-shadow(none);
     &:focus,
     &.focus {
-      background-color: $explosive;
-          border-color: $explosive;
+      background-color: $dark-marble;
+          border-color: $dark-marble;
     }
     @include hover {
-      background-color: $explosive;
-          border-color: $explosive;
+      background-color: $dark-marble;
+          border-color: $dark-marble;
                  color: $american-gray;
     }
   }
@@ -106,18 +106,18 @@
   &.disabled,
   &:disabled {
     cursor: arrow;
-    border-color: $explosive;
-    background-color: $explosive;
+    border-color: $dark-marble;
+    background-color: $dark-marble;
     color: $american-gray;
     @include box-shadow(none);
     &:focus,
     &.focus {
-      background-color: $explosive;
-          border-color: $explosive;
+      background-color: $dark-marble;
+          border-color: $dark-marble;
     }
     @include hover {
-      background-color: $explosive;
-          border-color: $explosive;
+      background-color: $dark-marble;
+          border-color: $dark-marble;
                  color: $american-gray;
     }
   }

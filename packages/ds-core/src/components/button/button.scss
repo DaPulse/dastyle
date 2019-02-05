@@ -59,7 +59,6 @@
   &.disabled,
   &:disabled {
     cursor: $cursor-disabled;
-    opacity: 0.55;
     @include box-shadow(none);
   }
 }
