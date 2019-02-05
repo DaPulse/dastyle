@@ -68,6 +68,7 @@ storiesOf('Button style guide', module)
       <Button color="private" size='sm' outline>Turn on</Button>
       <Button color="shareable" size='sm' outline>Turn on</Button>
       <Button color="primary" size='sm' outline>Turn on</Button>
+      <Button color="primary" disabled size='sm' outline>Turn on</Button>
     </div>
   ))
   .add('Variations', () => (
