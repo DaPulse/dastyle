@@ -5,8 +5,12 @@
   "description": "drafting the style of the universe",
   "scripts": {
     "bootstrap": "lerna bootstrap",
-    "docs": "lerna exec --scope ds-core -- npm run build && lerna exec --scope dastyle-docs -- npm start",
-    "deploy": "lerna exec --scope ds-core -- npm run build && cp packages/ds-core/build/static/js/main.js index.js && git commit -am 'bump version' && npm version patch && git push origin master && git push --tags"
+    "build-core": "lerna exec --scope ds-core -- npm run build",
+    "copy-build": "cp packages/ds-core/build/static/js/main.js index.js",
+    "build-docs": "lerna exec --scope dastyle-docs -- npm start",
+    "docs": "npm run build-core && npm run build-docs",
+    "run-local": "npm run build-core && npm run copy-build && npm run build-docs",
+    "deploy": "npm run build-core && npm run copy-build && git commit -am 'bump version' && npm version patch && git push origin master && git push --tags"
   },
   "engines": {
     "node": ">= 6.5"
