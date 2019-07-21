@@ -15,7 +15,7 @@ const FormFeedback = (props) => {
   const {
     className,
     tag: Tag,
-    ...attributes,
+    ...attributes
   } = props;
 
   const classes = mapToCssModules(classNames(

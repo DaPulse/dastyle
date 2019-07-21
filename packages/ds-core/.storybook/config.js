@@ -1,9 +1,7 @@
-import { configure } from '@storybook/react';
-import '@storybook/react/addons';
-import '@storybook/addon-knobs/register'
+import { configure } from "@storybook/react";
 
 function loadStories() {
-  require('../stories');
+  require("../stories");
 }
 
 configure(loadStories, module);

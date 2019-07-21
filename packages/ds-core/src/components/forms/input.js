@@ -1,6 +1,6 @@
-import React, { PropTypes } from 'react';
-import classNames from 'classnames';
-import './forms.scss';
+import React, { PropTypes } from "react";
+import classNames from "classnames";
+import "./forms.scss";
 
 const propTypes = {
   children: PropTypes.node,
@@ -11,12 +11,12 @@ const propTypes = {
   getRef: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
   static: PropTypes.bool,
   addon: PropTypes.bool,
-  className: PropTypes.string,
+  className: PropTypes.string
 };
 
 const defaultProps = {
-  tag: 'p',
-  type: 'text',
+  tag: "p",
+  type: "text"
 };
 
 //TODO consider refactoring to a pure function
@@ -32,17 +32,17 @@ class Input extends React.Component {
       addon,
       static: staticInput,
       getRef,
-      ...attributes,
+      ...attributes
     } = this.props;
 
-    const checkInput = ['radio', 'checkbox'].indexOf(type) > -1;
+    const checkInput = ["radio", "checkbox"].indexOf(type) > -1;
 
-    const fileInput = type === 'file';
-    const textareaInput = type === 'textarea';
-    const selectInput = type === 'select';
-    let Tag = selectInput || textareaInput ? type : 'input';
+    const fileInput = type === "file";
+    const textareaInput = type === "textarea";
+    const selectInput = type === "select";
+    let Tag = selectInput || textareaInput ? type : "input";
 
-    let formControlClass = 'ds-form-control';
+    let formControlClass = "ds-form-control";
 
     if (staticInput) {
       formControlClass = `ds-${formControlClass}-static`;
@@ -53,7 +53,7 @@ class Input extends React.Component {
       if (addon) {
         formControlClass = null;
       } else {
-        formControlClass = 'ds-form-check-input';
+        formControlClass = "ds-form-check-input";
       }
     }
 
@@ -62,15 +62,13 @@ class Input extends React.Component {
       state ? `ds-form-control-${state}` : false,
       size ? `ds-form-control-${size}` : false,
       formControlClass
-    )
+    );
 
-    if (Tag === 'input') {
+    if (Tag === "input") {
       attributes.type = type;
     }
 
-    return (
-      <Tag {...attributes} ref={getRef} className={classes} />
-    );
+    return <Tag {...attributes} ref={getRef} className={classes} />;
   }
 }
 

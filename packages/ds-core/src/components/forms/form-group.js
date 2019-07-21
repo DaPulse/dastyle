@@ -1,5 +1,5 @@
-import React, { PropTypes } from 'react';
-import classNames from 'classnames';
+import React, { PropTypes } from "react";
+import classNames from "classnames";
 
 const propTypes = {
   children: PropTypes.node,
@@ -8,14 +8,14 @@ const propTypes = {
   disabled: PropTypes.bool,
   tag: PropTypes.string,
   color: PropTypes.string,
-  className: PropTypes.string,
+  className: PropTypes.string
 };
 
 const defaultProps = {
-  tag: 'div',
+  tag: "div"
 };
 
-const FormGroup = (props) => {
+const FormGroup = props => {
   const {
     className,
     row,
@@ -23,20 +23,18 @@ const FormGroup = (props) => {
     color,
     check,
     tag: Tag,
-    ...attributes,
+    ...attributes
   } = props;
 
   const classes = classNames(
     className,
     color ? `ds-has-${color}` : false,
-    row ? 'ds-row' : false,
-    check ? 'ds-form-check' : 'ds-form-group',
-    check && disabled ? 'disabled' : false
+    row ? "ds-row" : false,
+    check ? "ds-form-check" : "ds-form-group",
+    check && disabled ? "disabled" : false
   );
 
-  return (
-    <Tag {...attributes} className={classes} />
-  );
+  return <Tag {...attributes} className={classes} />;
 };
 
 FormGroup.propTypes = propTypes;
