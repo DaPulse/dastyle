@@ -1,6 +1,6 @@
-import { configure } from '@kadira/storybook';
-import '@kadira/storybook/addons';
-import '@kadira/storybook-addon-knobs/register'
+import { configure } from '@storybook/react';
+import '@storybook/react/addons';
+import '@storybook/addon-knobs/register'
 
 function loadStories() {
   require('../stories');
