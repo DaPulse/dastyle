@@ -47,7 +47,7 @@
     "pretty-format": "^18.1.0",
     "promise": "7.1.1",
     "raw-loader": "^0.5.1",
-    "react-dev-utils": "^0.4.2",
+    "react-dev-utils": "^11.0.4",
     "react-highlight": "^0.9.0",
     "react-test-renderer": "^15.4.2",
     "recursive-readdir": "2.1.0",
