@@ -55,8 +55,8 @@
     "strip-ansi": "3.0.1",
     "style-loader": "0.13.1",
     "url-loader": "0.5.7",
-    "webpack": "1.14.0",
-    "webpack-dev-server": "1.16.2",
+    "webpack": "5.75.0",
+    "webpack-dev-server": "4.11.1",
     "webpack-manifest-plugin": "1.1.0",
     "whatwg-fetch": "1.0.0"
   },
@@ -67,7 +67,7 @@
     "react-dom": "^15.4.1",
     "react-highlight": "^0.9.0",
     "react-router": "^3.0.0",
-    "react-scripts": "^0.8.4",
+    "react-scripts": "^5.0.1",
     "react-select": "^1.0.0-rc.2",
     "react-tabs": "^0.8.2"
   },
